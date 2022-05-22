@@ -1,0 +1,59 @@
+<div class="more pointer  "
+  (click)="moreToggle()">
+  <div [class.absolute]="showMenu"
+    class="mr12">
+    <svg class="mt4"
+      xmlns="http://www.w3.org/2000/svg"
+      width="7.202"
+      height="24"
+      data-name="more (1)"
+      viewBox="0 0 7.202 24">
+      <use xlink:href="#more"></use>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg"
+      width="7.202"
+      height="24"
+      data-name="more (1)"
+      viewBox="0 0 7.202 24">
+      <use xlink:href="#more"></use>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg"
+      width="7.202"
+      height="24"
+      data-name="more (1)"
+      viewBox="0 0 7.202 24">
+      <use xlink:href="#more"></use>
+    </svg>
+  </div>
+
+  <svg id="Component_3_1"
+    data-name="Component 3 – 1"
+    xmlns="http://www.w3.org/2000/svg"
+    width="42.1"
+    height="33.7"
+    viewBox="0 0 46.252 36.242"
+    *ngIf="showMenu">
+    <use xlink:href="#menuActive"></use>
+  </svg>
+</div>
+
+<div fxFlex="0 0 200px"
+  class="user-menu pointer absolute br-sm bg-white"
+  [hidden]="!showMenu">
+  <ul fxLayout="row" fxLayoutAlign="center start" 
+    class="user-menu-container" *ngFor="let item of menuList">
+    <img class="img_icon" src="{{ item.MenuIcon }}" />
+    <!-- <img src="{{ item.MenuIconHover }}" /> -->
+    <li class="user-menu-item" *ngFor="let sub of item.SubMenu"
+    [routerLink]="[sub.MenuLink]">
+   <span> {{ sub.SubMenuName }}</span>
+  </li>
+    <!-- <li class="user-menu-item"
+      *ngFor="let item of menuList">
+      <span>{{ item.MenuName }}</span>
+      <ul>
+    
+      </ul>
+    </li> -->
+  </ul>
+</div>

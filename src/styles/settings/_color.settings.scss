@@ -1,0 +1,44 @@
+/******
+    Colors
+    *******/
+$red: var(--red);
+$blue: var(--blue);
+$green: var(--green);
+$dark-green: var(--dark-green);
+$orange: var(--orange);
+$gray: var(--gray);
+$dark-gray: var(--dark-gray);
+$yellow: var(--yellow);
+$dark-blue: var(--dark-blue);
+$black: var(--black);
+$back-btn:var(--btn-back);
+
+/***
+    Text
+    ***/
+$text-color-main: var(--text-color-main);
+// input labels, input required star
+$text-input-color: var(--text-input-color);
+// for a text that contrasting with the main theme
+$text-color-contrary: var(--text-color-contrary);
+$text-color-green: var(--text-color-green);
+
+/****************
+    Background Colors
+    ****************/
+$background-first: var(--background-first);
+$background-second: var(--background-second);
+$background-third: var(--background-third);
+// form controls' background and form-control-like component
+$background-forth: var(--background-forth);
+// focused form controls' background
+$background-focused: var(--background-focused);
+$background-green: var(--background-green);
+$background-yellow: var(--background-yellow);
+$background-blue: var(--background-blue);
+$background-contrary: var(--background-contrary);
+
+/*****
+    Border
+    *****/
+$border-color: var(--border-color);

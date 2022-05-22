@@ -1,0 +1,38 @@
+@import 'tools/tools.scss';
+
+@include xs {
+    .container {
+        max-width: 100%;
+        padding: 0 16px;
+    }
+}
+
+@include gt-xs {
+    .container {
+        max-width: 568px;
+    }
+}
+
+@include gt-sm {
+    .container {
+        max-width: 920px;
+    }
+}
+
+@include gt-md {
+    .container {
+        max-width: 1240px;
+    }
+}
+
+@include gt-lg {
+    .container {
+        max-width: 1500px;
+    }
+}
+
+@include xl {
+    .container {
+        max-width: 1500px;
+    }
+}

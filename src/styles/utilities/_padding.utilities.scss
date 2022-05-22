@@ -1,0 +1,21 @@
+@import 'tools/tools.scss';
+
+@include padding-producer(0);
+@include padding-producer(2);
+@include padding-producer(4);
+@include padding-producer(8);
+@include padding-producer(12);
+@include padding-producer(16);
+@include padding-producer(20);
+@include padding-producer(24);
+@include padding-producer(28);
+@include padding-producer(32);
+@include padding-producer(36);
+@include padding-producer(40);
+@include padding-producer(44);
+@include padding-producer(48);
+@include padding-producer(52);
+@include padding-producer(60);
+@include padding-producer(64);
+@include padding-producer(70);
+@include padding-producer(80);

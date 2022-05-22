@@ -1,0 +1,38 @@
+@import 'tools/tools.scss';
+
+@include margin-producer(0);
+@include margin-producer(4);
+@include margin-producer(8);
+@include margin-producer(12);
+@include margin-producer(16);
+@include margin-producer(20);
+@include margin-producer(24);
+@include margin-producer(28);
+@include margin-producer(32);
+@include margin-producer(36);
+@include margin-producer(40);
+@include margin-producer(44);
+@include margin-producer(48);
+@include margin-producer(52);
+@include margin-producer(56);
+@include margin-producer(60);
+@include margin-producer(64);
+@include margin-producer(74);
+@include margin-producer(80);
+@include margin-producer(94);
+
+.mla {
+    margin-left: auto;
+}
+
+.mra {
+    margin-right: auto;
+}
+
+.mxa {
+    margin: 0 auto;
+}
+
+.ma {
+    margin: auto;
+}

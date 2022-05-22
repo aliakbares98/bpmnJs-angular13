@@ -1,0 +1,49 @@
+
+@import "../../_scss/global/_globals.scss";
+@import '../../_scss/global/_var.scss';
+
+:host {
+  width: 560px;
+}
+.modal-header {
+  width: 100%;
+  @include font(IranianSans, 14px, right, $white);
+  padding: 10px 32px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-image: linear-gradient(92deg, #17bfcf 0%, #0c6068 100%);
+}
+
+::ng-deep .cdk-overlay-dark-backdrop {
+  background: rgba(0, 0, 0, 0);
+}
+
+::ng-deep .mat-dialog-container {
+  width: 560px;
+  padding: 0;
+
+  .mat-dialog-title {
+    font-size: 14px;
+  }
+  .mat-dialog-content {
+    overflow: hidden;
+    padding: 16px;
+    @include font(IranianSans, 16px, right, $blackPearl);
+  }
+
+  .mat-dialog-actions {
+    margin-left: 16px;
+    margin-bottom: 8px;
+    .mat-button-base {
+      margin-left: 16px;
+    }
+    button:nth-child(1) {
+      color: $white;
+      background-color: $java;
+    }
+    button:nth-child(2) {
+      border: solid 1px $java;
+      background-color: $white !important;
+    }
+  }
+}

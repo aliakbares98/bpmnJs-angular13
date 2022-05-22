@@ -1,0 +1,37 @@
+<div
+  class="operation"
+  fxLayout="row-reverse"
+  fxLayoutAlign="center center"
+  fxLayoutGap="16px"
+  dir="ltr"
+>
+  <app-icon
+    *ngFor="let operation of defaultIOperations"
+    [icon]="operation.Icon"
+    [toolTip]="operation.ToolTipName"
+    (click)="iconAction(operation)"
+  ></app-icon>
+  <button
+    *ngIf="moreOperations.length > 0"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button
+      mat-menu-item
+      *ngFor="let operation of moreOperations"
+      class="text-right"
+      fxLayout="row"
+      fxLayoutAlign="start center"
+      fxLayoutGap="16px"
+      dir="rtl"
+      (click)="iconAction(operation)"
+    >
+      <app-icon [icon]="operation.Icon"></app-icon>
+      <span class="mt-n3">{{ operation.ToolTipName }}</span>
+    </button>
+  </mat-menu>
+</div>

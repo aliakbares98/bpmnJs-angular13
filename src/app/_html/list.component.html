@@ -1,0 +1,89 @@
+<div class="main-container">
+  <app-search-list
+    *ngIf="searchValidation.length"
+    [service]="service"
+    [searchValidation]="searchValidation"
+    (list)="search($event)"
+  ></app-search-list>
+  <div
+    fxLayout="row"
+    fxLayoutAlign="start start"
+    dir="rtl"
+    class="report-content"
+  >
+   <df-search
+      fxFlex="17"
+      *ngIf="validationSet.length"
+      [serverSideStructure]="serverSideStructure"
+      [clientSideStructure]="clientSideStructure"
+      [classifiedValidation]="classifiedValidation"
+      (prjInput)="filterByState($event)"
+    ></df-search> 
+    <main class="report-list" fxFlex="83">
+      <app-search-toolbar
+        *ngIf="mainStructure?.btnList"
+        [link]="newAccesssEl?.AccessLink[0]"
+        [icons]="mainStructure?.btnList"
+        (createNew)="createNew()"
+        fxFill
+      ></app-search-toolbar>
+
+      <div
+        @list
+        class="report-list_content"
+        fxLayout="column"
+        [class.padding-bottom-32]="!pageCount"
+        matSort
+        (matSortChange)="sortData($event)"
+      >
+        <div
+          @items
+          class="report-list_title mat-elevation"
+          fxLayout="row"
+          [ngClass]="isSticky ? 'sticky' : ''"
+        >
+          <div [ngClass]="sub.col" *ngFor="let sub of mainStructure?.gridList">
+            <div
+              *ngIf="
+                sub.name === 'Operation' || sub.name === 'Label';
+                else sortable
+              "
+            >
+              <div class="text-center">{{ sub.label }}</div>
+            </div>
+            <ng-template #sortable>
+              <div [mat-sort-header]="sub.name">
+                {{ sub.label }}
+              </div>
+            </ng-template>
+          </div>
+        </div>
+        <div @items class="report-list_items" *ngFor="let item of showList">
+          <div [ngClass]="sub.col" *ngFor="let sub of mainStructure?.gridList">
+            <ng-container [ngSwitch]="sub.name">
+            <ng-container *ngSwitchDefault>{{ item[sub.name] }}</ng-container> 
+              <div fxLayoutGap="16px" *ngSwitchCase="'Operation'">
+                <app-operation
+                  [item]="item"
+                  (iconOnClicked)="iconAction($event, item)"
+                ></app-operation>
+              </div>
+              <div class="state" fxLayoutGap="16px" *ngSwitchCase="'Label'">
+                <span>{{ item.Status }}</span>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <app-paginator
+        class="full-width"
+        [count]="count"
+        [perPage]="perPage"
+        [currentPage]="pageNo"
+        (goPage)="goPage($event)"
+        *ngIf="pageCount > 1"
+      ></app-paginator>
+    </main>
+  </div>
+</div>

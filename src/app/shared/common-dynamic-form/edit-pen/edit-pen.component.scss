@@ -1,0 +1,22 @@
+
+@import "../../../_scss/global/_globals.scss";
+
+
+.edit-pen_btn {
+  width: 54px;
+  height: 54px;
+  position: fixed;
+  bottom: 142px;
+  left: 47px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 3px #00e9ff;
+  background-color: $java;
+  border-radius: 50%;
+  color: $white;
+  margin-left: 16px;
+  margin-top: 6px;
+  cursor: pointer;
+}

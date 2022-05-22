@@ -1,0 +1,87 @@
+.fs {
+    &-tiny {
+        font-size: $font-size-tiny; // 8px 
+    }
+
+    &-xs {
+        font-size: $font-size-xs; // 12px
+    }
+
+    &-sm {
+        font-size: $font-size-sm; // 14px 
+    }
+
+    &-base {
+        font-size: $font-size-base; // 16px
+    }
+
+    &-lg {
+        font-size: $font-size-lg; // 18px
+    }
+
+    &-xl {
+        font-size: $font-size-xl; // 20px 
+    }
+
+    &-2xl {
+        font-size: $font-size-2xl; // 24px
+    }
+
+    &-3xl {
+        font-size: $font-size-3xl; // 30px
+    }
+
+    &-4xl {
+        font-size: $font-size-4xl; // 36px
+    }
+
+    &-5xl {
+        font-size: $font-size-5xl; // 48px
+    }
+
+    &-6xl {
+        font-size: $font-size-6xl; // 64px
+    }
+
+    &-7xl {
+        font-size: $font-size-7xl; // 80px
+    }
+}
+
+.fw {
+    &-thin {
+        font-weight: $font-weight-thin;
+    }
+
+    &-extra-light {
+        font-weight: $font-weight-extra-light;
+    }
+
+    &-light {
+        font-weight: $font-weight-light;
+    }
+
+    &-normal {
+        font-weight: $font-weight-normal;
+    }
+
+    &-medium {
+        font-weight: $font-weight-medium;
+    }
+
+    &-semi-bold {
+        font-weight: $font-weight-semi-bold;
+    }
+
+    &-bold {
+        font-weight: $font-weight-bold;
+    }
+
+    &-bolder {
+        font-weight: $font-weight-bolder;
+    }
+
+    &-black {
+        font-weight: $font-weight-black;
+    }
+}

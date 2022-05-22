@@ -1,0 +1,17 @@
+:host {
+  width: 100%;
+}
+
+::ng-deep {
+  .mat-option-text {
+    text-align: right;
+  }
+}
+
+::ng-deep.mat-form-field-type-mat-input.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  -webkit-transform: translate(-0.65em, -1.4em) scale(0.75) !important;
+  -ms-transform: translate(-0.65em, -1.4em) scale(0.75) !important;
+  transform: translate(-0.65em, -1.4em) scale(0.75) !important;
+  width: 133.33333% !important;
+}

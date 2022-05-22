@@ -1,0 +1,34 @@
+<div
+  class="report-list_report-btn_container"
+  fxLayout="row"
+  fxLayoutAlign="space-between"
+  dir="ltr"
+  [@toRight]
+>
+  <div
+    class="report-list_report-btn"
+    fxLayout="row"
+    fxLayoutAlign="space-between center"
+    fxLayoutGap="16px"
+    dir="rtl"
+  >
+    <span
+      class="toolbar_btn"
+      style="width: 25px; height: 25px"
+      [matTooltip]="item.label"
+      (click)="btnAction(item.name)"
+      matTooltipClass="tooltip-bg"
+      *ngFor="let item of icons"
+    >
+      <ng-container
+        *ngIf="item.name !== 'NewPage' || (item.name === 'NewPage' && link)"
+      >
+        <img
+          src="./assets/svg/{{ item.name }}.svg"
+          alt="{{ item.name }}"
+          style="width: 100%"
+        />
+      </ng-container>
+    </span>
+  </div>
+</div>

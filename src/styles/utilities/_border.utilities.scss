@@ -1,0 +1,74 @@
+@import 'settings/settings.scss';
+
+.border {
+    border: $border;
+
+    &-top {
+        border-top: $border;
+
+        &-2 {
+            border-top: 2px solid $border-color;
+        }
+        &-3 {
+            border-top: 3px solid $border-color;
+        }
+    }
+
+    &-right {
+        border-right: $border;
+
+        &-2 {
+            border-right: 2px solid $border-color;
+        }
+        &-3 {
+            border-right: 3px solid $border-color;
+        }
+    }
+
+    &-bottom {
+        border-bottom: $border;
+
+        &-2 {
+            border-bottom: 2px solid $border-color;
+        }
+        &-3 {
+            border-bottom: 3px solid $border-color;
+        }
+    }
+
+    &-left {
+        border-left: $border;
+
+        &-2 {
+            border-left: 2px solid $border-color;
+        }
+        &-3 {
+            border-left: 3px solid $border-color;
+        }
+    }
+
+    &-2 {
+        border: 2px solid $border-color;
+    }
+    &-3 {
+        border: 3px solid $border-color;
+    }
+}
+
+.br {
+    &-sm {
+        border-radius: $border-radius-sm;
+    }
+
+    &-md {
+        border-radius: $border-radius-md;
+    }
+
+    &-lg {
+        border-radius: $border-radius-lg;
+    }
+
+    &-round {
+        border-radius: 50%;
+    }
+}

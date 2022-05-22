@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body{
+    background-color: #f1f6f9
+}
+// Material
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+// Local styles
+@import "settings/settings.scss";
+@import "tools/tools.scss";
+@import "generic/generic.scss";
+@import "elements/elements.scss";
+@import "objects/objects.scss";
+@import "theme/theme.scss";
+@import "utilities/utilities.scss";
+@import "overwrites/overwrites.scss";
+

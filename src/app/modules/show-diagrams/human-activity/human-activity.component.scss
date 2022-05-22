@@ -1,0 +1,51 @@
+@import "settings/settings.scss";
+
+h3.operation {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    border-top: 2px solid #dfdfdf;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+  }
+
+  span {
+    background: #fff;
+    padding: 0 15px;
+  }
+}
+
+::ng-deep
+  .mat-slide-toggle.mat-checked:not(.mat-disabled)
+  .mat-slide-toggle-thumb {
+  background-color: white; /*replace with your color*/
+}
+
+::ng-deep
+  .mat-slide-toggle.mat-checked:not(.mat-disabled)
+  .mat-slide-toggle-bar {
+  background-color: #17bfcf; /*replace with your color*/
+}
+.test {
+  background-color: #f9f9f9;
+}
+
+.btn-condition {
+  background-color: transparent;
+  border: solid 1px #17bfcf;
+  color: #17bfcf;
+  border-radius: 8px;
+  width: 141px;
+  height: 36px;
+  .mat-icon {
+    color: #17bfcf;
+  }
+}

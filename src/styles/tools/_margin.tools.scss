@@ -1,0 +1,31 @@
+@mixin margin-producer($value) {
+  .m#{$value} {
+    margin: #{$value}px !important;
+  }
+
+  .mt#{$value} {
+    margin-top: #{$value}px !important;
+  }
+
+  .mr#{$value} {
+    margin-right: #{$value}px !important;
+  }
+
+  .mb#{$value} {
+    margin-bottom: #{$value}px !important;
+  }
+
+  .ml#{$value} {
+    margin-left: #{$value}px !important;
+  }
+
+  .mx#{$value} {
+    margin-left: #{$value}px !important;
+    margin-right: #{$value}px !important;
+  }
+
+  .my#{$value} {
+    margin-top: #{$value}px !important;
+    margin-bottom: #{$value}px !important;
+  }
+}

@@ -1,0 +1,76 @@
+<div
+  class="bell"
+  (click)="bellToggle()"
+  matBadge="{{
+    service.signalr.notifyCount > 99 ? '+99' : service.signalr.notifyCount
+  }}"
+  matBadgeColor="warn"
+  matBadgeSize="small"
+  [matBadgeHidden]="badgeHidden"
+  matRipple
+  [matRippleCentered]="true"
+  [matRippleUnbounded]="false"
+  [matRippleUnbounded]="true"
+>
+  <!--  [class.bill-open]="showNotify" -->
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="bell"
+    width="20.755"
+    height="24.154"
+    viewBox="0 0 20.755 24.154"
+    [class.bell-open]="showNotify"
+  >
+    <defs>
+      <style>
+        .cls-1 {
+          fill: #031718;
+        }
+      </style>
+    </defs>
+    <use xlink:href="#bellBase"></use>
+  </svg>
+
+  <svg
+    id="Component_3_1"
+    data-name="Component 3 – 1"
+    xmlns="http://www.w3.org/2000/svg"
+    width="42.1"
+    height="33.7"
+    viewBox="0 0 46.252 36.242"
+    *ngIf="showNotify"
+  >
+    <use xlink:href="#bellActive"></use>
+  </svg>
+</div>
+<div class="notify" [hidden]="!showNotify">
+  <div class="notify-title">
+    <span>اعلان ها</span>
+    <button (click)="clearAll()">پاک کردن همه</button>
+  </div>
+  <div class="notify-content">
+    <div
+      @swingingFromSide
+      *ngFor="let item of service.signalr.notifyList; let i = index"
+      class="notify-item"
+    >
+      <div class="notify-item_container">
+        <span class="notify-item_time">{{ item.InsertTime }}</span>
+        <div class="notify-item_title_container">
+          <span
+            class="notify-item_title"
+            (click)="showDescription(item.CardboardId)"
+            >{{ item.CardboardSubject }}</span
+          >
+        </div>
+
+        <button mat-icon-button (click)="delete(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <span class="notify-item_description" [hidden]="!item.open">{{
+        item.CardboardFlowMessage
+      }}</span>
+    </div>
+  </div>
+</div>

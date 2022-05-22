@@ -1,0 +1,25 @@
+<div class="report-container" [@toRight]>
+  <h1 class="header-title">{{ pageTitle }}</h1>
+  <form method="post" [formGroup]="form" (ngSubmit)="search()">
+    <div class="report-search-container">
+      <input
+        matInput
+        type="text"
+        formControlName="SearchValue"
+        placeholder="{{ placeholder }}"
+        (keydown.enter)="search()"
+      />
+      <mat-error
+        class="text-right"
+        *ngIf="SearchValue?.invalid && SearchValue?.touched"
+      >
+        <!-- <signalr-error
+          [field]="SearchValue"
+          [errorTxt]="errorSet['SearchValue']"
+        ></signalr-error> -->
+      </mat-error>
+
+      <button type="submits" class="search-icon"></button>
+    </div>
+  </form>
+</div>

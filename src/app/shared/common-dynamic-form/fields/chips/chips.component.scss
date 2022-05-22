@@ -1,0 +1,36 @@
+@import "../../../../_scss/global/_globals.scss";
+
+
+.chips-input {
+  text-align: right;
+  direction: ltr;
+
+  ::ng-deep .mat-form-field-infix {
+    display: block !important;
+    .mobile-suffix {
+      width: 20%;
+    }
+  }
+
+  ::ng-deep .mat-chip-list-wrapper {
+    margin-top: -6px;
+    direction: rtl;
+    .mat-chip {
+      margin-top: -10px;
+      margin-bottom: -4px;
+      .mat-chip-input {
+        margin: 0;
+      }
+    }
+  }
+
+  input::placeholder {
+    color: red;
+  }
+}
+
+.hideInput {
+  input {
+    visibility: hidden;
+  }
+}

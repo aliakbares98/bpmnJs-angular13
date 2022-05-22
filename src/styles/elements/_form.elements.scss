@@ -1,0 +1,47 @@
+@import 'settings/settings.scss';
+
+textarea {
+    resize: none !important;
+}
+
+input {
+    outline: none;
+
+    &::-webkit-input-placeholder {
+        /* WebKit, Blink, Edge */
+        // color: $text-color-main;
+    }
+
+    &:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        // color: $text-color-main;
+        // opacity: 1;
+    }
+
+    &::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        // color: $text-color-main;
+        // opacity: 1;
+    }
+
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        // color: $text-color-main;
+    }
+
+    &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        // color: $text-color-main;
+    }
+
+    &::placeholder {
+        /* Most modern browsers support this now. */
+        // color: $text-color-main;
+    }
+}
+
+button {
+    cursor: pointer;
+   
+   
+}

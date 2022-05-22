@@ -1,0 +1,132 @@
+@import "var";
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.597em 0px !important;
+}
+::ng-deep .mat-form-field-label-wrapper {
+  top: -1.57em !important;
+  margin-top: 4px !important;
+}
+
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  -webkit-transform: translate(0.02em, -1.4em) scale(0.75) !important;
+  -ms-transform: translate(0.02em, -1.4em) scale(0.75) !important;
+  transform: translate(0.02em, -1.4em) scale(0.75) !important;
+  width: 133.33333% !important;
+}
+
+::ng-deep.mat-option:hover:not(.mat-option-disabled),
+.mat-option:focus:not(.mat-option-disabled) {
+  background: $java;
+}
+
+::ng-deep .mat-icon {
+  color: $dustyGray;
+}
+
+::ng-deep {
+  .mat-select {
+    height: 16px !important;
+  }
+}
+
+::ng-deep .mat-select-panel {
+  &::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #d5eff0;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #bcd4d5;
+    outline: none;
+  }
+}
+
+::ng-deep .mat-snack-bar-container {
+  // background-color: $java;
+  .mat-simple-snackbar {
+    direction: rtl;
+    .mat-simple-snackbar-action {
+      margin-left: -10px;
+      margin-right: 10px;
+      .mat-button-wrapper {
+        // color: $blackPearl;
+      }
+    }
+  }
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-label {
+  margin-top: 0.5em !important;
+  margin-right: 0.5rem !important;
+}
+
+/* ::ng-deep .mat-sort-header-arrow[style] {
+  margin: 0 !important;
+
+  .mat-sort-header-stem {
+    display: none;
+  }
+  .mat-sort-header-indicator {
+    opacity: 1;
+    color: black;
+    font-weight: bold;
+
+    .mat-sort-header-pointer-left,
+    .mat-sort-header-pointer-right,
+    .mat-sort-header-pointer-middle {
+      display: none;
+    }
+  }
+} */
+
+/* [aria-sort="none"] {
+  ::ng-deep .mat-sort-header-arrow {
+    .mat-sort-header-indicator {
+      &::before {
+        font-family: "Material Icons";
+        content: "arrow_drop_up";
+        opacity: 0;
+      }
+    }
+  }
+} */
+// My custom ascending arrow
+/* [aria-sort="ascending"] {
+  ::ng-deep .mat-sort-header-arrow {
+    .mat-sort-header-indicator {
+      &::before {
+        font-family: "Material Icons";
+        font-size: 24px;
+        content: "arrow_drop_up";
+        top: -0.5rem;
+        position: absolute;
+      }
+    }
+  }
+} */
+
+// My custom descending arrow
+/* [aria-sort="descending"] {
+  ::ng-deep .mat-sort-header-arrow {
+    .mat-sort-header-indicator {
+      &::before {
+        font-family: "Material Icons";
+        font-size: 24px;
+        content: "arrow_drop_down";
+        top: -0.55rem;
+        position: absolute;
+      }
+    }
+  }
+} */

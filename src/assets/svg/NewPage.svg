@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.177" height="24.479" viewBox="0 0 24.177 24.479">
+    <defs>
+        <style>
+            .cls-1{fill:#fff;stroke:#000}
+        </style>
+    </defs>
+    <g id="Group_3799" transform="translate(19255.5 19483.501)">
+        <g id="Group_3797" transform="translate(-19255 -19483.035)">
+            <g id="Group_3796">
+                <g id="Group_3800">
+                    <g id="Group_3798">
+                        <g id="request-for-proposal">
+                            <path id="Path_2240" d="M34.25 30.675H18.945A.945.945 0 0 1 18 29.73V8.945A.945.945 0 0 1 18.945 8H34.25a.945.945 0 0 1 .945.945V29.73a.945.945 0 0 1-.945.945z" class="cls-1" transform="translate(-17.999 -7.777)"/>
+                            <path id="Path_2241" stroke="#000" d="M32.439 29.053H17.134A1.135 1.135 0 0 1 16 27.919V7.134A1.135 1.135 0 0 1 17.134 6h15.305a1.135 1.135 0 0 1 1.134 1.134v20.785a1.135 1.135 0 0 1-1.134 1.134zM17.134 6.378a.757.757 0 0 0-.756.756v20.785a.757.757 0 0 0 .756.756h15.305a.757.757 0 0 0 .756-.756V7.134a.757.757 0 0 0-.756-.756z" transform="translate(-16 -5.966)"/>
+                            <g id="color-pencil" transform="translate(10.706)">
+                                <path id="Path_2262" d="M69.46 61.3l1.692 1.7-8.616 8.649-1.693-1.7zm0 0" transform="translate(-59.956 -59.512)"/>
+                                <path id="Path_2263" d="M368.861 369.85l-2.255.742.72-2.283zm0 0" transform="translate(-366.605 -357.538)"/>
+                                <path id="Path_2264" d="M1.573.153A.507.507 0 0 1 1.933 0a.473.473 0 0 1 .337.141l.982.986a.522.522 0 0 1 .012.726L1.88 3.243.187 1.544zm0 0" transform="translate(9.565)"/>
+                            </g>
+                        </g>
+                        <g id="Ellipse_331" class="cls-1" transform="translate(11.68 15.253)">
+                            <circle cx="4.38" cy="4.38" r="4.38"/>
+                            <circle cx="4.38" cy="4.38" r="3.88" fill="none"/>
+                        </g>
+                    </g>
+                    <path id="more_3_" stroke="#000" stroke-width="0.5px" d="M4.4 2.083H2.546V.231a.231.231 0 0 0-.463 0v1.852H.232a.231.231 0 0 0 0 .463h1.851V4.4a.231.231 0 1 0 .463 0V2.546H4.4a.231.231 0 1 0 0-.463zm0 0" transform="translate(13.889 17.532)"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

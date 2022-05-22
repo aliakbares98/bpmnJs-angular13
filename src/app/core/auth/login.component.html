@@ -1,0 +1,79 @@
+<main fxLayoutAlign="center">
+  <section class="login-container">
+    <div class="logo-parent">
+      <img
+        src="./assets/images/momtaz-logo.png"
+        class="logo"
+        alt="momtaz-logo"
+      />
+    </div>
+    <mat-card class="login-form-container">
+      <mat-card-header [class.invalid-user]="notValid">
+        <mat-card-title *ngIf="!notValid"
+          >ورود به پنل پخش دارویی ممتاز</mat-card-title
+        >
+        <mat-card-title *ngIf="notValid">{{ errMessage }} </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content class="login-form">
+        <form method="post" action="" [formGroup]="form" (ngSubmit)="login()">
+          <mat-form-field appearance="outline" class="container-input">
+            <mat-label class="login-lablel">نام کاربری</mat-label>
+            <input
+              matInput
+              formControlName="UserName"
+              type="text"
+              id="UserName"
+              name="UserName"
+              placeholder="نام کاربری"
+              (input)="clearInValid()"
+            />
+
+            <mat-error *ngIf="UserName?.invalid && UserName?.touched">
+              <login-errors
+                fieldname="نام کاربری"
+                [field]="UserName"
+              ></login-errors>
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="container-input">
+            <mat-label class="login-lablel">رمز عبور</mat-label>
+            <input
+              matInput
+              formControlName="Password"
+              type="Password"
+              name="Password"
+              id="Password"
+              placeholder="رمز عبور"
+              (input)="clearInValid()"
+            />
+            <mat-error *ngIf="Password?.invalid && Password?.touched">
+              <login-errors
+                fieldname="رمز عبور"
+                [field]="Password"
+              ></login-errors>
+            </mat-error>
+          </mat-form-field>
+          <div class="remember-container">
+            <div class="checkBox remember-me">
+              <label for="rememberMe">مرا به خاطر بسپار</label>
+              <!--  <mat-checkbox formControlName="rememberMe"></mat-checkbox> -->
+            </div>
+
+            <a>رمز عبور خود را فراموش کرده ام</a>
+          </div>
+
+          <button
+            type="submit"
+            class="login-sumit"
+            mat-raised-button
+            color="primary"
+          >
+            ورود
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</main>

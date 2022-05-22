@@ -1,0 +1,19 @@
+@import "settings/settings.scss";
+
+.w_input {
+  width: 489px;
+}
+.w_100 {
+  width: 100%;
+}
+
+.mat-raised-button.mat-primary,
+.mat-button.mat-blue {
+  border-color: $back-btn;
+    background-color: #17bfcf;
+    color: black;
+    border-color: #17bfcf;
+}
+
+
+

@@ -1,0 +1,115 @@
+@import "./../global/globals";
+
+.form-content {
+  border-radius: 3px;
+  background-color: $white;
+  padding: 32px 32px 0 32px;
+  margin-bottom: 32px;
+
+  .is-registred {
+    margin-bottom: 28.5px;
+    .is-registred_txt {
+      @include font(IranianSans, 1rem, right, $blackPearl);
+    }
+  }
+  .insert-phone_btn {
+    width: 24.999px;
+    height: 25px;
+    margin-top: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    span {
+      @include font(IranianSans, 14px, right, $java);
+    }
+  }
+
+  .remove-phone_btn {
+    height: 23.998px;
+    width: 19.915px;
+    margin-top: 12px;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    span {
+      @include font(IranianSans, 14px, right, red);
+    }
+  }
+}
+.page-content {
+  border-radius: 3px;
+  background-color: $white;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.send-cancel_btn {
+  margin-top: 32px;
+  margin-left: 32px;
+
+  button:nth-child(1) {
+    border: solid 1px $java;
+    padding: 6.5px 35px;
+  }
+  button:nth-child(2) {
+    color: #fbfcfe;
+    padding: 6.5px 16px;
+  }
+}
+
+::ng-deep .mat-form-field-infix {
+  display: flex !important;
+  .mobile-suffix {
+    width: 20%;
+  }
+}
+.couple-btn_right {
+  ::ng-deep .mat-form-field-outline-end {
+    border-left-style: none !important;
+    border-right-style: none !important;
+    border-radius: 0px !important ;
+  }
+}
+
+.couple-btn_left {
+  ::ng-deep.mat-form-field-label {
+    @include font(IranianSans, 12px, center, $dustyGray);
+    margin-top: 2px;
+  }
+  ::ng-deep.mat-form-field-outline-start {
+    border-right-style: none !important;
+    border-left-style: none !important;
+    border-radius: 0px !important ;
+  }
+}
+
+.attachment-item {
+  margin-bottom: 32px;
+  ::ng-deep.mat-form-field-wrapper {
+    padding-bottom: 12.5px;
+  }
+}
+
+.mat-form-field-type-mat-select {
+  @include grayInput();
+}
+
+.phone-btn {
+  margin-bottom: 31px;
+}
+
+.compo-spinner {
+  position: absolute;
+  left: -5%;
+  top: -8%;
+}
+
+.content-box {
+  border-radius: 3px;
+  background-color: #ffffff;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+/* ::ng-deep input.mat-input-element {
+  margin-top: -0.5em !important ;
+} */

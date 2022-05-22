@@ -1,0 +1,177 @@
+@import "../../_scss/global/_globals.scss";
+@import "../../_scss/global/_mixin.scss";
+@import "../../_scss/global/_font.scss";
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+
+
+.mat-card-header {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  margin-bottom: 60.5px;
+  direction: rtl;
+}
+.mat-card-title {
+  @include font(IranianSans, 16px, right, $blackPearl);
+  font-weight: 500;
+  line-height: 1.56;
+  letter-spacing: normal;
+  text-align: right;
+  padding: 14px 16px 2px 0;
+}
+
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.628em 0px !important;
+}
+::ng-deep .mat-form-field-label-wrapper {
+  top: -1.57em;
+  margin-top: 0.25rem;
+}
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  transform: translate(-0.5em, -1.4em) scale(0.75);
+  width: 133.33333%;
+}
+
+.login-container {
+  margin-top: 70px;
+
+  .login-form-container {
+    @include box(448px, 432px, 3px);
+
+    .login-form {
+      padding: 0px 32px 0 32px;
+      .container-input {
+        position: relative;
+        width: 100%;
+        text-align: right;
+        font-family: IranianSans;
+        margin-bottom: 6.5px;
+
+        .login-lablel {
+          padding-right: 16px;
+          font-size: 16px;
+        }
+
+        input {
+          height: 18px;
+        }
+
+        label {
+          margin-top: 1px;
+        }
+      }
+
+      input::placeholder {
+        @include font(IranianSans, 16px, right, #aaa);
+        padding-right: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.56;
+        letter-spacing: normal;
+        color: #999999;
+      }
+
+      .remember-container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 2px;
+        .remember-me {
+          input {
+            width: 19px;
+            height: 19px;
+            border-radius: 3px;
+            border: solid 1px rgba(112, 112, 112, 0.3);
+            vertical-align: middle;
+          }
+
+          label {
+            @include font(IranianSans, 14px, right, $blackPearl);
+            vertical-align: middle;
+            margin-right: 8px;
+          }
+        }
+        a {
+          font-family: IranianSans;
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.57;
+          letter-spacing: normal;
+          color: #17bfcf;
+          text-decoration: none;
+          margin-top: 2px;
+        }
+      }
+
+      .login-sumit {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        width: 33.028vh;
+        height: 44px;
+        color: #ffffff;
+        font-size: 16px;
+        font-family: IranianSans;
+        border-radius: 8px;
+        margin-top: 32px;
+      }
+    }
+  }
+
+  @media screen and (min-width: 360px) and (max-width: 400px) {
+    .login-form-container {
+      @include box(340px, 290px, 3px);
+    }
+  }
+
+  .logo-parent {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+
+    .logo {
+      width: 100%;
+    }
+  }
+}
+
+::ng-deep.login-err {
+  margin-right: -10px;
+  font-size: 12px;
+}
+
+//mat-input focused color
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: $dustyGray !important;
+}
+
+// mat-label focused style
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: $dustyGray !important;
+}
+
+.invalid-user {
+  background-color: $red;
+
+  .mat-card-title {
+    @extend .mat-card-title;
+    color: #ffffff;
+  }
+}

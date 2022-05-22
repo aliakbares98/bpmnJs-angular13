@@ -1,0 +1,39 @@
+
+@import "../../../_scss/global/_globals.scss";
+
+.complex {
+  padding-right: 10px;
+  font-size: small;
+  color: #888888;
+}
+
+.search-active {
+  cursor: pointer;
+}
+.search-icon {
+  ::ng-deep {
+    .mat-form-field-suffix {
+      top: 7px;
+    }
+  }
+}
+
+.combo-err-box {
+  margin-top: -20px;
+  margin-right: 10px;
+  font-size: 75%;
+  color: $red;
+}
+.combo-multiple-error {
+  margin-bottom: 15px;
+}
+
+.combo-clear {
+  margin-left: 5px;
+  cursor: pointer;
+  ::ng-deep {
+    .mat-form-field-suffix {
+      top: -1px !important;
+    }
+  }
+}

@@ -1,0 +1,78 @@
+// @import 'settings/settings.scss';
+
+.btn-condition {
+    background-color: transparent;
+    border: solid 1px #17bfcf;
+    .mat-icon {
+        color: $blue;
+    }
+    // Status
+    &:disabled {
+        cursor: not-allowed;
+        // background-color: #EDF1F0 !important;
+        // opacity: .5;
+    }
+
+    // Colors
+    // &-green {
+    //     background-color: $green;
+    //     color: $text-color-green;
+
+     
+    // }
+}
+//     &-red {
+//         background-color: $red;
+//         color: $text-color-main;
+//     }
+
+//     &-blue {
+//         background-color: $blue;
+//         color: $text-color-main;
+//     }
+
+//     &-white {
+//         // background-color: white;
+//         color: $text-color-contrary;
+//     }
+
+//     &-dark {
+//         // background: $background-third;
+//         color: $text-color-main;
+//     }
+
+//     // Size
+//     &-xl {
+//         padding: 20px;
+//         font-size: 14px;
+//         border-radius: 25px;
+//     }
+
+//     &-lg {
+//         padding: 16px 20px;
+//         font-size: 14px;
+//         border-radius: 15px;
+//     }
+
+//     &-md {
+//         padding: 8px 20px;
+//         font-size: 12px;
+//         border-radius: 10px;
+//     }
+
+//     // Model
+//     &-outline {
+//         border: 1px solid $text-color-main;
+//         background-color: transparent;
+//         color: $text-color-main;
+
+//         &.btn-green {
+//             border: 1px solid $green;
+//             color: $green;
+
+//             .mat-icon {
+//                 color: $green;
+//             }
+//         }
+//     }
+// }

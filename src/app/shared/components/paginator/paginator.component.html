@@ -1,0 +1,114 @@
+<div
+  class="pagination-container"
+  fxLayout="row"
+  fxLayoutAlign="start start"
+  dir="ltr"
+>
+  <div
+    class="pagination"
+    fxLayout="row-reverse"
+    fxLayoutAlign="end center"
+    dir="ltr"
+    fxLayoutGap="4px"
+    [hidden]="noResult"
+  >
+    <div
+      class="start-end_btn"
+      fxLayout="row"
+      fxLayoutGap="4px"
+      [class.disabled]="isFirstPage"
+      [class.disabled]="disabledMode"
+      (click)="!isFirstPage && setPage(1)"
+    >
+      <p>اولین</p>
+      <svg
+        id="Group_1027"
+        data-name="Group 1027"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+      >
+        <use xlink:href="#prePage"></use>
+      </svg>
+    </div>
+    <div
+      class="pagination-right-left"
+      [class.disabled]="isFirstPage"
+      [class.disabled]="disabledMode"
+      (click)="!isFirstPage && setPage(currentPage - 1)"
+    >
+      <svg
+        id="Group_1027"
+        data-name="Group 1027"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+      >
+        <use xlink:href="#prePage"></use>
+      </svg>
+    </div>
+    <div
+      class="pagination-number"
+      *ngFor="let page of pages"
+      [class]="currentPage == page ? 'activePage' : ''"
+      [class.disabled]="disabledMode"
+      (click)="setPage(page)"
+    >
+      {{ page }}
+    </div>
+    <div
+      *ngIf="totalPages > maxPos && totalPages - pages[pages.length - 1] > 1"
+    >
+      ...
+    </div>
+    <div
+      *ngIf="totalPages > 1"
+      class="pagination-number"
+      (click)="setPage(totalPages)"
+      [class.activePage]="currentPage == totalPages"
+      [class.disabled]="disabledMode"
+    >
+      {{ totalPages }}
+    </div>
+
+    <div
+      class="pagination-right-left"
+      [class.disabled]="isLastPage"
+      [class.disabled]="disabledMode"
+      (click)="!isLastPage && setPage(currentPage + 1)"
+    >
+      <svg
+        id="Group_1027"
+        data-name="Group 1027"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+      >
+        <use xlink:href="#nextPage"></use>
+      </svg>
+    </div>
+    <div
+      class="start-end_btn"
+      fxLayout="row-reverse"
+      fxLayoutGap="6px"
+      (click)="!isLastPage && setPage(totalPages)"
+      [class.disabled]="isLastPage"
+      [class.disabled]="disabledMode"
+    >
+      <p>آخرین</p>
+      <svg
+        id="Group_1027"
+        data-name="Group 1027"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 18 18"
+      >
+        <use xlink:href="#nextPage"></use>
+      </svg>
+    </div>
+  </div>
+</div>

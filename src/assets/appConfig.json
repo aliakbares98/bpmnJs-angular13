@@ -1,0 +1,7 @@
+  {
+    "endPoints" : {
+      "server": "http://192.168.10.39",
+      "api": "/HermesAPI/"
+    }
+  }
+  

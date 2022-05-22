@@ -1,0 +1,46 @@
+<section
+  fxLayout="row"
+  fxLayoutAlign="center"
+  (click)="download()"
+  class="upload-section"
+>
+  <div class="trash" *ngIf="showTrash" (click)="remove()">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="16.69"
+      height="20"
+      viewBox="0 0 16.69 20"
+    >
+      <g data-name="bin (2)">
+        <path
+          d="M11.181 6.891a.481.481 0 0 0-.481.481v9.1a.481.481 0 1 0 .962 0v-9.1a.481.481 0 0 0-.481-.481zm0 0"
+          data-name="Path 169"
+          transform="translate(.003 .001)"
+        />
+        <path
+          d="M5.502 6.891a.481.481 0 0 0-.481.481v9.1a.481.481 0 1 0 .962 0v-9.1a.481.481 0 0 0-.481-.481zm0 0"
+          data-name="Path 170"
+          transform="translate(.003 .001)"
+        />
+        <path
+          d="M1.364 5.953v11.54a2.546 2.546 0 0 0 .706 1.782A2.4 2.4 0 0 0 3.789 20h9.105a2.4 2.4 0 0 0 1.72-.724 2.546 2.546 0 0 0 .706-1.782V5.953a1.791 1.791 0 0 0 1.351-1.961 1.823 1.823 0 0 0-1.823-1.558h-2.464v-.585a1.815 1.815 0 0 0-.555-1.313A1.918 1.918 0 0 0 10.478 0H6.2a1.918 1.918 0 0 0-1.35.537 1.815 1.815 0 0 0-.55 1.312v.585H1.835A1.823 1.823 0 0 0 .012 3.992a1.791 1.791 0 0 0 1.352 1.961zm11.53 13.109H3.789a1.5 1.5 0 0 1-1.463-1.569V5.994h12.031v11.5a1.5 1.5 0 0 1-1.463 1.569zM5.262 1.849a.889.889 0 0 1 .273-.649A.94.94 0 0 1 6.2.935h4.273a.94.94 0 0 1 .67.263.889.889 0 0 1 .273.651v.585H5.262zM1.835 3.371h13.013a.843.843 0 1 1 0 1.686H1.835a.843.843 0 1 1 0-1.686zm0 0"
+          data-name="Path 171"
+          transform="translate(.003 .001)"
+        />
+        <path
+          d="M8.341 6.891a.481.481 0 0 0-.481.481v9.1a.481.481 0 1 0 .962 0v-9.1a.481.481 0 0 0-.481-.481zm0 0"
+          data-name="Path 172"
+          transform="translate(.003 .001)"
+        />
+      </g>
+    </svg>
+  </div>
+  <img *ngIf="imgView" [src]="imgView" />
+  <label class="editLogo">
+    <input class="file-input" type="file" />
+  </label>
+  <div class="bg-progress" *ngIf="progress && !finished">
+    <div class="num" [style.margin-left]="percent">{{ progress }}%</div>
+    <div class="progress-line" [style.width]="percent"></div>
+  </div>
+</section>

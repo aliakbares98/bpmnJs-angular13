@@ -1,0 +1,51 @@
+<div class="main-container">
+  <h1 class="header-title">{{ pageTitle }}</h1>
+  <div class="form-content"
+    fxLayout="column"
+    fxLayoutGap="35px">
+    <div fxLayout="row wrap"
+      fxLayoutGap="80px"
+      dir="rtl"
+      class="report-elm_row">
+      <div class="report-elm mb-32">
+        {{ parallelLabelSet["MessageTypes"] }} :
+        <span>{{ Msg_Properties['MessageObjectsName'] }}</span>
+      </div>
+      <div class="report-elm mb-32">
+        {{ parallelLabelSet["MessageObjectTypes"] }} :
+        <span>{{ Msg_Properties['MessageTypesName'] }}</span>
+      </div>
+    </div>
+    <div>
+      {{ parallelLabelSet["MessageText"] }} :
+      <span>{{ reportData?.MessageText }}</span>
+    </div>
+  </div>
+  <div
+  fxLayout="row"
+  fxLayoutAlign="start start"
+  fxLayoutGap="64px"
+  dir="ltr"
+  class="del-cancel_btn"
+>
+  <button
+    type="button"
+    mat-stroked-button
+    color="accent"
+    (click)="backFn()"
+    *ngIf="hasReportData"
+  >
+    بازگشت
+  </button>
+  <button
+    type="button"
+    mat-raised-button
+    color="accent"
+    (click)="removeReport()"
+    *ngIf="isDeleteMode && hasReportData"
+  >
+    حذف
+  </button>
+</div>
+
+</div>

@@ -1,0 +1,1030 @@
+span.flag {
+    display: inline-block;
+    vertical-align: middle;
+    width: 32px;
+    height: 32px;
+
+    &-ZM {
+        @include setBackgroundPosition(15, 9);
+    }
+
+    &-YE {
+        @include setBackgroundPosition(15, 6);
+    }
+
+    &-WS {
+        @include setBackgroundPosition(15, 5);
+    }
+
+    &-WF {
+        @include setBackgroundPosition(15, 4);
+    }
+
+    &-VE {
+        @include setBackgroundPosition(14, 16);
+    }
+
+    &-UZ {
+        @include setBackgroundPosition(14, 13);
+    }
+
+    &-UY {
+        @include setBackgroundPosition(14, 12);
+    }
+
+    &-VI {
+        @include setBackgroundPosition(15, 1);
+    }
+
+    &-US,
+    &-en {
+        @include setBackgroundPosition(14, 11);
+    }
+
+    &-TZ {
+        @include setBackgroundPosition(14, 7);
+    }
+
+    &-IM {
+        @include setBackgroundPosition(7, 2);
+    }
+
+    &-JE {
+        @include setBackgroundPosition(7, 9);
+    }
+
+    &-GG {
+        @include setBackgroundPosition(5, 13);
+    }
+
+    &-GB {
+        @include setBackgroundPosition(5, 9);
+    }
+
+    &-EG {
+        @include setBackgroundPosition(4, 14);
+    }
+
+    &-MK {
+        @include setBackgroundPosition(9, 8);
+    }
+
+    &-UA {
+        @include setBackgroundPosition(14, 8);
+    }
+
+    &-UG {
+        @include setBackgroundPosition(14, 9);
+    }
+
+    &-TV {
+        @include setBackgroundPosition(14, 5);
+    }
+
+    &-TC {
+        @include setBackgroundPosition(13, 9);
+    }
+
+    &-TM {
+        @include setBackgroundPosition(13, 17);
+    }
+
+    &-TR,
+    &-tr {
+        @include setBackgroundPosition(14, 3);
+    }
+
+    &-TN {
+        @include setBackgroundPosition(14, 1);
+    }
+
+    &-AE {
+        @include setBackgroundPosition(1, 2);
+    }
+
+    &-TT {
+        @include setBackgroundPosition(14, 4);
+    }
+
+    &-TO {
+        @include setBackgroundPosition(14, 2);
+    }
+
+    &-TK {
+        @include setBackgroundPosition(13, 15);
+    }
+
+    &-TG {
+        @include setBackgroundPosition(13, 12);
+    }
+
+    &-TH {
+        @include setBackgroundPosition(13, 13);
+    }
+
+    &-TJ {
+        @include setBackgroundPosition(13, 14);
+    }
+
+    &-SY {
+        @include setBackgroundPosition(13, 7);
+    }
+
+    &-CH {
+        @include setBackgroundPosition(3, 9);
+    }
+
+    &-SE {
+        @include setBackgroundPosition(12, 10);
+    }
+
+    &-SZ {
+        @include setBackgroundPosition(13, 8);
+    }
+
+    &-SJ {
+        @include setBackgroundPosition(12, 14);
+    }
+
+    &-SR {
+        @include setBackgroundPosition(13, 3);
+    }
+
+    &-SD {
+        @include setBackgroundPosition(12, 9);
+    }
+
+    &-EH {
+        @include setBackgroundPosition(4, 15);
+    }
+
+    &-ES {
+        @include setBackgroundPosition(4, 17);
+    }
+
+    &-ZW {
+        @include setBackgroundPosition(15, 10);
+    }
+
+    &-ZA {
+        @include setBackgroundPosition(15, 8);
+    }
+
+    &-SO {
+        @include setBackgroundPosition(13, 2);
+    }
+
+    &-SI {
+        @include setBackgroundPosition(12, 13);
+    }
+
+    &-VN {
+        @include setBackgroundPosition(15, 2);
+    }
+
+    &-SK {
+        @include setBackgroundPosition(12, 15);
+    }
+
+    &-SG {
+        @include setBackgroundPosition(12, 11);
+    }
+
+    &-SL {
+        @include setBackgroundPosition(12, 16);
+    }
+
+    &-SC {
+        @include setBackgroundPosition(12, 8);
+    }
+
+    &-RS {
+        @include setBackgroundPosition(12, 3);
+    }
+
+    &-SN {
+        @include setBackgroundPosition(13, 1);
+    }
+
+    &-SA, &-ar {
+        @include setBackgroundPosition(12, 6);
+    }
+
+    &-ST {
+        @include setBackgroundPosition(13, 4);
+    }
+
+    &-SM {
+        @include setBackgroundPosition(12, 17);
+    }
+
+    &-VC {
+        @include setBackgroundPosition(14, 15);
+    }
+
+    &-PM {
+        @include setBackgroundPosition(11, 10);
+    }
+
+    &-MF {
+        @include setBackgroundPosition(9, 5);
+    }
+
+    &-LC {
+        @include setBackgroundPosition(8, 9);
+    }
+
+    &-AI {
+        @include setBackgroundPosition(1, 5);
+    }
+
+    &-KN {
+        @include setBackgroundPosition(8, 1);
+    }
+
+    &-SH {
+        @include setBackgroundPosition(12, 12);
+    }
+
+    &-BL {
+        @include setBackgroundPosition(2, 9);
+    }
+
+    &-RW {
+        @include setBackgroundPosition(12, 5);
+    }
+
+    &-RU {
+        @include setBackgroundPosition(12, 4);
+    }
+
+    &-RO {
+        @include setBackgroundPosition(12, 2);
+    }
+
+    &-RE {
+        @include setBackgroundPosition(12, 1);
+    }
+
+    &-QA {
+        @include setBackgroundPosition(11, 17);
+    }
+
+    &-PR {
+        @include setBackgroundPosition(11, 12);
+    }
+
+    &-TL {
+        @include setBackgroundPosition(13, 16);
+    }
+
+    &-GW {
+        @include setBackgroundPosition(6, 8);
+    }
+
+    &-PT {
+        @include setBackgroundPosition(11, 14);
+    }
+
+    &-PL {
+        @include setBackgroundPosition(11, 9);
+    }
+
+    &-PN {
+        @include setBackgroundPosition(11, 11);
+    }
+
+    &-PH {
+        @include setBackgroundPosition(11, 7);
+    }
+
+    &-PE {
+        @include setBackgroundPosition(11, 4);
+    }
+
+    &-PY {
+        @include setBackgroundPosition(11, 16);
+    }
+
+    &-PG {
+        @include setBackgroundPosition(11, 6);
+    }
+
+    &-PA {
+        @include setBackgroundPosition(11, 3);
+    }
+
+    &-PK {
+        @include setBackgroundPosition(11, 8);
+    }
+
+    &-PW {
+        @include setBackgroundPosition(11, 15);
+    }
+
+    &-MH {
+        @include setBackgroundPosition(9, 7);
+    }
+
+    &-FM {
+        @include setBackgroundPosition(5, 5);
+    }
+
+    &-UM {
+        @include setBackgroundPosition(14, 10);
+    }
+
+    &-MP {
+        @include setBackgroundPosition(9, 13);
+    }
+
+    &-NO {
+        @include setBackgroundPosition(10, 14);
+    }
+
+    &-NF {
+        @include setBackgroundPosition(10, 10);
+    }
+
+    &-NU {
+        @include setBackgroundPosition(10, 17);
+    }
+
+    &-NG {
+        @include setBackgroundPosition(10, 11);
+    }
+
+    &-NE {
+        @include setBackgroundPosition(10, 9);
+    }
+
+    &-NI {
+        @include setBackgroundPosition(10, 12);
+    }
+
+    &-NZ {
+        @include setBackgroundPosition(11, 1);
+    }
+
+    &-VU {
+        @include setBackgroundPosition(15, 3);
+    }
+
+    &-NC {
+        @include setBackgroundPosition(10, 8);
+    }
+
+    &-BQ {
+        @include setBackgroundPosition(2, 13);
+    }
+
+    &-SX {
+        @include setBackgroundPosition(13, 6);
+    }
+
+    &-AW {
+        @include setBackgroundPosition(1, 14);
+    }
+
+    &-CW {
+        @include setBackgroundPosition(4, 2);
+    }
+
+    &-NL {
+        @include setBackgroundPosition(10, 13);
+    }
+
+    &-NP {
+        @include setBackgroundPosition(10, 15);
+    }
+
+    &-NR {
+        @include setBackgroundPosition(10, 16);
+    }
+
+    &-NA {
+        @include setBackgroundPosition(10, 7);
+    }
+
+    &-OM {
+        @include setBackgroundPosition(11, 2);
+    }
+
+    &-MZ {
+        @include setBackgroundPosition(10, 6);
+    }
+
+    &-MA {
+        @include setBackgroundPosition(9, 1);
+    }
+
+    &-MS {
+        @include setBackgroundPosition(9, 16);
+    }
+
+    &-ME {
+        @include setBackgroundPosition(9, 4);
+    }
+
+    &-MD {
+        @include setBackgroundPosition(9, 3);
+    }
+
+    &-MN {
+        @include setBackgroundPosition(9, 11);
+    }
+
+    &-MC {
+        @include setBackgroundPosition(9, 2);
+    }
+
+    &-MX {
+        @include setBackgroundPosition(10, 4);
+    }
+
+    &-MU {
+        @include setBackgroundPosition(10, 1);
+    }
+
+    &-MR {
+        @include setBackgroundPosition(9, 15);
+    }
+
+    &-MQ {
+        @include setBackgroundPosition(9, 14);
+    }
+
+    &-MT {
+        @include setBackgroundPosition(9, 17);
+    }
+
+    &-ML {
+        @include setBackgroundPosition(9, 9);
+    }
+
+    &-MV {
+        @include setBackgroundPosition(10, 2);
+    }
+
+    &-MY {
+        @include setBackgroundPosition(10, 5);
+    }
+
+    &-MW {
+        @include setBackgroundPosition(10, 3);
+    }
+
+    &-MG {
+        @include setBackgroundPosition(9, 6);
+    }
+
+    &-MO {
+        @include setBackgroundPosition(9, 12);
+    }
+
+    &-LU {
+        @include setBackgroundPosition(8, 15);
+    }
+
+    &-LT {
+        @include setBackgroundPosition(8, 14);
+    }
+
+    &-LI {
+        @include setBackgroundPosition(8, 10);
+    }
+
+    &-LY {
+        @include setBackgroundPosition(8, 17);
+    }
+
+    &-LR {
+        @include setBackgroundPosition(8, 12);
+    }
+
+    &-LV {
+        @include setBackgroundPosition(8, 166);
+    }
+
+    &-LS {
+        @include setBackgroundPosition(8, 13);
+    }
+
+    &-LB {
+        @include setBackgroundPosition(8, 8);
+    }
+
+    &-LA {
+        @include setBackgroundPosition(8, 7);
+    }
+
+    &-KG {
+        @include setBackgroundPosition(7, 14);
+    }
+
+    &-KW {
+        @include setBackgroundPosition(8, 4);
+    }
+
+    &-KR {
+        @include setBackgroundPosition(8, 3);
+    }
+
+    &-KP {
+        @include setBackgroundPosition(8, 2);
+    }
+
+    &-KE {
+        @include setBackgroundPosition(7, 13);
+    }
+
+    &-JO {
+        @include setBackgroundPosition(7, 11);
+    }
+
+    &-KZ {
+        @include setBackgroundPosition(8, 6);
+    }
+
+    &-JP {
+        @include setBackgroundPosition(7, 12);
+    }
+
+    &-JM {
+        @include setBackgroundPosition(7, 10);
+    }
+
+    &-CI {
+        @include setBackgroundPosition(3, 10);
+    }
+
+    &-IT {
+        @include setBackgroundPosition(7, 8);
+    }
+
+    &-IL {
+        @include setBackgroundPosition(7, 1);
+    }
+
+    &-IE {
+        @include setBackgroundPosition(6, 17);
+    }
+
+    &-IQ {
+        @include setBackgroundPosition(7, 5);
+    }
+
+    &-IR,
+    &-fa {
+        @include setBackgroundPosition(7, 6);
+    }
+
+    &-ID {
+        @include setBackgroundPosition(6, 16);
+    }
+
+    &-IN {
+        @include setBackgroundPosition(7, 3);
+    }
+
+    &-IS {
+        @include setBackgroundPosition(7, 7);
+    }
+
+    &-HU {
+        @include setBackgroundPosition(6, 15);
+    }
+
+    &-HK {
+        @include setBackgroundPosition(6, 10);
+    }
+
+    &-HN {
+        @include setBackgroundPosition(6, 12);
+    }
+
+    &-VA {
+        @include setBackgroundPosition(14, 14);
+    }
+
+    &-HM {
+        @include setBackgroundPosition(6, 11);
+    }
+
+    &-HT {
+        @include setBackgroundPosition(6, 14);
+    }
+
+    &-GY {
+        @include setBackgroundPosition(6, 9);
+    }
+
+    &-GN {
+        @include setBackgroundPosition(6, 1);
+    }
+
+    &-GT {
+        @include setBackgroundPosition(6, 6);
+    }
+
+    &-GU {
+        @include setBackgroundPosition(6, 7);
+    }
+
+    &-GP {
+        @include setBackgroundPosition(6, 2);
+    }
+
+    &-GD {
+        @include setBackgroundPosition(5, 10);
+    }
+
+    &-GL {
+        @include setBackgroundPosition(5, 16);
+    }
+
+    &-GR {
+        @include setBackgroundPosition(6, 4);
+    }
+
+    &-KI {
+        @include setBackgroundPosition(7, 16);
+    }
+
+    &-GI {
+        @include setBackgroundPosition(5, 15);
+    }
+
+    &-GH {
+        @include setBackgroundPosition(5, 14);
+    }
+
+    &-DE {
+        @include setBackgroundPosition(4, 6);
+    }
+
+    &-PS {
+        @include setBackgroundPosition(11, 13);
+    }
+
+    &-GM {
+        @include setBackgroundPosition(5, 17);
+    }
+
+    &-GE {
+        @include setBackgroundPosition(5, 11);
+    }
+
+    &-GA {
+        @include setBackgroundPosition(5, 8);
+    }
+
+    &-DJ {
+        @include setBackgroundPosition(4, 7);
+    }
+
+    &-TF {
+        @include setBackgroundPosition(13, 11);
+    }
+
+    &-PF {
+        @include setBackgroundPosition(11, 5);
+    }
+
+    &-GF {
+        @include setBackgroundPosition(5, 12);
+    }
+
+    &-FR {
+        @include setBackgroundPosition(5, 7);
+    }
+
+    &-AX {
+        @include setBackgroundPosition(1, 15);
+    }
+
+    &-FI {
+        @include setBackgroundPosition(5, 2);
+    }
+
+    &-FJ {
+        @include setBackgroundPosition(5, 3);
+    }
+
+    &-GS {
+        @include setBackgroundPosition(6, 5);
+    }
+
+    &-FK {
+        @include setBackgroundPosition(5, 4);
+    }
+
+    &-FO {
+        @include setBackgroundPosition(5, 6);
+    }
+
+    &-EE {
+        @include setBackgroundPosition(4, 13);
+    }
+
+    &-ER {
+        @include setBackgroundPosition(4, 16);
+    }
+
+    &-ET {
+        @include setBackgroundPosition(5, 1);
+    }
+
+    &-GQ {
+        @include setBackgroundPosition(6, 3);
+    }
+
+    &-SV {
+        @include setBackgroundPosition(13, 5);
+    }
+
+    &-EC {
+        @include setBackgroundPosition(4, 12);
+    }
+
+    &-DO {
+        @include setBackgroundPosition(4, 10);
+    }
+
+    &-DM {
+        @include setBackgroundPosition(4, 9);
+    }
+
+    &-DK {
+        @include setBackgroundPosition(4, 8);
+    }
+
+    &-BJ {
+        @include setBackgroundPosition(2, 8);
+    }
+
+    &-CZ {
+        @include setBackgroundPosition(4, 5);
+    }
+
+    &-CY {
+        @include setBackgroundPosition(4, 4);
+    }
+
+    &-CU {
+        @include setBackgroundPosition(3, 17);
+    }
+
+    &-HR {
+        @include setBackgroundPosition(6, 13);
+    }
+
+    &-CR {
+        @include setBackgroundPosition(3, 16);
+    }
+
+    &-CK {
+        @include setBackgroundPosition(3, 11);
+    }
+
+    &-CD {
+        @include setBackgroundPosition(3, 6);
+    }
+
+    &-CG {
+        @include setBackgroundPosition(3, 8);
+    }
+
+    &-YT {
+        @include setBackgroundPosition(15, 7);
+    }
+
+    &-KM {
+        @include setBackgroundPosition(7, 16);
+    }
+
+    &-CO {
+        @include setBackgroundPosition(3, 15);
+    }
+
+    &-CC {
+        @include setBackgroundPosition(3, 5);
+    }
+
+    &-CX {
+        @include setBackgroundPosition(4, 3);
+    }
+
+    &-TW {
+        @include setBackgroundPosition(14, 6);
+    }
+
+    &-CN {
+        @include setBackgroundPosition(3, 14);
+    }
+
+    &-CL {
+        @include setBackgroundPosition(3, 12);
+    }
+
+    &-TD {
+        @include setBackgroundPosition(13, 10);
+    }
+
+    &-LK {
+        @include setBackgroundPosition(8, 11);
+    }
+
+    &-CF {
+        @include setBackgroundPosition(3, 7);
+    }
+
+    &-KY {
+        @include setBackgroundPosition(8, 5);
+    }
+
+    &-CV {
+        @include setBackgroundPosition(4, 1);
+    }
+
+    &-CA {
+        @include setBackgroundPosition(3, 4);
+    }
+
+    &-CM {
+        @include setBackgroundPosition(3, 13);
+    }
+
+    &-KH {
+        @include setBackgroundPosition(7, 15);
+    }
+
+    &-BY {
+        @include setBackgroundPosition(3, 2);
+    }
+
+    &-BI {
+        @include setBackgroundPosition(2, 7);
+    }
+
+    &-MM {
+        @include setBackgroundPosition(9, 10);
+    }
+
+    &-BG {
+        @include setBackgroundPosition(2, 5);
+    }
+
+    &-BN {
+        @include setBackgroundPosition(2, 11);
+    }
+
+    &-VG {
+        @include setBackgroundPosition(14, 17);
+    }
+
+    &-SB {
+        @include setBackgroundPosition(12, 7);
+    }
+
+    &-IO {
+        @include setBackgroundPosition(7, 4);
+    }
+
+    &-BZ {
+        @include setBackgroundPosition(3, 3);
+    }
+
+    &-BR {
+        @include setBackgroundPosition(2, 14);
+    }
+
+    &-BV {
+        @include setBackgroundPosition(2, 17);
+    }
+
+    &-BW {
+        @include setBackgroundPosition(3, 1);
+    }
+
+    &-BA {
+        @include setBackgroundPosition(1, 17);
+    }
+
+    &-BO {
+        @include setBackgroundPosition(2, 12);
+    }
+
+    &-BT {
+        @include setBackgroundPosition(2, 16);
+    }
+
+    &-BM {
+        @include setBackgroundPosition(2, 10);
+    }
+
+    &-BE {
+        @include setBackgroundPosition(2, 3);
+    }
+
+    &-BB {
+        @include setBackgroundPosition(2, 1);
+    }
+
+    &-AM {
+        @include setBackgroundPosition(1, 7);
+    }
+
+    &-BD {
+        @include setBackgroundPosition(2, 2);
+    }
+
+    &-BH {
+        @include setBackgroundPosition(2, 6);
+    }
+
+    &-BS {
+        @include setBackgroundPosition(2, 15);
+    }
+
+    &-AT {
+        @include setBackgroundPosition(1, 12);
+    }
+
+    &-AU {
+        @include setBackgroundPosition(1, 13);
+    }
+
+    &-AR {
+        @include setBackgroundPosition(1, 10);
+    }
+
+    &-AZ {
+        @include setBackgroundPosition(1, 16);
+    }
+
+    &-AG {
+        @include setBackgroundPosition(1, 4);
+    }
+
+    &-AO {
+        @include setBackgroundPosition(1, 8);
+    }
+
+    &-AD {
+        @include setBackgroundPosition(1, 1);
+    }
+
+    &-AS {
+        @include setBackgroundPosition(1, 11);
+    }
+
+    &-DZ {
+        @include setBackgroundPosition(4, 11);
+    }
+
+    &-AQ {
+        @include setBackgroundPosition(1, 9);
+    }
+
+    &-AL {
+        @include setBackgroundPosition(1, 6);
+    }
+
+    &-AF {
+        @include setBackgroundPosition(1, 3);
+    }
+
+    &-BF {
+        @include setBackgroundPosition(2, 4);
+    }
+
+    &-XD {
+        // @include setBackgroundPosition(1, 1);
+        background-image: none;
+        background-color: white;
+    }
+
+    &-XE {
+        // @include setBackgroundPosition(1, 1);
+        background-image: none;
+        background-color: white;
+    }
+
+    &-XX {
+        // @include setBackgroundPosition(1, 1);
+        background-image: none;
+        background-color: white;
+    }
+
+    &-SS {
+        // @include setBackgroundPosition(1, 1);
+        background-image: none;
+        background-color: white;
+    }
+
+    &-XS {
+        background-image: none;
+        background-color: white;
+    }
+}

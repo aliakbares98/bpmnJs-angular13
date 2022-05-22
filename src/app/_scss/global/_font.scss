@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "IranianSans";
+  src:// url("/assets/fonts/IranianSans/IranianSans.eot"),
+    url("/assets/fonts/IranianSans/IranianSans.woff") format("woff"),
+    url("/assets/fonts/IranianSans/IranianSans.ttf") format("truetype"),
+    url("/assets/fonts/IranianSans/IranianSans.svg#svgFontName") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* fallback */
+@font-face {
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/fonts/materialicons/materialicons.woff2") format("woff2");
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}

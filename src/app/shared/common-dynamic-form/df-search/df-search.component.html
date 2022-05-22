@@ -1,0 +1,49 @@
+<article class="report-side" fxFlex="100">
+  <div
+    class="product-filter"
+    fxLayout="column"
+    fxLayoutGap="7.642px"
+    *ngIf="serverSideStructure.length"
+  >
+    <form
+      @comeIn
+      class="dynamic-form row"
+      [formGroup]="serverSideForm"
+      autocomplete="off"
+      dir="rtl"
+    >
+      <ng-container
+        *ngFor="let field of serverSideStructure"
+        appDynamicField
+        [field]="field"
+        [group]="serverSideForm"
+      >
+      </ng-container>
+    </form>
+  </div>
+  <div
+    class="product-filter"
+    fxLayout="column"
+    fxLayoutGap="7.642px"
+    *ngIf="clientSideStructure.length"
+  >
+    <form
+      @comeIn
+      class="dynamic-form row"
+      [formGroup]="clientSideForm"
+      autocomplete="off"
+      dir="rtl"
+    >
+      <ng-container
+        *ngFor="let field of clientSideStructure"
+        appDynamicField
+        [field]="field"
+        [group]="clientSideForm"
+        (prjInput)="onPrjInput($event)"
+      >
+      </ng-container>
+    </form>
+  </div>
+
+  <!--   <app-per-page (perPage)="setPerpage($event)"></app-per-page> -->
+</article>

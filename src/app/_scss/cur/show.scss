@@ -1,0 +1,44 @@
+@import "./../global/globals";
+
+.form-content {
+  border-radius: 3px;
+  background-color: $white;
+  padding: 32px 32px 0 32px;
+  margin-bottom: 32px;
+
+  .attachment-container {
+    .attachment-elm {
+      margin-bottom: 32px;
+      cursor: pointer;
+    }
+    p {
+      margin-bottom: 32px;
+      @include font(IranianSans, 16px, right, $blackPearl);
+    }
+  }
+}
+
+.report-elm_row {
+  margin-bottom: 35px;
+}
+
+.attach-content {
+  border-radius: 3px;
+  background-color: $white;
+  padding: 1px 32px 0 32px;
+  margin-bottom: 32px;
+}
+
+.del-cancel_btn {
+  margin-top: 32px;
+  margin-left: 32px;
+
+  button:nth-child(1) {
+    border: solid 1px $java;
+    padding: 6.5px 35px;
+  }
+  button:nth-child(2) {
+    color: #fbfcfe;
+    padding: 6.5px 35px;
+  }
+}

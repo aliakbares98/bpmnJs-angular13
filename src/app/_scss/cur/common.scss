@@ -1,0 +1,61 @@
+.hermes-divider {
+  opacity: 0.3;
+  border-bottom: solid 1px $doveGray;
+}
+
+.report-elm {
+  @include font(IranianSans, 16px, right, $gray);
+  cursor: default;
+  display: flex;
+
+  span {
+    margin-right: 4.5px;
+    @include font(IranianSans, 16px, right, $blackPearl);
+  }
+}
+
+.report-elm_read-only {
+  @include font(IranianSans, 14px, right, $gray);
+  cursor: default;
+  margin-bottom: 10px;
+
+  span {
+    margin-right: 4.5px;
+    @include font(IranianSans, 14px, right, $blackPearl);
+  }
+}
+
+.divider-ball {
+  width: 10px;
+  height: 10px;
+  background-color: $java;
+  border-radius: 5px;
+}
+
+.report-elm_row {
+  margin-bottom: 35px;
+}
+
+.report-divider-container {
+  margin: 64px 0 32px 0;
+  direction: rtl;
+  h1 {
+    @include font(IranianSans, 18px, right, $blackPearl);
+  }
+}
+
+.startAlign {
+  align-self: auto;
+}
+
+.centerAlign {
+  align-self: center;
+}
+.inline-block {
+  display: inline-block;
+}
+.attachment-container {
+  ::ng-deep .mat-list-base .mat-list-item.mat-list-item-with-avatar {
+    height: 32px;
+  }
+}

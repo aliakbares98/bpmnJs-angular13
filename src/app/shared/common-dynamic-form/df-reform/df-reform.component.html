@@ -1,0 +1,46 @@
+<div class="edit-reports-container" fxLayout="column" fxLayoutGap="16px">
+  <div
+    class="edit-reports_title"
+    fxLayout
+    fxLayoutAlign="start center"
+    fxLayoutGap="8px"
+    dir="rtl"
+  >
+    <div class="divider-ball"></div>
+    <h1>گزارش اصلاحات</h1>
+  </div>
+  <form
+    class="dynamic-form"
+    [formGroup]="form"
+    autocomplete="off"
+    *ngIf="hasStructure"
+    dir="rtl"
+  >
+    <ng-container
+      *ngFor="let field of structure"
+      appDynamicField
+      [field]="field"
+      [group]="form"
+      (prjInput)="prjInput($event)"
+    >
+    </ng-container>
+  </form>
+</div>
+<div
+  fxLayout="row"
+  fxLayoutAlign="start start"
+  fxLayoutGap="32px"
+  dir="ltr"
+  class="accept-reject_btn"
+>
+  <button
+    mat-raised-button
+    [ngClass]="btn.class"
+    (click)="send(btn.value)"
+    *ngFor="let btn of buttons"
+  >
+    {{ btn.label }}
+  </button>
+</div>
+
+<app-edit-pen></app-edit-pen>

@@ -1,0 +1,34 @@
+/*
+ * Reset Section
+ */
+ @import "./_scss/global/_reset.scss";
+ @import "./_scss/global/_font.scss";
+ @import "./_scss/global/_mixin.scss";
+ @import "./_scss/global/_var.scss";
+ 
+ body {
+   background-color: #f1f6f9;
+ }
+ 
+ .snackbar-notify {
+   color: $white;
+   background-color: $java;
+ }
+ .snackbar-error {
+   color: $red;
+   background-color: $java;
+ }
+ .diagram-parent {
+  height: 500px;
+  border: solid 3px #EEE;
+  position: relative;
+}
+
+.import-error {
+  color: red;
+  padding: 20px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+} 

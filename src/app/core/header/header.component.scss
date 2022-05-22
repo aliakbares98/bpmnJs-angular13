@@ -1,0 +1,52 @@
+@import "../../_scss/global/_globals.scss";
+
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 64px;
+  height: 77px;
+  margin: 0 auto;
+  position: relative;
+  background-color: #c9f4ff;
+  direction: rtl;
+
+  .logo-header {
+    cursor: pointer;
+    @include size(50px, 50px);
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+    }
+  }
+  .navbar-profile {
+    @include size(34px, 34px);
+    border-radius: 100%;
+    cursor: pointer;
+
+    img {
+      max-width: 30px;
+      max-height: 30px;
+      border-radius: 100%;
+      margin-top: 3px;
+    }
+  }
+
+  .header-left-side {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .hermes-logo {
+    cursor: pointer;
+    width: 78px;
+  }
+}
+
+.mat-button {
+  margin: 0;
+}

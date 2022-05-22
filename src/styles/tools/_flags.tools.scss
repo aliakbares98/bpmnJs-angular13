@@ -1,0 +1,13 @@
+
+@mixin setBackgroundPosition($rowNumber, $columnNumber) {
+    $firstRowXPostion: -3px;
+    $firstRowYPostion: -4px;
+
+    $horizontalMovementValue: 36px;
+    $verticalMovementValue: 49px;
+
+    // background-image: url("../../assets/images/flag/flags.png");
+    background-repeat: no-repeat;
+    background-position-x: $firstRowXPostion - (($columnNumber - 1) * $horizontalMovementValue); // ad
+    background-position-y: $firstRowYPostion - (($rowNumber - 1) * $verticalMovementValue); // ad
+}

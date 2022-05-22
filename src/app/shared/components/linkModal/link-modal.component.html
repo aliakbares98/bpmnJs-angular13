@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <h4 mat-dialog-title>{{ title }}</h4>
+</div>
+<form method="post" [formGroup]="form">
+  <div mat-dialog-content dir="rtl">
+    <!-- <app-chips-box
+      [label]="title"
+      [list]="comboList"
+      [errorTxt]=""
+      [formControlName]="controlName"
+    ></app-chips-box> -->
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" mat-stroked-button color="accent">
+      {{ cancelButtonText }}
+    </button>
+    <button
+      mat-button
+      mat-stroked-button
+      color="accent"
+      (click)="onConfirmClick()"
+      [mat-dialog-close]="form.value"
+      cdkFocusInitial
+    >
+      {{ confirmButtonText }}
+    </button>
+  </div>
+</form>

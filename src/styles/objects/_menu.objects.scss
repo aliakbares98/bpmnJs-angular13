@@ -1,0 +1,61 @@
+.navbar {
+    width: 100%;
+    overflow-y: auto;
+
+    .navbar_item {
+        width: 100%;
+
+        &:not(.active-link) {
+            .navbar_item_title {
+                transition: $transition;
+            }
+        }
+
+        &.active-link {
+            background-color: $green;
+        }
+
+        &.btn--sign-out {
+            transition: $transition;
+            background-color: $gray;
+
+            &:hover {
+                background-color: $dark-blue;
+
+                .navbar_item_title {
+                    color: $text-color-main;
+                }
+            }
+        }
+    }
+
+    &.active-link {
+        background-color: $green;
+    }
+}
+
+.register-button {
+    &--before {
+        > span {
+            transition: $transition;
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+
+    &--after {
+        border: 2px solid white;
+        transition: $transition;
+
+        &:hover {
+            border-color: $green;
+            color: $green;
+
+            >mat-icon {
+                transition: $transition;
+                // color: $green;
+            }
+        }
+    }
+}

@@ -1,0 +1,74 @@
+@import "../../_scss/global/_var.scss";
+@import "../../_scss/global/_font.scss";
+
+
+
+
+.detail-container {
+  padding: 15px 16px 10px 25px;
+  border: solid 1px #d5e2e4;
+  border-radius: 6px;
+  background-color: $back;
+  position: relative;
+
+  .detail-toggle-arrow {
+    position: absolute;
+    right: 50%;
+    bottom: -17px;
+  }
+
+  .detail-row {
+    padding: 19.5px 16px 28px 32px;
+  }
+
+  .detail-row-total {
+    padding-right: 16px;
+    padding-top: -11px;
+  }
+}
+
+.detail-counter {
+  span:nth-child(1) {
+    width: 66px;
+    @include font(IranianSans, 14px, right, $blackPearl);
+  }
+  span:nth-child(2) {
+    width: 39px;
+    padding: 4px 0;
+    border-radius: 6px;
+    border: solid 1px #d5e2e4;
+    background-color: #d5e2e4;
+    @include font(IranianSans, 16px, center, $blackPearl);
+  }
+}
+
+.register-cancel_btn {
+  margin-top: -6.3px;
+
+  button:nth-child(1) {
+    border: solid 1px $java;
+  }
+  button:nth-child(2) {
+    border: solid 1px $java;
+  }
+}
+
+.has-prize-container {
+  .has-prize {
+    direction: rtl;
+    color: #3c3c3e;
+  }
+}
+
+#detail_divider {
+  border: solid 1px #d5e2e4;
+  background-color: #f9f9f9;
+  margin: 20px 0;
+}
+.detail-registered-btn {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  
+}

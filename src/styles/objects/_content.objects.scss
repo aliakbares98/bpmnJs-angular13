@@ -1,0 +1,101 @@
+@import 'settings/settings.scss';
+
+.wrapper {
+    width: 100%;
+    padding-top: 10vh;
+    max-width: 400px;
+}
+
+.page {
+    // min-height: 100vh;
+    padding-top: 110px;
+    padding-bottom: 40px;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+
+    &-fluid {
+        width: 100%;
+    }
+}
+
+.card {
+    cursor: pointer;
+}
+
+.custom-chips {
+    background-color: $dark-gray;
+    border-radius: 4px;
+    padding: 6px 4px;
+    margin: 4px;
+    font-size: 12px;
+    line-height: 12px;
+}
+
+button.custom-fab {
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    outline: none;
+
+    &-mini {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    &-blue {
+        background-color: $blue;
+        color: $text-color-main;
+    }
+
+    &-red {
+        background-color: $red;
+        color: $text-color-main;
+    }
+
+    &:active {
+        border: none;
+        outline: none;
+    }
+
+    *:active {
+        outline: none;
+        border: none;
+    }
+}
+
+.product-custom-input {
+    padding: 4px;
+    border-color: #ccc;
+    border-style: dotted;
+    margin: 2px 4px;
+    vertical-align: middle;
+    border-radius: 4px;
+
+    &[type="number"],
+    &[type="text"] {
+        text-align: center;
+    }
+
+    &:not(.product-custom-input--select) {
+        width: 80px;
+    }
+
+    &[type="date"] {
+        width: 150px;
+    }
+}
+
+.link {
+    transition: color .3s ease-in-out;
+
+    &:hover {
+        color: $green;
+    }
+}

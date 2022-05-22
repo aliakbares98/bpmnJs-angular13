@@ -1,0 +1,73 @@
+@mixin font($font, $size, $align, $color) {
+  font-family: $font;
+  font-size: $size;
+  text-align: $align;
+  color: $color;
+}
+
+@mixin img($background-image, $width, $height) {
+  background-image: $background-image;
+  width: $width;
+  height: $height;
+}
+
+@mixin box(
+  $width,
+  $minHeight,
+  $radius: 20px,
+  $shadow: 0 0 6px 0 #dfdfdf,
+  $padding: 0px
+) {
+  width: $width;
+  min-height: $minHeight;
+  position: relative;
+  background: #fff;
+  box-shadow: $shadow;
+  border-radius: $radius;
+  position: relative;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  padding: $padding;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin grayInput() {
+  ::ng-deep.mat-form-field-outline-start,
+  ::ng-deep.mat-form-field-outline-gap,
+  ::ng-deep.mat-form-field-outline-end {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+@mixin whiteInput() {
+  ::ng-deep.mat-form-field-outline {
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-gap,
+    .mat-form-field-outline-end {
+      background-color: $white;
+    }
+  }
+}
+@mixin pinkInput() {
+  ::ng-deep.mat-form-field-outline {
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-gap,
+    .mat-form-field-outline-end {
+      background-color: $pink !important;
+    }
+  }
+}
+
+/* @mixin gradient($startColor, $endColor) {
+    background: $startColor;
+    background: -moz-linear-gradient(left, $startColor 0%, $endColor 100%);
+    background: -webkit-linear-gradient(left, $startColor 0%, $endColor 100%);
+    background: linear-gradient(to right, $startColor 0%, $endColor 100%);
+    filter    : progid:DXImageTransform.Microsoft.gradient(startColorstr='$startColor', endColorstr='$endColor', GradientType=1);
+} */

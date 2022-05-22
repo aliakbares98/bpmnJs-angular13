@@ -1,0 +1,19 @@
+<div
+  [formGroup]="group"
+  fxFlex="100%"
+  class="dunamic-field"
+  floatLabel="never"
+  dir="rtl"
+  [class.combo-err-outline]="name.invalid && name.touched"
+>
+  <combo-box
+    [label]="field.label"
+    [list]="field.list"
+    [attr.name]="field?.name"
+    [formControlName]="field.name"
+    class="white-input"
+  ></combo-box>
+  <mat-error *ngIf="name.invalid && name.touched">
+    <signalr-error [field]="name" [errorTxt]="field?.errors"></signalr-error>
+  </mat-error>
+</div>

@@ -1,0 +1,20 @@
+<mat-form-field appearance="outline" [formGroup]="group" fxFill>
+  <mat-label>{{ field?.label }}</mat-label>
+  <mat-select
+    [(value)]="selectedOptions"
+    [formControlName]="field.name"
+    [attr.name]="field.name"
+    [multiple]="isMultiple"
+  >
+    <mat-option
+      *ngFor="let item of field?.list"
+      [value]="item.Id"
+      class="align-r"
+    >
+      {{ item.Value }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="name.invalid && name.touched">
+    <signalr-error [field]="name" [errorTxt]="field?.errors"></signalr-error>
+  </mat-error>
+</mat-form-field>

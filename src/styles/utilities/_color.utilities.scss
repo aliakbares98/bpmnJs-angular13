@@ -1,0 +1,107 @@
+@import 'settings/settings.scss';
+
+// hover
+.hoverRow :hover{
+    background-color: #fafafa;
+  }
+// Colors
+.white {
+    color: white;
+}
+
+.red {
+    color: $red;
+}
+
+.blue {
+    color: $blue;
+}
+.dark-blue{
+    color: $dark-blue;
+}
+.green {
+    color: $green;
+}
+
+.dark-green {
+    color: $dark-green;
+}
+
+.orange {
+    color: $orange;
+}
+
+.gray {
+    color: $gray;
+}
+
+.dark-gray {
+    color: $dark-gray;
+}
+
+.yellow {
+    color: $yellow;
+}
+.balck{
+    color: $black;
+}
+.back-btn{
+    color: $back-btn;
+}
+
+// Text Colors
+.text-color {
+    &-main {
+        color: $text-color-main;
+    }
+
+    &-contrary {
+        color: $blue;
+    }
+
+    &-green {
+        color: $text-color-green;
+    }
+}
+
+// Backgroud Colors
+.bg {
+
+    &-first {
+        background-color: $background-first !important;
+    }
+
+    &-second {
+        background-color: $background-second;
+    }
+
+    &-third {
+        background-color: $background-third;
+    }
+
+    &-forth {
+        background-color: $background-forth;
+    }
+
+    &-focused {
+        background-color: $background-focused;
+    }
+
+    &-white {
+        background-color: white;
+    }
+
+    &-green {
+        background-color: $green;
+    }
+
+    &-red {
+        background-color: $red;
+    }
+    &-yellow {
+        background-color: $yellow;
+    }
+    &-blue {
+        background-color: $blue;
+    }
+}

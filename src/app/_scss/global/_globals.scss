@@ -1,0 +1,207 @@
+/*
+* Reset Section
+*/
+@import "reset";
+@import "mixin";
+@import "var";
+@import "font";
+@import "mat";
+@import "../cur/common.scss";
+
+/******* desktop & tablet ******/
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: IranianSans, "Helvetica Neue", sans-serif;
+  height: 100%;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+.full-width {
+  width: 100%;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: flex-start;
+}
+
+.main-container {
+  background-color: $back;
+  padding: 32px;
+  min-height: 90vh;
+}
+.header-title {
+  @include font(IranianSans, 18px, right, $white);
+  padding: 20px 32px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-image: linear-gradient(92deg, #16baca 0%, #0c6377 100%);
+}
+
+.h-input {
+  text-align: right;
+  width: 100%;
+}
+.align-r {
+  text-align: right;
+  direction: rtl;
+}
+.align-l {
+  text-align: left;
+  direction: ltr;
+}
+
+.plus {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 16 16" fill="%2317BFCF"><path id="more_3_"  d="M15.2 7.2H8.8V.8a.8.8 0 0 0-1.6 0v6.4H.8a.8.8 0 0 0 0 1.6h6.4v6.4a.8.8 0 1 0 1.6 0V8.8h6.4a.8.8 0 1 0 0-1.6zm0 0" data-name="more (3)"/></svg>');
+}
+
+.plusT {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 16 16" fill="%230C6068"><path id="more_3_"  d="M15.2 7.2H8.8V.8a.8.8 0 0 0-1.6 0v6.4H.8a.8.8 0 0 0 0 1.6h6.4v6.4a.8.8 0 1 0 1.6 0V8.8h6.4a.8.8 0 1 0 0-1.6zm0 0" data-name="more (3)"/></svg>');
+}
+.plusD {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"  viewBox="0 0 16 16" fill="%23999999"><path id="more_3_"  d="M15.2 7.2H8.8V.8a.8.8 0 0 0-1.6 0v6.4H.8a.8.8 0 0 0 0 1.6h6.4v6.4a.8.8 0 1 0 1.6 0V8.8h6.4a.8.8 0 1 0 0-1.6zm0 0" data-name="more (3)"/></svg>');
+}
+
+.add-call {
+  width: 24.999px;
+  height: 25px;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24.999" height="25" viewBox="0 0 24.999 25"><g id="call"transform="translate(0.094 0.5)"> <g id="Group_1974" data-name="Group 1974" transform="translate(0.405)"><path id="Path_701" data-name="Path 701" d="M1.041,58a8.174,8.174,0,0,1-.617-3.507,3.022,3.022,0,0,1,.911-1.947l1.759-1.756a1.677,1.677,0,0,1,2.5,0c.49.455.946.944,1.431,1.428l1.4,1.394a1.656,1.656,0,0,1,0,2.568c-.588.587-1.137,1.169-1.759,1.722a.36.36,0,0,0-.1.455,10.636,10.636,0,0,0,1.563,2.534,18.325,18.325,0,0,0,4.391,4c.358.225.779.391,1.137.616a.369.369,0,0,0,.49-.1l1.759-1.756a1.635,1.635,0,0,1,2.5,0l2.832,2.827a1.7,1.7,0,0,1,0,2.568c-.519.553-1.107,1.037-1.593,1.624A3.215,3.215,0,0,1,16.918,71.7a11.752,11.752,0,0,1-4.263-1.267,23.379,23.379,0,0,1-7.806-6.1A21.641,21.641,0,0,1,1.041,58Z" transform="translate(-0.405 -47.712)" fill="none" stroke="#17bfcf" stroke-width="1"/><path id="Path_702" data-name="Path 702" d="M263.157,7.367v2.782a1.526,1.526,0,0,1-1.526,1.526h0a1.526,1.526,0,0,1-1.526-1.526V7.367h-2.787a1.526,1.526,0,0,1-1.526-1.526h0a1.526,1.526,0,0,1,1.526-1.526H260.1V1.526A1.526,1.526,0,0,1,261.626,0h0a1.526,1.526,0,0,1,1.526,1.526V4.314h2.787a1.526,1.526,0,0,1,1.526,1.526h0a1.526,1.526,0,0,1-1.526,1.526Z" transform="translate(-243.466)" fill="none" stroke="#17bfcf" stroke-width="1"/></g></g></svg>');
+}
+
+.minus {
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="16px" height="16px"><path d="M490.667,234.667H21.333C9.551,234.667,0,244.218,0,256c0,11.782,9.551,21.333,21.333,21.333h469.333    c11.782,0,21.333-9.551,21.333-21.333C512,244.218,502.449,234.667,490.667,234.667z"  class="active-path"  fill="%230C6068"/></svg>');
+}
+
+.upload-box {
+  width: 282px;
+  height: 150px;
+  border-radius: 2px;
+  border: solid 1px rgba(3, 23, 24, 0.1);
+  /*   background-image: url("/assets/svg/uploadPic.svg");
+  background-repeat: no-repeat;
+  background-position: center; */
+}
+
+.margin-bottom-32 {
+  margin-bottom: 32px;
+}
+.padding-bottom-32 {
+  padding-bottom: 32px;
+}
+
+.padding-bottom-64 {
+  padding-bottom: 64px;
+}
+
+.gray-input {
+  @include grayInput();
+}
+.white-input {
+  @include whiteInput();
+}
+.pink-input {
+  @include pinkInput();
+}
+
+.combo-err-outline {
+  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: red;
+  }
+  .combo-err-box {
+    margin-top: -20px;
+    margin-right: 10px;
+    font-size: 75%;
+  }
+}
+.is-default-err {
+  margin-right: 10px;
+  font-size: 75%;
+}
+.insert-position_btn {
+  height: 40px;
+  border: solid 1px $java;
+  border-radius: 8px;
+  margin-top: 3.5px;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  span {
+    @include font(IranianSans, 14px, right, $java);
+  }
+  &:disabled {
+    border: solid 1px $dustyGray;
+    span {
+      @include font(IranianSans, 14px, right, $dustyGray);
+      cursor: default;
+    }
+    .plus {
+      color: $doveGray;
+    }
+  }
+}
+
+.attach-error {
+  color: $red;
+  font-size: 13px !important;
+  font-weight: 300 !important;
+  margin-right: -15px !important;
+}
+
+.upload-error {
+  font-size: 11px !important;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+//////////////////////shared edit //
+.remove-position_btn {
+  height: 40px;
+  border: solid 1px red;
+  border-radius: 8px;
+  margin-top: 3.5px;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  span {
+    @include font(IranianSans, 14px, right, red);
+  }
+}
+
+.divider-container {
+  margin: 42px 0 28.5px 0;
+  direction: rtl;
+  h1 {
+    @include font(IranianSans, 18px, right, $blackPearl);
+  }
+}
+
+input {
+  height: 17px;
+  color: $doveGray;
+}
+
+button{
+  @include font(IranianSans, 14px, right, $dustyGray);
+}

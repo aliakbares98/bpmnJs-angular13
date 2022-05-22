@@ -1,0 +1,68 @@
+@import "../../../_scss/global/var";
+
+section {
+  width: 278px;
+  height: 146px;
+  text-align: center;
+  position: relative;
+
+  .trash {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    cursor: pointer;
+  }
+  img {
+    max-width: 278px;
+    max-height: 146px;
+  }
+  .editLogo {
+    cursor: pointer;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 95px;
+    min-width: 95px;
+    position: absolute;
+    top: 25px;
+    left: 90px;
+  }
+
+  input[type="file"] {
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+  }
+
+  .bg-progress {
+    width: 77.3%;
+    height: 14px;
+    border-radius: 8px;
+    border: 1px solid $java;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    direction: ltr;
+    position: absolute;
+    bottom: 32px;
+
+    .progress-line {
+      width: 0%;
+      height: 12px;
+      background: $java;
+      border-radius: 8px;
+      transition: width 750ms ease-in-out;
+    }
+
+    .num {
+      color: $java;
+      font-family: montserrat;
+      font-size: 14px;
+      position: absolute;
+      top: -21px;
+      left: -7px;
+      margin-left: 0%;
+    }
+  }
+}

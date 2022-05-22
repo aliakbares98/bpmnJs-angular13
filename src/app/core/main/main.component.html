@@ -1,0 +1,12 @@
+<main>
+  <app-overlay></app-overlay>
+  <app-header (state)="toggle($event)"></app-header>
+  <!--   <div class="example-box" cdkDrag>Drag me around</div> -->
+  <div style="position: relative"
+    class="mt24 content">
+    <div class="backdrop"
+      *ngIf="show"></div>
+    <router-outlet></router-outlet>
+  </div>
+
+</main>

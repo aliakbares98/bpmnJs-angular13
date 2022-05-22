@@ -1,0 +1,24 @@
+.show-detail {
+  margin-bottom: 32px;
+
+  .show-detail_toggle {
+    width: 30px;
+    padding: 6px 0;
+    border-radius: 6px;
+    background-color: #bcd4d5;
+    z-index: 1000;
+
+    .minus,
+    .plusT {
+      margin: 0 auto;
+    }
+  }
+}
+
+.detail-paginator_container {
+  padding: 15rem 61px 53px 0;
+
+  .detail-total {
+    padding-bottom: 16px;
+  }
+}

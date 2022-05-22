@@ -1,0 +1,22 @@
+<mat-form-field
+  appearance="outline"
+  [formGroup]="group"
+  fxFlex="100%"
+  class="dunamic-field"
+  floatLabel="never"
+  dir="rtl"
+>
+  <mat-label>{{ field?.label }}</mat-label>
+  <input
+    matInput
+    type="text"
+    [formControlName]="field.name"
+    [attr.name]="field.name"
+    [placeholder]="field.placeholder"
+    (input)="txtInput($event)"
+  />
+
+  <mat-error *ngIf="name.invalid && name.touched">
+    <signalr-error [field]="name" [errorTxt]="field?.errors"></signalr-error>
+  </mat-error>
+</mat-form-field>

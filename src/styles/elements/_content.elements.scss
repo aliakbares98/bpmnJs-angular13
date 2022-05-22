@@ -1,0 +1,52 @@
+@import "settings/settings.scss";
+
+* {
+  box-sizing: border-box;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-track {
+    // background-color: $background-third;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    // background-color: $green;
+  }
+}
+
+html {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+// body {
+//   background: #131615;
+// }
+
+p,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+li,
+div,
+a,
+span,
+strong,
+table,
+th,
+tr,
+td,
+button,
+mat-label {
+  // color: inherit;
+
+  &:not([class*="mat-"]) {
+    font-family: IranianSans, sans-serif;
+  }
+}

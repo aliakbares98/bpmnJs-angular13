@@ -1,0 +1,20 @@
+@import 'settings/settings.scss';
+
+.mat-snack-bar-container{
+    &--success {
+        background-color: $green;
+        color: $text-color-main;
+    }
+    &--error {
+        background-color: $red;
+        color: $text-color-main;
+    }
+    &--warnin {
+        background-color: $orange;
+        color: $text-color-main;
+    }
+    &--info {
+        background-color: $blue;
+        color: $text-color-main;
+    }
+}

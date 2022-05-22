@@ -1,0 +1,87 @@
+<mat-form-field
+  appearance="outline"
+  [ngClass]="[_value ? 'combo-clear' : 'search-icon', inputColor]"
+  class="full-width"
+>
+  <mat-label>{{ label }}</mat-label>
+  <mat-icon
+    matSuffix
+    *ngIf="!_value"
+    (click)="search()"
+    [ngClass]="service ? 'search-active' : ''"
+    >search</mat-icon
+  >
+  <span
+    matSuffix
+    *ngIf="_value && showClear"
+    #clearBtn
+    (click)="clearInput()"
+    modelStatus
+    [editMode]="editMode"
+    [isBtn]="true"
+    (changed)="updateRecordStatus()"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="8.833"
+      height="8.833"
+      viewBox="0 0 8.833 8.833"
+    >
+      <use xlink:href="#clear"></use></svg
+  ></span>
+
+  <input
+    matInput
+    type="text"
+    [matAutocomplete]="combo"
+    (input)="change($event)"
+    (blur)="updateTitle(input.value)"
+    (focus)="focusFunction()"
+    (click)="isClicked()"
+    [value]="title"
+    [disabled]="isDisabled"
+    #input
+    modelStatus
+    [editMode]="editMode"
+    
+    [isCombo]="true"
+    (changed)="updateRecordStatus()"
+  />
+
+  <mat-autocomplete
+    #combo="matAutocomplete"
+    [displayWith]="getTitle.bind(this)"
+    (optionSelected)="onSelectItem($event.option.value)"
+    modelStatus
+    [editMode]="editMode"
+    
+    [isCombo]="true"
+    (changed)="updateRecordStatus()"
+  >
+    <mat-option *ngFor="let item of data" [value]="item">
+      <span *ngIf="displayFormat == 'base'">{{ item.Value }}</span>
+      <div *ngIf="displayFormat == 'complex'">
+        <span>{{ item?.Value + " " }}</span>
+        <span class="complex">{{ item?.SupplierName }}</span>
+      </div>
+    </mat-option>
+  </mat-autocomplete>
+  <mat-error></mat-error>
+  <ng-content></ng-content>
+</mat-form-field>
+
+<div
+  [hidden]="!noResult"
+  class="combo-err-box"
+  [ngClass]="noResult ? 'combo-multiple-error' : ''"
+>
+  پیدا نشد!
+</div>
+
+<div
+  [hidden]="!shortKey"
+  class="combo-err-box"
+  [ngClass]="control?.invalid && shortKey ? 'combo-multiple-error' : ''"
+>
+  {{ shortKeyMessage }}
+</div>

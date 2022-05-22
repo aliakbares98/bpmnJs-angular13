@@ -1,0 +1,18 @@
+.couple-btn_right {
+  ::ng-deep .mat-form-field-outline-end {
+    border-left-style: none !important;
+    border-right-style: none !important;
+    border-radius: 0px !important ;
+  }
+}
+
+.couple-btn_left {
+  ::ng-deep .mat-form-field-outline-start {
+    border-left-style: none !important;
+    border-right-style: none !important;
+    border-radius: 0px !important ;
+  }
+  ::ng-deep.mat-form-field-label {
+    text-align: center;
+  }
+}

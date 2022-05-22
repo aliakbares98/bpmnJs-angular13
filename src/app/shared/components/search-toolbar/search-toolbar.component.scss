@@ -1,0 +1,27 @@
+@import "../../../_scss/global/_globals.scss";
+
+
+
+.report-list_report-btn_container {
+  align-content: center;
+  background-color: $white;
+  padding: 0 32px;
+  width: 100%;
+
+  .create-new-btn {
+    @include font(IranianSans, 14px, right, $java);
+    padding: 7px 16px;
+    border-radius: 8px;
+    border: solid 1px #17bfcf;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+
+  .toolbar_btn {
+    margin: 17px 0px 8px 0px;
+    cursor: pointer;
+  }
+  .tooltip-bg {
+    background: $java;
+  }
+}

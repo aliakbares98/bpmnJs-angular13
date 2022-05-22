@@ -1,0 +1,10 @@
+[dir='rtl'] {
+    .always-ltr {
+        text-align: left;
+        direction: ltr;
+    }
+
+    .ngx-datatable.material .datatable-body .datatable-body-row .datatable-body-cell {
+        text-align: right;
+    }
+}

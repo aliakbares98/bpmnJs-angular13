@@ -1,0 +1,96 @@
+// @import "../../global/_globals.scss";
+@import "../global/globals";
+
+
+.report-content {
+  margin-top: 32px;
+
+  .report-list {
+    margin-right: 32px;
+    direction: rtl;
+
+    ::ng-deep.mat-form-field-type-mat-select.mat-form-field-can-float.mat-form-field-should-float
+      .mat-form-field-label {
+      -webkit-transform: translate(-0em, -1.4em) scale(0.75) !important; ///2.5em
+      -ms-transform: translate(-0em, -1.4em) scale(0.75) !important; ///2.5em
+      transform: translate(-0em, -1.4em) scale(0.75) !important; ///2.5em
+      width: 133.33333% !important;
+    }
+  }
+}
+.report-list_report-btn_container {
+  align-content: center;
+  background-color: $white;
+  padding: 0 32px;
+  width: 100%;
+
+  .create-new-btn {
+    @include font(IranianSans, 14px, right, $java);
+    padding: 7px 16px;
+    border-radius: 8px;
+    border: solid 1px #17bfcf;
+    margin: 10px 0;
+    cursor: pointer;
+  }
+}
+
+.report-list_content {
+  width: 100%;
+
+  .report-list_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 32px;
+    @include font(IranianSans, 18px, right, $blackPearl);
+  }
+
+  .report-list_items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 32px;
+    background-color: $white;
+    @include font(IranianSans, 14px, right, $blackPearl);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+    .state {
+      text-align: center;
+      span {
+        @include font(IranianSans, 12px, right, #32cd32);
+        opacity: 0.9;
+        padding: 0 18px 0 19px;
+        border: solid 1px #32cd32;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+.report-side {
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+  }
+}
+.product-filter {
+  padding: 12.5px 32px 12.5px 12.5px;
+  background-color: $white;
+  border-radius: 3px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  margin-bottom: 16px;
+}
+.sticky {
+  // position: fixed;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: $back;
+}
+
+.mat-elevation {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  margin: 0% 3%;
+  overflow: auto;
+}

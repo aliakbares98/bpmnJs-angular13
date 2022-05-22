@@ -1,0 +1,168 @@
+<mat-card class="bg-card white br-sm">
+    <h3>تنظیمات گره فعالیت انسانی</h3>
+</mat-card>
+<mat-card>
+
+    <form method="post"
+        [formGroup]="form">
+        <div fxLayout="row"
+            fxLayoutGap="32px"
+            formGroupName="tblInv_Search">
+            <!-- *****گره ***** -->
+            <mat-form-field appearance="outline"
+                class="w_input">
+                <mat-label>
+                    {{
+                    parallelLabelSet["Packing_GroupValueId"]
+                    }}
+                </mat-label>
+                <mat-select class="bg-third"
+                    formControlName="knot"
+                    (selectionChange)="OnPackingTypeSelected($event.value)">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let state of states"
+                        [value]="state">{{state}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-- *****نوع فرم ***** -->
+            <mat-form-field appearance="outline"
+                class="w_input">
+                <mat-label>نوع فرم</mat-label>
+                <mat-select formControlName="formType"
+                    (selectionChange)="OnPackingTypeSelected($event.value)">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let state of states"
+                        [value]="state">{{state}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <!-- *****قالب پیام ***** -->
+            <mat-form-field appearance="outline"
+                class="w_input">
+                <mat-label>قالب پیام</mat-label>
+                <mat-select formControlName="formThemp"
+                    (selectionChange)="OnPackingTypeSelected($event.value)">
+                    <mat-option>None</mat-option>
+                    <mat-option *ngFor="let state of states"
+                        [value]="state">{{state}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+
+        <h3 class="operation"><span>عملیات</span></h3>
+        <mat-card class="test">
+            <div fxLayout="row"
+                fxLayoutGap="32px"
+                formGroupName="tblInv_operation">
+                <!-- *****اولویت ***** -->
+                <mat-form-field appearance="outline">
+                    <mat-label>اولویت</mat-label>
+                    <input matInput
+                        class="backgr"
+                        formControlName="priority"
+                        type="text">
+                </mat-form-field>
+                <!-- ***** فعالیت  ***** -->
+                <mat-form-field appearance="outline"
+                    class="w_input">
+                    <input type="text"
+                        matInput
+                        placeholder="فعالیت"
+                        formControlName="activity"
+                        name="search">
+                    <button matSuffix
+                        mat-button>
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+                <!-- *****عملیات ***** -->
+                <mat-form-field appearance="outline">
+                    <mat-label>عملیات</mat-label>
+                    <mat-select formControlName="operation"
+                        (selectionChange)="OnPackingTypeSelected($event.value)">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let state of states"
+                            [value]="state">{{state}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-slide-toggle>ثبت مقدار</mat-slide-toggle>
+            </div>
+            <h3 class="operation"><span>شرایط</span></h3>
+            <div fxLayout="row"
+                fxLayoutGap="32px"
+                formGroupName="conditions">
+                <!-- *****اولویت ***** -->
+                <mat-form-field appearance="outline">
+                    <mat-label>اولویت</mat-label>
+                    <input matInput
+                        class="backgr"
+                        type="text"
+                        formControlName="priority">
+                </mat-form-field>
+                <!-- ***** شرط  ***** -->
+                <mat-form-field appearance="outline"
+                    class="w_input">
+                    <input type="text"
+                        matInput
+                        placeholder="شرط"
+                        name="search"
+                        formControlName="condition">
+                    <button matSuffix
+                        mat-button>
+                        <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+                <!-- *****عملیات ***** -->
+                <mat-form-field appearance="outline">
+                    <mat-label>عملیات</mat-label>
+                    <mat-select formControlName="activity"
+                        (selectionChange)="OnPackingTypeSelected($event.value)">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let state of states"
+                            [value]="state">{{state}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- *****فیلد ***** -->
+                <mat-form-field appearance="outline">
+                    <mat-label>فیلد</mat-label>
+                    <mat-select formControlName="field"
+                        (selectionChange)="OnPackingTypeSelected($event.value)">
+                        <mat-option>None</mat-option>
+                        <mat-option *ngFor="let state of states"
+                            [value]="state">{{state}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- *****مقدار ***** -->
+                <mat-form-field appearance="outline">
+                    <mat-label>مقدار</mat-label>
+                    <input matInput
+                        class="backgr"
+                        type="text"
+                        formControlName="value">
+                </mat-form-field>
+            </div>
+            <div fxLayout="row"
+                fxLayoutAlign="space-between center">
+                <mat-slide-toggle formControlName="testValue">ثبت مقدار</mat-slide-toggle>
+                <button mat-raised-button
+                    class="btn-condition">
+                    <mat-icon class="blue ">add</mat-icon>
+                    <span>افزودن شرط</span>
+                </button>
+
+            </div>
+        </mat-card>
+
+        <div fxLayout="row"
+            fxLayoutAlign="end center"
+            class="pt32">
+            <button mat-raised-button
+                class="btn-condition">
+                <mat-icon class="blue ">add</mat-icon>
+                <span>افزودن عملیات</span>
+            </button>
+        </div>
+
+        <h3 class="operation pt52 "><span>شرایط</span></h3>
+    </form>
+
+</mat-card>

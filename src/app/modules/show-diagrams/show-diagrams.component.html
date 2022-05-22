@@ -1,0 +1,12 @@
+<div class="diagram-parent"
+  NoRightClickDirective>
+  <app-diagrams [url]="diagramUrl"
+    (importDone)="handleImported($event)">
+  </app-diagrams>
+  <div class="import-error"
+    *ngIf="importError">
+    <strong>Failed to render diagram: </strong>
+    {{ importError.message }}
+  </div>
+</div>
+<button (click)="savexml()">load</button>

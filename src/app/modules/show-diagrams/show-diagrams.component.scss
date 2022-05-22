@@ -1,0 +1,23 @@
+.diagram-parent {
+  height: 500px;
+  border: solid 3px #eee;
+  position: relative;
+}
+
+.import-error {
+  color: red;
+  padding: 20px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+// ::ng-deep.bjs-container{
+//   direction: rtl!important;
+// }
+
+::ng-deep .djs-label tspan {
+  direction: rtl;
+  color: red!important;
+  font-size: 10px;
+}

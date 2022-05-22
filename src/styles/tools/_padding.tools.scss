@@ -1,0 +1,31 @@
+@mixin padding-producer($value) {
+    .p#{$value} {
+        padding: #{$value}px;
+    }
+
+    .pt#{$value} {
+        padding-top: #{$value}px;
+    }
+
+    .pr#{$value} {
+        padding-right: #{$value}px;
+    }
+
+    .pb#{$value} {
+        padding-bottom: #{$value}px;
+    }
+
+    .pl#{$value} {
+        padding-left: #{$value}px;
+    }
+
+    .px#{$value} {
+        padding-right: #{$value}px;
+        padding-left: #{$value}px;
+    }
+
+    .py#{$value} {
+        padding-top: #{$value}px;
+        padding-bottom: #{$value}px;
+    }
+}

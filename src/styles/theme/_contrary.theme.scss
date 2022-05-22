@@ -1,0 +1,103 @@
+@import 'settings/settings.scss';
+
+.contrary {
+    color: $text-color-contrary;
+
+    .mat-form-field {
+        .mat-form-field-wrapper {
+            background: #fff;
+        }
+
+        input,
+        textarea {
+            &::-webkit-input-placeholder {
+                /* WebKit, Blink, Edge */
+                color: $text-color-contrary;
+                opacity: .3;
+            }
+
+            &:-moz-placeholder {
+                /* Mozilla Firefox 4 to 18 */
+                color: $text-color-contrary;
+                opacity: .3;
+            }
+
+            &::-moz-placeholder {
+                /* Mozilla Firefox 19+ */
+                color: $text-color-contrary;
+                opacity: .3;
+            }
+
+            &:-ms-input-placeholder {
+                /* Internet Explorer 10-11 */
+                color: $text-color-contrary;
+                opacity: .3;
+            }
+
+            &::-ms-input-placeholder {
+                /* Microsoft Edge */
+                color: $text-color-contrary;
+                opacity: .3;
+            }
+
+            &::placeholder {
+                /* Most modern browsers support this now. */
+                color: $text-color-contrary;
+                opacity: .3;
+            }
+        }
+
+
+        &.mat-focused {
+            .mat-form-field-wrapper {
+                background-color: #edf1f0;
+            }
+        }
+    }
+
+    .mat-checkbox {
+        &-frame {
+            border-color: $text-color-contrary;
+        }
+
+        &.mat-checkbox-checked {
+            .mat-checkbox-frame {
+                border-color: transparent;
+            }
+        }
+
+        &-disabled {
+            opacity: .6;
+        }
+    }
+
+    .mat-divider {
+        border-top-color: #ddd;
+    }
+
+    .mat-drawer,
+    .mat-drawer-container,
+    .mat-select-arrow,
+    .mat-checkbox,
+    .mat-checkbox-label,
+    .mat-form-field,
+    input,
+    textarea,
+    .mat-select-value-text {
+        color: $text-color-contrary !important;
+    }
+
+    a {
+
+        &:active,
+        &:focus {
+            color: $text-color-contrary;
+        }
+    }
+
+    .input--cellphone {
+        .mat-form-field-wrapper {
+            background: #edf1f0 !important;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+@import "../../_scss/global/_var.scss";
+@import "../../_scss/global/_font.scss";
+@import "../../_scss/global/_mixin.scss";
+
+
+
+.page-not-found {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  background-color: $back;
+
+  .back-to-root {
+    width: 192.7px;
+    border-radius: 8px;
+    background-color: #f1828d;
+    margin: 0 auto;
+    padding: 20px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    // @include font(IranianSans, 17px, center, $white);
+
+    /*   &focus {
+      outline-color: transparent;
+    } */
+  }
+}

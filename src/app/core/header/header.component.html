@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="header-left-side">
+    <div class="navbar-profile" (click)="logout()" >
+      <img src="./assets/images/user.png" alt="avatar" />
+    </div>
+    <app-user-menu (toggle)="moreToggle($event)"></app-user-menu>
+    <app-notify (toggle)="bellToggle($event)"></app-notify>
+  </div>
+  <div class="logo-header" *ngIf="url !== '/dashboard'" routerLink="/">
+    <img src="./assets/images/momtaz-badge.png" alt="momtaz-badge" />
+  </div>
+
+  <!-- <div routerLink="accounting/CodingNew/New">کدینگ</div> -->
+  <img
+    src="./assets/images/hermes.png"
+    class="hermes-logo"
+    alt="hermes-logo"
+    routerLink="/"
+  />
+</header>

@@ -1,0 +1,46 @@
+@import "global/globals";
+
+.detail-form-content {
+  border-radius: 3px;
+  background-color: #ffffff;
+  padding: 32px 22px 0 22px;
+  margin-bottom: 32px;
+}
+.divider-container_detail {
+  margin-bottom: 20px;
+  margin-right: 10px;
+  direction: rtl;
+  h1 {
+    @include font(IranianSans, 18px, right, $blackPearl);
+  }
+}
+.detail {
+  margin-bottom: 32px;
+}
+
+.detail-toggle {
+  width: 30px;
+  padding: 6px 0;
+  border-radius: 6px;
+  background-color: #bcd4d5;
+  cursor: pointer;
+
+  .minus,
+  .plusT {
+    margin: 0 auto;
+  }
+}
+
+.detail_addBtn {
+  margin-top: 30px;
+  margin-left: 20px;
+  padding-bottom: 15rem;
+}
+
+.detail-paginator_container {
+  padding: 15rem 61px 53px 0;
+
+  .detail-total {
+    padding-bottom: 16px;
+  }
+}

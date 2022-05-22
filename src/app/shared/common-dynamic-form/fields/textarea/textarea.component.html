@@ -1,0 +1,18 @@
+<mat-form-field
+  appearance="outline"
+  [formGroup]="group"
+  class="dunamic-field"
+  fxFill
+>
+  <mat-label>{{ field?.label }}</mat-label>
+  <textarea
+    matInput
+    [formControlName]="field.name"
+    [placeholder]="field.placeholder"
+    [attr.rows]="field?.attrs?.rows || 5"
+    [attr.name]="field.name"
+  ></textarea>
+  <mat-error *ngIf="name.invalid && name.touched">
+    <signalr-error [field]="name" [errorTxt]="field?.errors"></signalr-error>
+  </mat-error>
+</mat-form-field>
