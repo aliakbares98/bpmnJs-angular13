@@ -1,12 +1,14 @@
-<div class="diagram-parent"
-  NoRightClickDirective>
-  <app-diagrams [url]="diagramUrl"
-    (importDone)="handleImported($event)">
-  </app-diagrams>
-  <div class="import-error"
-    *ngIf="importError">
-    <strong>Failed to render diagram: </strong>
-    {{ importError.message }}
+<div class="row col-12 pr-0">
+  <div>
+    <button type="button" (click)="saveWorkFlow()">Save</button>
+    <button type="button" (click)="saveSVG($event)">svg</button>
   </div>
-</div>
-<button (click)="savexml()">load</button>
+  <div class="diagram-parent">
+    <app-diagrams #appDiagram [file]="diagramFile" (importDone)="handleImported($event)"></app-diagrams>
+  
+    <div class="import-error" *ngIf="importError">
+      <strong>Failed to render diagram: </strong>
+      {{ importError.message }}
+    </div>
+  </div>
+  </div>

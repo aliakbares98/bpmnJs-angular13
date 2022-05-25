@@ -191,6 +191,8 @@ export class SignalrService {
     const preContracts = this.getContracts().filter(
       (c) => c.ApiKey !== contract.ApiKey
     );
+    console.log(contract);
+    
     const newContracts = [...preContracts, contract];
     this.setContracts(newContracts);
   }

@@ -1,10 +1,12 @@
 
-import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { HumanActivityComponent } from './human-activity/human-activity.component';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { DiagramsComponent } from '@shared/diagrams/diagrams.component';
 
-import BpmnJS from 'bpmn-js/lib/Modeler.js';
+
+// **********  BPMN IMPORT
+import * as BpmnJS from 'bpmn-js/dist/bpmn-modeler.production.min.js';
+import * as FileSaver from 'file-saver';
+
 
 @Component({
   selector: 'app-show-diagrams',
@@ -14,34 +16,27 @@ import BpmnJS from 'bpmn-js/lib/Modeler.js';
 export class ShowDiagramsComponent implements OnInit {
 
 
-  constructor(private http: HttpClient, private dialog: MatDialog) { }
+  constructor() { }
 
-  ngOnInit() {
+  ngOnInit() { }
 
-
-  }
-
-
-
-  public xmlItems: any;
-
-  //store xml data into array variable
-
-  bpmnJS = new BpmnJS();
-  title = 'bpmn-js-angular';
-
-
-  diagramUrl = './assets/diagram/defautl.bpmn';
-  // diagramUrl = './assets/xml/diagram.xml';
-
+  bpmnSvg = new BpmnJS;
+  diagramFile = 'default.bpmn';
   importError?: Error;
 
-  handleImported(event) {
-    const {
-      type,
-      error,
-      warnings
-    } = event;
+
+  @ViewChild(DiagramsComponent) diagramComponent!: DiagramsComponent;
+
+  loadWorkflow(workflowFile: string): void {
+    this.diagramFile = workflowFile;
+  }
+
+  clearEditor(): void {
+    this.diagramFile = 'default.bpmn';
+  }
+
+  handleImported(event: any) {
+    const { type, error, warnings } = event;
 
     if (type === 'success') {
       console.log(`Rendered diagram (%s warnings)`, warnings.length);
@@ -53,73 +48,24 @@ export class ShowDiagramsComponent implements OnInit {
 
     this.importError = error;
   }
-  gotDialog() {
-    this.dialog.open(HumanActivityComponent)
-  }
-  savexml() {
-    // this.bpmnJS.saveXML((err, data) => {
-      //   console.log(data);
-      // });
-      debugger;
-      this.bpmnJS.saveXML({ format: true }, function (err, xml) {
-      console.log(err, xml);
-    });
-  }
 
-
-
- 
-  json: any;
-  
-  exportJson() {
-  
-  }
-
-  load(): void {
-    //  const modeler = new BpmnJS();
-    // try {
-    //   const result =  modeler.saveXML();
-    //   const { xml } = result;
-    //   console.log(xml);
-    // } catch (err) {
-    //   console.log(err);
-    // }
-
-    // this.bpmnJS.saveXML((err: any, xml: any) => {
-    //   console.log(this.bpmnJS);
-
-    //   if (err) {
-    //     console.log(Error, err);
-    //   } else {
-    //     console.log('Result of saving XML: ', xml);
-    //   }
-    // })
-    // this.http.get(this.diagramUrl, {
-    //   headers: { obsesrve: 'response' }, responseType: 'text'
-    // }).subscribe({
-    //   next: (x: any) => {
-    //     console.log('Fetched XML, now importing: ', x);
-    //     // this.bpmnJS.importXML(x, this.handleError);
-    //     // try {
-    //     //   const result = await this.bpmnJS.importXML(xml);
-    //     //   const { warnings } = result;
-    //     //   console.log(warnings);
-    //     // } catch (err) {
-    //     //   console.log(err.message, err.warnings);
-    //     // }
-    //   },
-    // });
-  }
-
-
-  // save(): void {
-
-  //   this.bpmnJS.saveXML((err: any, xml: any) => console.log('Result of saving XML: ', err, xml));
-  // }
-
-  handleError(err: any) {
-    if (err) {
-      console.warn('Ups, error: ', err);
+  async saveWorkFlow(): Promise<void> {
+    try {
+      let bpmnContent: any = await this.diagramComponent.getBpmnContent();
+      console.log(bpmnContent.xml);
+    } catch (err) {
     }
   }
+
+  async saveSVG(e) {
+    let bpmnContent: any = await this.diagramComponent.getBpmnSVG();
+    await this.bpmnSvg.saveSVG((err: any, svg: any) => {
+      const blob = new Blob([svg], { type: 'text/plain;charset=utf-8' });
+      FileSaver.saveAs(blob, './assets/diagram/test.bpmn');
+    });
+
+  }
+
 }
+
+
