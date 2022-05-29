@@ -31,6 +31,7 @@
     "@szgc/bpmn-i18n": "^1.0.2",
     "bpmn-font": "^0.10.0",
     "bpmn-js": "^9.1.0",
+    "bpmn-js-disable-collapsed-subprocess": "^0.1.4",
     "bpmn-js-properties-panel": "^1.1.1",
     "combobox": "^1.0.1",
     "file-saver": "^2.0.5",

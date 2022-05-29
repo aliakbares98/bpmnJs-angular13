@@ -14,3 +14,7 @@ export default function customTranslate(template, replacements) {
     return replacements[key] || '{' + key + '}';
   });
 }
+
+
+
+

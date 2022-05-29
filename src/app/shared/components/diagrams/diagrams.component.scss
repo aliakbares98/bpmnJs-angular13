@@ -1,5 +1,3 @@
-
-
 .diagram-container {
   direction: ltr;
   height: 100%;
@@ -18,5 +16,7 @@
 
 .djs-direct-editing-content {
   font-family: IranianSans, "Helvetica Neue", sans-serif;
-
+}
+.entry.bpmn-icon-intermediate-event-throw-message {
+  display: none !important;
 }

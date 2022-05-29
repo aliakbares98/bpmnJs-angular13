@@ -1,13 +1,17 @@
-import { HumanActivityComponent } from './../../../modules/show-diagrams/human-activity/human-activity.component';
-import { MatDialog } from '@angular/material/dialog';
 import { switchMap, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog } from '@angular/material/dialog';
 import { Subscription, Observable, from } from 'rxjs';
+import { HumanActivityComponent } from './../../../modules/show-diagrams/human-activity/human-activity.component';
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+
+
+
+
 import customTranslate from './fn-translate.js';
-
-
+import CustomPaletteModule from './fn-remove-menu.js';
 import * as BpmnJS from 'bpmn-js/dist/bpmn-modeler.development.js';
+import CustomContextPadModule from "./index.js";
 
 
 
@@ -20,24 +24,24 @@ import * as BpmnJS from 'bpmn-js/dist/bpmn-modeler.development.js';
 })
 export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
 
-
   private bpmnJS: BpmnJS;
   @ViewChild('ref', { static: true }) private el!: ElementRef;
   @Output() private importDone: EventEmitter<any> = new EventEmitter();
   @Input() public file!: string;
 
-  constructor(private http: HttpClient, private dialog: MatDialog) {
-  }
+  constructor(
+    private http: HttpClient,
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
-
-
     this.bpmnJS = new BpmnJS({
       propertiesPanel: {
         parent: '#properties',
       },
       additionalModules: [
-        { translate: ['value', customTranslate] }
+        { translate: ['value', customTranslate] },
+        CustomPaletteModule,
+        CustomContextPadModule
       ],
       moddleExtensions: {
         //       camunda: camundaModdleDescriptor,
@@ -45,8 +49,6 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
       },
 
     });
-
-
 
 
     this.bpmnJS.on('import.done', ({ error }: { error: any }) => {
@@ -77,10 +79,11 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
 
     });
 
+
+
+
+
   }
-
-
-
 
   removeShape(shape, hints) {
     var context = {
@@ -88,7 +91,6 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
       hints: hints || {}
     }
   }
-
 
   ngOnChanges(changes: SimpleChanges) {
     // re-import whenever the url changes
@@ -108,19 +110,21 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
         switchMap((xml: string) => this.importDiagram(xml)),
         map((result) => result.warnings)
       )
-      .subscribe(
-        (warnings: any) => {
+      .subscribe({
+        next: (warnings: any) => {
           this.importDone.emit({
             type: 'success',
             warnings,
           });
-        },
-        (err: any) => {
-          this.importDone.emit({
-            type: 'error',
-            error: err,
-          });
+          (err: any) => {
+            this.importDone.emit({
+              type: 'error',
+              error: err,
+            });
+          }
         }
+      }
+
       );
   }
 
