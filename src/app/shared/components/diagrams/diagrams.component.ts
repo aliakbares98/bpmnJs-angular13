@@ -1,17 +1,15 @@
-// import { BpmnJS } from 'bpmn-js/lib/NavigatedViewer.js';
+import { HumanActivityComponent } from './../../../modules/show-diagrams/human-activity/human-activity.component';
 import { MatDialog } from '@angular/material/dialog';
 import { switchMap, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Subscription, Observable, from } from 'rxjs';
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
+import customTranslate from './fn-translate.js';
 
-import * as svg from 'save-svg-as-png';
 
-import { HumanActivityComponent } from 'src/app/modules/show-diagrams/human-activity/human-activity.component';
+import * as BpmnJS from 'bpmn-js/dist/bpmn-modeler.development.js';
 
-import * as BpmnJS from 'bpmn-js/dist/bpmn-modeler.production.min.js';
-// import * from 'bpmn-js/lib/bpmn-modeler.production.min.js';
-import * as FileSaver from 'file-saver';
+
 
 @Component({
   selector: 'app-diagrams',
@@ -24,7 +22,6 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
 
 
   private bpmnJS: BpmnJS;
-
   @ViewChild('ref', { static: true }) private el!: ElementRef;
   @Output() private importDone: EventEmitter<any> = new EventEmitter();
   @Input() public file!: string;
@@ -33,26 +30,31 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
+
+
     this.bpmnJS = new BpmnJS({
       propertiesPanel: {
         parent: '#properties',
       },
       additionalModules: [
-        // propertiesPanelModule,
-        //        customControlsModule,
-        //       customPropertiesProviderModule
+        { translate: ['value', customTranslate] }
       ],
       moddleExtensions: {
         //       camunda: camundaModdleDescriptor,
         //       custom: customModdleDescriptor
       },
+
     });
+
+
 
 
     this.bpmnJS.on('import.done', ({ error }: { error: any }) => {
       if (!error) {
         this.bpmnJS.get('canvas').zoom('fit-viewport');
       }
+
+
     });
 
     this.bpmnJS.attachTo(this.el.nativeElement);
@@ -64,7 +66,7 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
       console.log(event);
       switch (event.element.type) {
         case 'bpmn:StartEvent':
-          this.dialogShape()
+          // this.dialogShape()
           break;
         case "bpmn:Flow_0mn2z98_di":
 
@@ -75,8 +77,18 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
 
     });
 
-
   }
+
+
+
+
+  removeShape(shape, hints) {
+    var context = {
+      shape: shape,
+      hints: hints || {}
+    }
+  }
+
 
   ngOnChanges(changes: SimpleChanges) {
     // re-import whenever the url changes
@@ -91,7 +103,7 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
 
   loadDiagram(file: string): Subscription {
     return this.http
-      .get('./assets/diagram/test.bpmn', { responseType: 'text' })
+      .get('./assets/diagram/defautl.bpmn', { responseType: 'text' })
       .pipe(
         switchMap((xml: string) => this.importDiagram(xml)),
         map((result) => result.warnings)
@@ -122,12 +134,12 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
     return this.bpmnJS.saveXML({ format: true });
   }
   async getBpmnSVG() {
-    var svgCode =await this.bpmnJS.saveSVG({ format: true }, function (error, svg) {
+    var svgCode = await this.bpmnJS.saveSVG({ format: true }, function (error, svg) {
       if (error) {
-          return;
+        return;
       }
       var svgBlob = new Blob([svg], {
-          type: 'image/svg+xml'
+        type: 'image/svg+xml'
       });
       var fileName = 'sdasdasds.svg';
       var downloadLink = document.createElement('a');
@@ -137,9 +149,9 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
       downloadLink.click();
       downloadLink.style.visibility = 'hidden';
       document.body.appendChild(downloadLink);
-      downloadLink.click();                                        
+      downloadLink.click();
     });
-   
+
   }
 
   dialogShape() {

@@ -1,4 +1,5 @@
 
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DiagramsComponent } from '@shared/diagrams/diagrams.component';
 
@@ -16,11 +17,26 @@ import * as FileSaver from 'file-saver';
 export class ShowDiagramsComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  ngOnInit() { }
+  ngOnInit() {
 
-  bpmnSvg = new BpmnJS;
+    var customTranslate = {
+      translate: ['value', '../../shared/i18n/fa.json']
+    };
+
+    var modeler = new BpmnJS({
+      // ...
+      additionalModules: [
+        customTranslate
+      ]
+    });
+  }
+  public data: any;
+  bpmnData;
+  json: any;
+  bpmnJS = new BpmnJS();
+  bpmnSvg = new BpmnJS();
   diagramFile = 'default.bpmn';
   importError?: Error;
 
@@ -64,6 +80,15 @@ export class ShowDiagramsComponent implements OnInit {
       FileSaver.saveAs(blob, './assets/diagram/test.bpmn');
     });
 
+  }
+
+
+
+
+  savexml() {
+    this.bpmnJS.saveXML((err, data) => {
+      console.log(data);
+    });
   }
 
 }

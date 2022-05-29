@@ -1,9 +1,22 @@
+
+
 .diagram-container {
   direction: ltr;
   height: 100%;
   width: 100%;
-
   border: 1px solid black;
   border-radius: 1em;
   min-height: 90vh;
+}
+
+.djs-label tspan {
+  direction: ltr;
+  font-family: IranianSans, "Helvetica Neue", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.djs-direct-editing-content {
+  font-family: IranianSans, "Helvetica Neue", sans-serif;
+
 }

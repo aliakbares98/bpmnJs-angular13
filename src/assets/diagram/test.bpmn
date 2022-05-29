@@ -1,36 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
-  <process id="wsProcess" name="My process" isExecutable="true" activiti:candidateStarterGroups="RH">
-    <startEvent id="startevent1" name="Start"></startEvent>
-    <endEvent id="endevent1" name="End"></endEvent>
-    <userTask id="usertask2" name="Demo_Task" activiti:assignee="bilel"></userTask>
-    <sequenceFlow id="flow4" sourceRef="startevent1" targetRef="usertask2"></sequenceFlow>
-    <dataObject id="domaine" name="domaine" itemSubjectRef="xsd:string">
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" 
+  xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" 
+  xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" 
+  xmlns:camunda="http://camunda.org/schema/1.0/bpmn" 
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+  xmlns:activiti="http://activiti.org/bpmn" targetNamespace="http://www.activiti.org/processdef">
+  <process id="process" isExecutable="true">
+    <startEvent id="sid-F6A0EEB4-10A4-4DE5-B1DF-74AD0D3CBB11" />
+    <userTask id="afdasfasfafa" name="kkkkkkkkk" activiti:assignee="aa" activiti:candidateUsers="bb" activiti:candidateGroups="cc" activiti:async="true" activiti:dueDate="cd" activiti:formKey="3afafaf" activiti:priority="aaf">
+      <documentation>afafa</documentation>
       <extensionElements>
-        <activiti:value>test</activiti:value>
+        <activiti:formProperty id="new_property_1" name="3232" type="string" expression="3232" variable="3232" />
+        <activiti:executionListener event="start" class="afdafafa" />
+        <activiti:taskListener event="create" class="3232" />
       </extensionElements>
-    </dataObject>
-    <sequenceFlow id="flow5" sourceRef="usertask2" targetRef="endevent1"></sequenceFlow>
+      <multiInstanceLoopCharacteristics activiti:collection="ccc" activiti:elementVariable="b">
+        <loopCardinality>a</loopCardinality>
+        <completionCondition>ac</completionCondition>
+      </multiInstanceLoopCharacteristics>
+    </userTask>
+    <sequenceFlow id="sid-EFDFDA3A-7886-4C92-9979-1302F6781436" sourceRef="sid-F6A0EEB4-10A4-4DE5-B1DF-74AD0D3CBB11" targetRef="afdasfasfafa" />
+    <userTask id="ac" name="fafasfas">
+      <outgoing>SequenceFlow_11pcs84</outgoing>
+    </userTask>
+    <sequenceFlow id="sid-7ADB8586-9F5A-4E7B-984A-33CC29B6C81C" sourceRef="afdasfasfafa" targetRef="ac" />
+    <sequenceFlow id="SequenceFlow_11pcs84" sourceRef="ac" targetRef="Task_0ajlys2" />
+    <userTask id="Task_0ajlys2" name="434334" camunda:asyncBefore="true" camunda:asyncAfter="true" camunda:jobPriority="34234" activiti:assignee="4432" activiti:candidateUsers="3423423" activiti:candidateGroups="4234234" camunda:dueDate="23423423" camunda:followUpDate="4324234" camunda:priority="432" activiti:formKey="43534434">
+      <documentation>43242342</documentation>
+      <extensionElements>
+        <camunda:failedJobRetryTimeCycle>2342342</camunda:failedJobRetryTimeCycle>
+        <camunda:executionListener class="423423423" event="start" />
+        <camunda:inputOutput>
+          <camunda:inputParameter name="Input_0c76cuu">3423432423</camunda:inputParameter>
+          <camunda:outputParameter name="Output_2tckopd">3432423432</camunda:outputParameter>
+        </camunda:inputOutput>
+        <camunda:properties>
+          <camunda:property name="434" value="23423423" />
+        </camunda:properties>
+        <camunda:taskListener class="434343阿发" event="create" id="343434343">
+          <camunda:field name="323242">
+            <camunda:string>4324234234234</camunda:string>
+          </camunda:field>
+        </camunda:taskListener>
+        <camunda:formData>
+          <camunda:formField id="FormField_1ko5lri" label="43434" type="string" defaultValue="34343">
+            <camunda:properties>
+              <camunda:property id="Property_3f2rome" value="4343" />
+            </camunda:properties>
+            <camunda:validation>
+              <camunda:constraint name="43" config="4" />
+            </camunda:validation>
+          </camunda:formField>
+        </camunda:formData>
+      </extensionElements>
+      <incoming>SequenceFlow_11pcs84</incoming>
+      <multiInstanceLoopCharacteristics isSequential="true" />
+    </userTask>
   </process>
-  <bpmndi:BPMNDiagram id="BPMNDiagram_wsProcess">
-    <bpmndi:BPMNPlane bpmnElement="wsProcess" id="BPMNPlane_wsProcess">
-      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
-        <omgdc:Bounds height="35.0" width="35.0" x="50.0" y="190.0"></omgdc:Bounds>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_process">
+    <bpmndi:BPMNPlane id="BPMNPlane_process" bpmnElement="process">
+      <bpmndi:BPMNShape id="BPMNShape_sid-F6A0EEB4-10A4-4DE5-B1DF-74AD0D3CBB11" bpmnElement="sid-F6A0EEB4-10A4-4DE5-B1DF-74AD0D3CBB11">
+        <omgdc:Bounds x="199.75" y="159" width="30" height="30" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
-        <omgdc:Bounds height="35.0" width="35.0" x="340.0" y="190.0"></omgdc:Bounds>
+      <bpmndi:BPMNShape id="BPMNShape_afdasfasfafa" bpmnElement="afdasfasfafa">
+        <omgdc:Bounds x="274.75" y="134" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape bpmnElement="usertask2" id="BPMNShape_usertask2">
-        <omgdc:Bounds height="55.0" width="105.0" x="140.0" y="180.0"></omgdc:Bounds>
+      <bpmndi:BPMNShape id="BPMNShape_ac" bpmnElement="ac">
+        <omgdc:Bounds x="419.75" y="134" width="100" height="80" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge bpmnElement="flow4" id="BPMNEdge_flow4">
-        <omgdi:waypoint x="85.0" y="207.0"></omgdi:waypoint>
-        <omgdi:waypoint x="140.0" y="207.0"></omgdi:waypoint>
+      <bpmndi:BPMNEdge id="BPMNEdge_sid-7ADB8586-9F5A-4E7B-984A-33CC29B6C81C" bpmnElement="sid-7ADB8586-9F5A-4E7B-984A-33CC29B6C81C">
+        <omgdi:waypoint x="374.75" y="174" />
+        <omgdi:waypoint x="419.75" y="174" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="flow5" id="BPMNEdge_flow5">
-        <omgdi:waypoint x="245.0" y="207.0"></omgdi:waypoint>
-        <omgdi:waypoint x="340.0" y="207.0"></omgdi:waypoint>
+      <bpmndi:BPMNEdge id="BPMNEdge_sid-EFDFDA3A-7886-4C92-9979-1302F6781436" bpmnElement="sid-EFDFDA3A-7886-4C92-9979-1302F6781436">
+        <omgdi:waypoint x="229.75" y="174" />
+        <omgdi:waypoint x="274.75" y="174" />
       </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="SequenceFlow_11pcs84_di" bpmnElement="SequenceFlow_11pcs84">
+        <omgdi:waypoint x="520" y="174" />
+        <omgdi:waypoint x="570" y="174" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="UserTask_15xapiq_di" bpmnElement="Task_0ajlys2">
+        <omgdc:Bounds x="570" y="134" width="100" height="80" />
+      </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
   </bpmndi:BPMNDiagram>
 </definitions>
