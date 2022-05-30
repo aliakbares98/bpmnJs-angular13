@@ -1,14 +1,29 @@
-<div class="row col-12 pr-0">
-  <div>
-    <button type="button" (click)="saveWorkFlow()">Save</button>
-    <button type="button" (click)="saveSVG($event)">svg</button>
+<div class="diagram-parent">
+  <app-diagrams #appDiagram
+    [file]="diagramFile"
+    (importDone)="handleImported($event)"></app-diagrams>
+
+  <div class="import-error"
+    *ngIf="importError">
+    <strong>Failed to render diagram: </strong>
+    {{ importError.message }}
   </div>
-  <div class="diagram-parent">
-    <app-diagrams #appDiagram [file]="diagramFile" (importDone)="handleImported($event)"></app-diagrams>
-  
-    <div class="import-error" *ngIf="importError">
-      <strong>Failed to render diagram: </strong>
-      {{ importError.message }}
-    </div>
-  </div>
+</div>
+
+<div fxLayout="row"
+  fxLayoutAlign="end center" fxLayoutGap="20px" class="diagram_btn">
+ 
+  <button mat-raised-button
+    color="primary"
+    (click)="saveSVG($event)">SVG خروجی </button>
+    <button mat-raised-button
+    color="primary"
+    (click)="saveWorkFlow()">چاپ</button>
+  <button mat-raised-button
+    color="primary"
+    (click)="saveSVG($event)">ثبت اطلاعات</button>
+    <button mat-raised-button
+    class="diagram_btn-cancel"
+      color="primary"
+      routerLink="/">انصراف</button>
   </div>

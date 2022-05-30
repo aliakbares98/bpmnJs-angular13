@@ -19,9 +19,7 @@
 .djs-direct-editing-content {
   font-family: IranianSans, "Helvetica Neue", sans-serif;
 }
-.entry.bpmn-icon-intermediate-event-throw-message {
-  display: none !important;
-}
+
 .djs-palette-entries {
   display: none;
 }
@@ -30,28 +28,44 @@
 }
 
 // Hidden Menu bar
-.entry.bpmn-icon-intermediate-event-none,
-.entry.bpmn-icon-start-event-message,
+// .entry.bpmn-icon-start-event-message,
 .entry.bpmn-icon-start-event-condition,
 .entry.bpmn-icon-start-event-signal,
 .entry.bpmn-icon-subprocess-collapsed,
 .entry.diagram-containerentry.bpmn-icon-manual,
 .entry.bpmn-icon-subprocess-expanded,
 .djs-popup-body.entry.bpmn-icon-send,
-.djs-popup-header,.entry.bpmn-icon-manual,
+.djs-popup-header,
+.entry.bpmn-icon-manual,
 .entry.bpmn-icon-call-activity,
 .entry.bpmn-icon-script,
-.entry.bpmn-icon-business-rule {
+.entry.bpmn-icon-business-rule,
+.entry.bpmn-icon-gateway-complex,
+.entry.bpmn-icon-gateway-eventbased,
+.entry.bpmn-icon-receive,
+.entry.bpmn-icon-send,
+.entry.bpmn-icon-intermediate-event-none,
+.entry.bpmn-icon-end-event-message,
+.entry.bpmn-icon-end-event-escalation,
+.entry.bpmn-icon-end-event-error,
+.entry.bpmn-icon-end-event-compensation,
+.entry.bpmn-icon-end-event-signal,
+.entry.bpmn-icon-intermediate-event-catch-timer,
+.entry.bpmn-icon-intermediate-event-throw-escalation,
+.entry.bpmn-icon-intermediate-event-catch-condition,
+.entry.bpmn-icon-intermediate-event-catch-link,
+.entry.bpmn-icon-intermediate-event-throw-link,
+.entry.bpmn-icon-intermediate-event-throw-compensation,
+.entry.bpmn-icon-intermediate-event-catch-signal,
+.entry.bpmn-icon-intermediate-event-throw-signal {
   display: none;
 }
-
-
 
 /**
  * outline styles
  */
 
- .djs-outline {
+.djs-outline {
   fill: none;
   visibility: hidden;
 }
@@ -60,11 +74,11 @@
 .djs-element.selected .djs-outline {
   visibility: visible;
   shape-rendering: crispEdges;
-  stroke-dasharray: 3,3;
+  stroke-dasharray: 3, 3;
 }
 
 .djs-element.selected .djs-outline {
-  stroke: #8888FF;
+  stroke: #8888ff;
   stroke-width: 1px;
 }
 
@@ -74,7 +88,7 @@
 }
 
 .djs-shape.connect-ok .djs-visual > :nth-child(1) {
-  fill: #DCFECC /* light-green */ !important;
+  fill: #dcfecc /* light-green */ !important;
 }
 
 .djs-shape.connect-not-ok .djs-visual > :nth-child(1),
@@ -83,7 +97,7 @@
 }
 
 .djs-shape.new-parent .djs-visual > :nth-child(1) {
-  fill: #F7F9FF !important;
+  fill: #f7f9ff !important;
 }
 
 svg.drop-not-ok {
@@ -91,17 +105,17 @@ svg.drop-not-ok {
 }
 
 svg.new-parent {
-  background: #F7F9FF /* light-blue */ !important;
+  background: #f7f9ff /* light-blue */ !important;
 }
 
 .djs-connection.connect-ok .djs-visual > :nth-child(1),
 .djs-connection.drop-ok .djs-visual > :nth-child(1) {
-  stroke: #90DD5F /* light-green */ !important;
+  stroke: #90dd5f /* light-green */ !important;
 }
 
 .djs-connection.connect-not-ok .djs-visual > :nth-child(1),
 .djs-connection.drop-not-ok .djs-visual > :nth-child(1) {
-  stroke: #E56283 /* light-red */ !important;
+  stroke: #e56283 /* light-red */ !important;
 }
 
 .drop-not-ok,
@@ -113,7 +127,6 @@ svg.new-parent {
   stroke-width: 5px !important;
   stroke: rgba(255, 116, 0, 0.7) !important;
 }
-
 
 /**
 * Selection box style
@@ -261,13 +274,12 @@ svg.new-parent {
   cursor: ew-resize;
 }
 
-
 /**
  * snapping
  */
 .djs-snap-line {
   stroke: rgb(255, 195, 66);
-  stroke: rgba(255, 195, 66, 0.50);
+  stroke: rgba(255, 195, 66, 0.5);
   stroke-linecap: round;
   stroke-width: 2px;
   pointer-events: none;
@@ -303,7 +315,7 @@ svg.new-parent {
   padding-top: 5px;
 
   border: none;
-  border-bottom: solid 1px #DDD;
+  border-bottom: solid 1px #ddd;
 
   clear: both;
 }
@@ -333,7 +345,7 @@ svg.new-parent {
 }
 
 .djs-palette .djs-palette-entries:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -404,8 +416,8 @@ svg.new-parent {
 
   cursor: default;
 
-  background-color: #FEFEFE;
-  box-shadow: 0 0 2px 1px #FEFEFE;
+  background-color: #fefefe;
+  box-shadow: 0 0 2px 1px #fefefe;
   pointer-events: all;
 }
 
@@ -414,7 +426,7 @@ svg.new-parent {
 }
 
 .djs-context-pad .entry:hover {
-  background: #C9F4FF;
+  background: #c9f4ff;
   cursor: pointer;
 }
 
@@ -463,7 +475,7 @@ svg.new-parent {
 .djs-popup .djs-popup-header .entry.active {
   color: rgb(255, 116, 0);
   border: solid 1px rgb(255, 116, 0);
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 .djs-popup-body .entry {
@@ -475,11 +487,11 @@ svg.new-parent {
 }
 
 .djs-popup-body {
-  background-color: #FEFEFE;
+  background-color: #fefefe;
 }
 
 .djs-popup-header {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #ddd;
 }
 
 .djs-popup-header .entry {
@@ -494,9 +506,10 @@ svg.new-parent {
 /**
  * popup / palette styles
  */
-.djs-popup, .djs-palette {
-  background: #FAFAFA;
-  border: solid 1px #CCC;
+.djs-popup,
+.djs-palette {
+  background: #fafafa;
+  border: solid 1px #ccc;
   border-radius: 2px;
 }
 
@@ -525,7 +538,7 @@ svg.new-parent {
 }
 
 .djs-bendpoint .djs-visual {
-  fill: #17BFCF;
+  fill: #17bfcf;
   stroke-width: 1px;
   stroke-opacity: 0.5;
   stroke: black;
@@ -552,7 +565,7 @@ svg.new-parent {
 .djs-segment-dragger.djs-dragging .djs-visual,
 .djs-bendpoint:hover .djs-visual,
 .djs-bendpoint.floating .djs-visual {
-  fill: #17BFCF;
+  fill: #17bfcf;
   stroke-opacity: 0.5;
   stroke: black;
 }
@@ -597,15 +610,14 @@ svg.new-parent {
 .djs-segment-dragger.djs-dragging,
 .djs-bendpoint.djs-dragging {
   display: block;
-  opacity: 1.0;
+  opacity: 1;
 }
 
 .djs-segment-dragger.djs-dragging .djs-visual,
 .djs-bendpoint.djs-dragging .djs-visual {
-  fill: #17BFCF;
+  fill: #17bfcf;
   stroke-opacity: 0.5;
 }
-
 
 /**
  * tooltips
@@ -634,7 +646,6 @@ svg.new-parent {
   opacity: 1;
 }
 
-
 /**
  * search pad
  */
@@ -653,8 +664,8 @@ svg.new-parent {
 
   font-size: 1.05em;
   opacity: 0.9;
-  background: #FAFAFA;
-  border: solid 1px #CCC;
+  background: #fafafa;
+  border: solid 1px #ccc;
   border-radius: 2px;
 }
 
@@ -671,7 +682,7 @@ svg.new-parent {
 
 .djs-search-input input:focus {
   outline: none;
-  border-color: #52B415;
+  border-color: #52b415;
 }
 
 .djs-search-results {
@@ -689,7 +700,7 @@ svg.new-parent {
   width: 100%;
   padding: 6px 10px;
   background: white;
-  border-bottom: solid 1px #AAA;
+  border-bottom: solid 1px #aaa;
   border-radius: 1px;
 }
 
@@ -719,11 +730,9 @@ svg.new-parent {
 }
 
 .djs-search-overlay {
-  background: #17BFCF;
+  background: #17bfcf;
   opacity: 0.3;
 }
-
-
 
 /**
  * hidden styles

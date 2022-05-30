@@ -26,7 +26,8 @@ const routes: Routes = [
     CommonModule,
     ReactiveFormsModule,
     MatModule,
-    SharedModule
+    SharedModule,
+    
   ],
   exports: []
 })

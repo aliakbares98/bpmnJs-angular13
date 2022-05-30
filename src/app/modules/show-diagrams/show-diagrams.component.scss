@@ -7,7 +7,6 @@
 .import-error {
   color: red;
   padding: 20px;
-
   position: absolute;
   top: 0;
   left: 0;
@@ -21,3 +20,13 @@
   color: red!important;
   font-size: 10px;
 }
+
+.diagram_btn{
+  padding-top: 20px;
+
+  .diagram_btn-cancel{
+    margin-right: 100px;
+
+  }
+}
+
