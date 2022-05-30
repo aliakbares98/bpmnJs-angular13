@@ -25,12 +25,7 @@ export class ShowDiagramsComponent implements OnInit {
       translate: ['value', '../../shared/i18n/fa.json']
     };
 
-    var modeler = new BpmnJS({
-      // ...
-      additionalModules: [
-        customTranslate
-      ]
-    });
+ 
   }
   public data: any;
   bpmnData;

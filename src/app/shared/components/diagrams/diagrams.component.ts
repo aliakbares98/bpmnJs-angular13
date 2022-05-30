@@ -9,10 +9,11 @@ import { Component, ElementRef, EventEmitter, Input, OnChanges, OnDestroy, OnIni
 
 
 import customTranslate from './fn-translate.js';
-import CustomPaletteModule from './fn-remove-menu.js';
 import * as BpmnJS from 'bpmn-js/dist/bpmn-modeler.development.js';
-import CustomContextPadModule from "./index.js";
 
+// Validation
+import lintModule from 'bpmn-js-bpmnlint';
+import bpmnlintConfig from './bpmnlintconfig-packed.js';
 
 
 @Component({
@@ -34,19 +35,25 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
     private dialog: MatDialog) { }
 
   ngOnInit(): void {
+
     this.bpmnJS = new BpmnJS({
       propertiesPanel: {
         parent: '#properties',
       },
-      additionalModules: [
-        { translate: ['value', customTranslate] },
-        CustomPaletteModule,
-        CustomContextPadModule
-      ],
-      moddleExtensions: {
-        //       camunda: camundaModdleDescriptor,
-        //       custom: customModdleDescriptor
+      keyboard: {
+        bindTo: document
       },
+      linting: {
+        bpmnlint: bpmnlintConfig,
+        active: true
+      },
+      additionalModules: [
+        lintModule,
+
+        { translate: ['value', customTranslate] },
+      ],
+      enableZeebeUserTasks: true,
+   
 
     });
 
