@@ -1,3 +1,5 @@
+import { EditBaseClass } from '@classes/edit-base.class';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ListClass } from './../../../../shared/classes/list.class';
@@ -13,22 +15,33 @@ import { OrganizationManagementService } from './../../service/organization-mana
 })
 
 
-export class AddProcessInformationComponent extends ListClass implements OnInit {
+export class AddProcessInformationComponent extends EditBaseClass implements OnInit {
+
+
+  public pageTitle = 'ثبت اطلاعات فرآیند ';
 
   constructor(
     public override service: OrganizationManagementService,
-    public override router: Router,
-    eb: EventBusService
+    fb: FormBuilder
   ) {
-    super(eb)
+    super(fb)
   }
 
   public statusList: Array<string> = [];
-  public override showList: any;
 
 
   override async ngOnInit() {
     super.ngOnInit();
+  }
+
+  override initForm: any = () => {
+    this.form = this.fb.group({
+      
+    })
+   };
+
+  send() {
+
   }
 
 }

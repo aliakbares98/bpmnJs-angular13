@@ -1,8 +1,8 @@
-import { EventBusService } from './../../../core/services/event-bus.service';
 import { Router } from '@angular/router';
-import { OrganizationManagementService } from './../service/organization-management.service';
-import { ListClass } from './../../../shared/classes/list.class';
+import { ListClass } from '@classes/list.class';
 import { Component, OnInit } from '@angular/core';
+import { EventBusService } from '@services/event-bus.service';
+import { OrganizationManagementService } from './../service/organization-management.service';
 
 
 @Component({
@@ -15,11 +15,15 @@ export class OrganizationManagementComponent extends ListClass implements OnInit
   constructor(
     public override service: OrganizationManagementService,
     public override router: Router,
-    eb: EventBusService
+    eb: EventBusService,
   ) {
     super(eb)
   }
 
+  public statusList: Array<string> = [];
+  public override  showList: any;
+
+  
   override async ngOnInit() {
     super.ngOnInit();
   }

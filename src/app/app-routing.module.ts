@@ -23,7 +23,7 @@ const routes: Routes = [
         loadChildren: () => import(`./modules/managment/managment.module`).then((m) => m.ManagmentModule),
       },
       {
-        path: 'org-mang',
+        path: 'Management/WfpDgmSrch',
         loadChildren: () => import(`./modules/organization-management/organization-management.module`).then((m) => m.OrganizationManagementModule),
       },
       {

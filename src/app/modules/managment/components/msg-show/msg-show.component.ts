@@ -3,7 +3,6 @@ import { Observable } from 'rxjs';
 import { Location } from '@angular/common';
 import { ShowClass } from '@classes/show.class';
 import { MatDialog } from '@angular/material/dialog';
-import { IMsg } from '../../interfaces/msg.interface';
 import { Router, ActivatedRoute } from '@angular/router';
 import { separateGroupValue } from '@methods/seprateGroupValue';
 import { MsgService } from './../../services/msg-service.service';

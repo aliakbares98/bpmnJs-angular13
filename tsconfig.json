@@ -45,7 +45,9 @@
         "src/app/shared/services/errors/*"
       ],
       "@services/*": [
-        "src/app/shared/services/*"
+        "src/app/shared/services/*",
+        "src/app/core/services/*",
+
       ],
       "@pipes/*": [
         "src/app/shared/pipes/*"

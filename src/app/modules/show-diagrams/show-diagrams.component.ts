@@ -88,7 +88,6 @@ export class ShowDiagramsComponent implements OnInit {
 
 
     var svgCode = await this.bpmnJS.saveSVG({ format: true }, function (error, svg) {
-      debugger;
       if (error) {
         return;
       }

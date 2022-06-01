@@ -1,5 +1,5 @@
-import { CommonService } from '@core/services/common.service';
 import { Injectable } from '@angular/core';
+import { CommonService } from '@core/services/common.service';
 import { SignalrService } from '@core/services/signalr.service';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { SignalrService } from '@core/services/signalr.service';
 })
 export class MsgService extends CommonService {
 
-  override reportSpModel!:string;
+  // override reportSpModel!:string;
 
   constructor(public override signalr: SignalrService) {
     super(signalr)

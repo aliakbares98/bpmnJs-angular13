@@ -1,1 +1,157 @@
+<mat-card class="bg-third">
+    <mat-card class="bg-card white br-sm">
+        <h3> افزودن {{pageTitle}} </h3>
+    </mat-card>
 
+    <form [formGroup]="form"
+        (ngSubmit)="send()">
+        <div class="form-content pt32">
+            <div fxLayout="row"
+                fxLayoutGap.gt-xs="32px"
+                fxLayoutGap="32px"
+                formGroupName="tblCore_Message_Properties">
+                <!-- عنوان فارسی-->
+                <mat-form-field appearance="outline"
+                    fxFlex="30rem"
+                    fxFlex.xs="100%"
+                    formGroupName="MessageTypes">
+                    <mat-label>{{
+                        parallelLabelSet["MessageTypes"]
+                        }}</mat-label>
+                    <mat-select formControlName="MessageTypes">
+                        <mat-option class="align-r">
+                        </mat-option>
+                    </mat-select>
+                    <!-- <mat-error class="combo-err-box"
+                        *ngIf="MessageTypeId?.invalid && MessageTypeId?.touched">
+                        <signalr-error [field]="MessageTypeId"
+                            [errorTxt]="errorSet['MessageTypes']"></signalr-error>
+                    </mat-error> -->
+                </mat-form-field>
+                <!-- کلید واژه-->
+                <mat-form-field appearance="outline"
+                    fxFlex="30rem"
+                    fxFlex.xs="100%"
+                    formGroupName="MessageTypes">
+                    <mat-label>{{
+                        parallelLabelSet["MessageTypes"]
+                        }}</mat-label>
+                    <mat-select formControlName="MessageTypes">
+                        <mat-option class="align-r">
+                        </mat-option>
+                    </mat-select>
+                    <!-- <mat-error class="combo-err-box"
+                        *ngIf="MessageTypeId?.invalid && MessageTypeId?.touched">
+                        <signalr-error [field]="MessageTypeId"
+                            [errorTxt]="errorSet['MessageTypes']"></signalr-error>
+                    </mat-error> -->
+                </mat-form-field>
+                <!--  کد-->
+                <mat-form-field appearance="outline"
+                    fxFlex="30rem"
+                    fxFlex.xs="100%"
+                    formGroupName="MessageTypes">
+                    <mat-label>{{
+                        parallelLabelSet["MessageTypes"]
+                        }}</mat-label>
+                    <mat-select formControlName="MessageTypes">
+                        <mat-option class="align-r">
+                        </mat-option>
+                    </mat-select>
+                    <!-- <mat-error class="combo-err-box"
+                        *ngIf="MessageTypeId?.invalid && MessageTypeId?.touched">
+                        <signalr-error [field]="MessageTypeId"
+                            [errorTxt]="errorSet['MessageTypes']"></signalr-error>
+                    </mat-error> -->
+                </mat-form-field>
+                <!-- توضیحات -->
+                <div formGroupName="tblCore_Messages">
+                    <div formGroupName="MessageText">
+                        <mat-form-field appearance="outline"
+                            class="w_100">
+                            <mat-label>{{
+                                parallelLabelSet["MessageText"]
+                                }}</mat-label>
+                            <input matInput
+                                formControlName="MessageText"
+                                value="">
+                        </mat-form-field>
+                    </div>
+
+                </div>
+                <!-- تامین کالا -->
+                <div fxLayout="column"
+                    class="ContactRole_SupplierId">
+                    <!-- <combo-box
+                  [label]="parallelLabelSet['ContactRole_SupplierId']"
+                  [list]="
+                    comboLoadList[dataSourceObjectSet['ContactRole_SupplierId']]
+                  "
+                  formControlName="ContactRole_SupplierId"
+                  [editMode]="editMode"
+                  [status]="ProductStatus"
+                  (changed)="updateRecordStatus(tblInv_Products)"
+                ></combo-box> -->
+                    <!-- <mat-error
+                  class="combo-err-box"
+                  *ngIf="
+                    ContactRole_SupplierId?.invalid && ContactRole_SupplierId?.touched
+                  "
+                >
+                  <signalr-error
+                    [field]="ContactRole_SupplierId"
+                    [errorTxt]="errorSet['ContactRole_SupplierId']"
+                  ></signalr-error>
+                </mat-error> -->
+                </div>
+                <!-- ماهیت فرآیند -->
+                <mat-form-field appearance="outline"
+                    fxFlex="30rem"
+                    formGroupName="MessageObjectTypes">
+                    <mat-label>{{
+                        parallelLabelSet["MessageObjectTypes"]
+                        }}</mat-label>
+                    <mat-select formControlName="MessageObjectTypes">
+                        <mat-option class="align-r">
+                        </mat-option>
+                    </mat-select>
+                    <!-- <mat-error class="combo-err-box"
+                        *ngIf="
+          MessageObjectTypeId?.invalid &&
+          MessageObjectTypeId?.touched ">
+                        <signalr-error [field]="MessageObjectTypeId"
+                            [errorTxt]="errorSet['MessageObjectTypeId']"></signalr-error>
+                    </mat-error> -->
+                </mat-form-field>
+                <!-- آیکون منو -->
+                <mat-form-field appearance="outline"
+                    fxFlex="30rem"
+                    formGroupName="MessageObjectTypes">
+                    <mat-label>{{
+                        parallelLabelSet["MessageObjectTypes"]
+                        }}</mat-label>
+                    <mat-select formControlName="MessageObjectTypes">
+                        <mat-option class="align-r">
+                        </mat-option>
+                    </mat-select>
+                    <!-- <mat-error class="combo-err-box"
+                        *ngIf="
+          MessageObjectTypeId?.invalid &&
+          MessageObjectTypeId?.touched ">
+                        <signalr-error [field]="MessageObjectTypeId"
+                            [errorTxt]="errorSet['MessageObjectTypeId']"></signalr-error>
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+        </div>
+        <div fxLayout="row"
+            fxLayoutAlign="end center"
+            fxLayoutGap="64px"
+            class="mt32 ml32">
+            <button mat-raised-button
+                type="submit"
+                color="primary"><span>ذخیره و ارسال</span> </button>
+            <button mat-raised-button> <span>انصراف</span> </button>
+        </div>
+    </form>
+</mat-card>
