@@ -62,7 +62,9 @@ import { SearchToolbarComponent } from './components/search-toolbar/search-toolb
     NoRightClickDirective,
     DiagramsComponent,
     DynamicFormModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatModule,
+
 
 
   ],

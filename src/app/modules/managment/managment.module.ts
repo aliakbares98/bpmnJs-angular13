@@ -11,7 +11,6 @@ import { MsgEditComponent } from './components/msg-edit/msg-edit.component';
 import { MsgShowComponent } from './components/msg-show/msg-show.component';
 import { MsgSearchComponent } from './components/msg-search/msg-search.component';
 import { DynamicFormModule } from '@sharedMod/common-dynamic-form/dynamic-form.module';
-import { MsgService } from './services/msg-service.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -22,10 +21,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    ComboBoxModule,
-    MatModule,
     SharedModule,
-    FlexLayoutModule,
     ErrorsModule,
     DynamicFormModule
   ],

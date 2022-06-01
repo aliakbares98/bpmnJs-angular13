@@ -8,7 +8,6 @@ import { DiagramsComponent } from '@shared/diagrams/diagrams.component';
 import * as BpmnJS from 'bpmn-js/dist/bpmn-modeler.production.min.js';
 import * as FileSaver from 'file-saver';
 
-
 @Component({
   selector: 'app-show-diagrams',
   templateUrl: './show-diagrams.component.html',
@@ -16,17 +15,9 @@ import * as FileSaver from 'file-saver';
 })
 export class ShowDiagramsComponent implements OnInit {
 
-
   constructor(private http: HttpClient) { }
 
-  ngOnInit() {
-
-    var customTranslate = {
-      translate: ['value', '../../shared/i18n/fa.json']
-    };
-
- 
-  }
+  ngOnInit() { }
   public data: any;
   bpmnData;
   json: any;
@@ -34,7 +25,6 @@ export class ShowDiagramsComponent implements OnInit {
   bpmnSvg = new BpmnJS();
   diagramFile = 'default.bpmn';
   importError?: Error;
-
 
   @ViewChild(DiagramsComponent) diagramComponent!: DiagramsComponent;
 
@@ -84,6 +74,40 @@ export class ShowDiagramsComponent implements OnInit {
     this.bpmnJS.saveXML((err, data) => {
       console.log(data);
     });
+  }
+
+
+  async exportJson() {
+    // this.bpmnJS.saveSVG((err: any, svg: any) => {
+    //   const blob = new Blob([svg],
+    //     { type: 'text/plain;charset=utf-8' }); 
+    //     FileSaver.saveAs(blob, 'bpmnSample.bpmn');
+    //     console.log(blob);
+    // });
+
+
+
+    var svgCode = await this.bpmnJS.saveSVG({ format: true }, function (error, svg) {
+      debugger;
+      if (error) {
+        return;
+      }
+      var svgBlob = new Blob([svg], {
+        type: 'image/svg+xml'
+      });
+      var fileName = 'sdasdasds.svg';
+      var downloadLink = document.createElement('a');
+      downloadLink.download = fileName;
+      downloadLink.innerHTML = 'Get BPMN SVG';
+      downloadLink.href = window.URL.createObjectURL(svgBlob);
+      downloadLink.click();
+      downloadLink.style.visibility = 'hidden';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+    });
+    console.log(svgCode);
+    
+
   }
 
 }

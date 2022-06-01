@@ -83,12 +83,7 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
         default:
           break;
       }
-
     });
-
-
-
-
 
   }
 
@@ -145,23 +140,7 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
     return this.bpmnJS.saveXML({ format: true });
   }
   async getBpmnSVG() {
-    var svgCode = await this.bpmnJS.saveSVG({ format: true }, function (error, svg) {
-      if (error) {
-        return;
-      }
-      var svgBlob = new Blob([svg], {
-        type: 'image/svg+xml'
-      });
-      var fileName = 'sdasdasds.svg';
-      var downloadLink = document.createElement('a');
-      downloadLink.download = fileName;
-      downloadLink.innerHTML = 'Get BPMN SVG';
-      downloadLink.href = window.URL.createObjectURL(svgBlob);
-      downloadLink.click();
-      downloadLink.style.visibility = 'hidden';
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-    });
+  
 
   }
 

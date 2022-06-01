@@ -29,6 +29,7 @@
     "@ngx-translate/http-loader": "^7.0.0",
     "@syncfusion/ej2-angular-dropdowns": "^19.4.56",
     "@szgc/bpmn-i18n": "^1.0.2",
+    "angular-x2js": "^0.2.0",
     "bpmn-font": "^0.10.0",
     "bpmn-js": "^9.1.0",
     "bpmn-js-bpmnlint": "^0.18.0",
@@ -43,7 +44,7 @@
     "save-svg-as-png": "^1.4.17",
     "tslib": "^2.3.0",
     "uuid": "^8.3.2",
-    "x2js": "^3.4.3",
+    "x2js": "3.4.3",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

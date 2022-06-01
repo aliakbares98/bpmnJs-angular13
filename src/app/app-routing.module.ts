@@ -23,6 +23,10 @@ const routes: Routes = [
         loadChildren: () => import(`./modules/managment/managment.module`).then((m) => m.ManagmentModule),
       },
       {
+        path: 'org-mang',
+        loadChildren: () => import(`./modules/organization-management/organization-management.module`).then((m) => m.OrganizationManagementModule),
+      },
+      {
         path: 'diagram',
         loadChildren: () => import(`./modules/show-diagrams/show-diagrams.module`).then((m) => m.ShowDiagramsModule),
       }
