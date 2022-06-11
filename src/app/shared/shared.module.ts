@@ -64,6 +64,8 @@ import { SearchToolbarComponent } from './components/search-toolbar/search-toolb
     DynamicFormModule,
     FlexLayoutModule,
     MatModule,
+    ReactiveFormsModule,
+    FormsModule,
 
 
 

@@ -143,7 +143,7 @@ export class MsgEditComponent extends EditBaseClass implements OnInit {
         this.service.add(param).subscribe((res) => {
           console.log(res);
 
-          // this.location.back();
+          this.location?.back();
         })
       );
     }
@@ -181,8 +181,6 @@ export class MsgEditComponent extends EditBaseClass implements OnInit {
     return this.MessageText?.get('RecordStatus')?.value;
   }
   // ******** **End GetRecordStatus
-
-
 
 
 }

@@ -1,10 +1,12 @@
-import { EditBaseClass } from '@classes/edit-base.class';
-import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ObjKeyStr, ValidationSet } from '@interfaces/global.interfaces';
+import { KeyStr } from './../../../../shared/interfaces/global.interfaces';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { ListClass } from './../../../../shared/classes/list.class';
-import { EventBusService } from './../../../../core/services/event-bus.service';
 import { OrganizationManagementService } from './../../service/organization-management.service';
+import { EditBaseClass } from '@classes/edit-base.class';
+import { makeLoadList } from '@sharedMod/methods/makeLoadList';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -19,10 +21,19 @@ export class AddProcessInformationComponent extends EditBaseClass implements OnI
 
 
   public pageTitle = 'ثبت اطلاعات فرآیند ';
+  public override dataSourceObjectSet: KeyStr = {};
+  public editMode: boolean = false;
+  public override validationSet: ValidationSet[] = [];
+  public override comboLoadList: KeyStr[] = [];
+  public override modelSet: ObjKeyStr = {};
+
 
   constructor(
     public override service: OrganizationManagementService,
-    fb: FormBuilder
+    fb: FormBuilder,
+    private route: ActivatedRoute,
+    location: Location
+
   ) {
     super(fb)
   }
@@ -32,16 +43,104 @@ export class AddProcessInformationComponent extends EditBaseClass implements OnI
 
   override async ngOnInit() {
     super.ngOnInit();
+
+    this.grabage.add(
+      this.route.data.subscribe(async (res) => {
+        console.log('result Data:', res);
+        const data = res['initData'];
+        const id = this.route.snapshot.paramMap.get('id');
+        this.validationSet = data.validation;
+        this.setEditFormValidations();
+
+        this.initForm();
+        this.populateValidation(this.FormCtrls);
+        this.comboLoadList = makeLoadList(data.load);
+
+      })
+    )
+
   }
 
   override initForm: any = () => {
     this.form = this.fb.group({
-      
-    })
-   };
+      tblWfp_WorkFlows: this.fb.group({
+        Model: [this.modelSet['Name']],
+        Name: [''],
+        ApiKey: [''],
+        Code: [''],
+        Description: [''],
+        RecordStatus: ['Inserted'],
+        KeyId: [null],
+
+      }),
+      tblWfp_WorkFlows_Properties: this.fb.group({
+        Model: [this.modelSet['SystemMenu']],
+        SystemMenu: [''],
+        WorkFlowType: [''],
+        SystemIcon: [''],
+        RecordStatus: ['Inserted'],
+        KeyId: [null],
+      }),
+    });
+  };
 
   send() {
+    debugger;
+    const formVal = this.form.value;
+    if (this.form.value) {
+      let contractData = this.makeContractData(formVal);
+      contractData = [...contractData, ...this.recordStatusSet];
+      const actionType = this.wpId ? 'UpdateN' : 'Insertn';
+      const param = {
+        Data: contractData,
+        ActionType: actionType,
+      };
+      this.grabage.add(
+        this.service.add(param).subscribe((res) => {
+          console.log(res);
+          this.location?.back();
 
+        })
+      )
+    }
   }
 
+  //*************** GET Control */ 
+  get tblWfp_WorkFlows() {
+    return this.form.get('tblWfp_WorkFlows') as FormGroup;
+  }
+
+  get Name() {
+    return this.tblWfp_WorkFlows.get('Name');
+  }
+  get ApiKey() {
+    return this.tblWfp_WorkFlows.get('ApiKey');
+  }
+  get Code() {
+    return this.tblWfp_WorkFlows.get('Code');
+  }
+
+  get tblWfp_WorkFlows_Properties() {
+    return this.form.get('tblWfp_WorkFlows_Properties') as FormGroup;
+  }
+
+  get SystemMenu() {
+    return this.tblWfp_WorkFlows_Properties.get('SystemMenu');
+  }
+  get WorkFlowType() {
+    return this.tblWfp_WorkFlows_Properties.get('WorkFlowType');
+  }
+  get SystemIcon() {
+    return this.tblWfp_WorkFlows_Properties.get('SystemIcon');
+  }
+
+  // *************** GetRecordStatus
+  get SystemIconStatus() {
+    return this.SystemIcon?.get('SystemIconStatus')?.value;
+
+  }
+  get WorkFlowTypeStatus() {
+    return this.WorkFlowType?.get('WorkFlowTypeStatus')?.value;
+
+  }
 }

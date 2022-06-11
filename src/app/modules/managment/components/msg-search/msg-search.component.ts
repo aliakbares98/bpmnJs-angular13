@@ -19,6 +19,8 @@ export class MsgSearchComponent extends ListClass implements OnInit {
     eb: EventBusService,
   ) {
     super(eb);
+
+  
   }
 
 
@@ -26,7 +28,7 @@ export class MsgSearchComponent extends ListClass implements OnInit {
   public override  showList: any;
 
   override async ngOnInit() {
-   super.ngOnInit();
+    super.ngOnInit();
   }
 
 

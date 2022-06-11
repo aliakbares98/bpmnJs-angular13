@@ -9,6 +9,7 @@ import { DynamicFormModule } from '@sharedMod/common-dynamic-form/dynamic-form.m
 import { OrganizationManagementRoutingModule } from './organization-management.routing';
 import { OrganizationManagementComponent } from './components/organization-management.component';
 import { AddProcessInformationComponent } from './components/add-process-information/add-process-information.component';
+import { CommonDynamicModule } from '@sharedMod/common-dynamic/common-dynamic.module';
 
 
 @NgModule({
@@ -19,12 +20,11 @@ import { AddProcessInformationComponent } from './components/add-process-informa
   imports: [
     CommonModule,
     OrganizationManagementRoutingModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
     SharedModule,
     ErrorsModule,
-    DynamicFormModule
+    DynamicFormModule,
+    CommonDynamicModule
 
   ],
 

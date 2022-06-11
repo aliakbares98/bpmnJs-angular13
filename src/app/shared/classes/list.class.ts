@@ -169,7 +169,7 @@ export class ListClass
 
   setKeysForSearchStructureReq() {
     const accesssEl = this.findPermisionBy('Srch');
-      console.log('afff',accesssEl);
+      console.log('result data:',accesssEl);
       
     if (accesssEl) {
       this.setApiKeyAndFormName(this.permisionKey, accesssEl.WorkFlowFormName);

@@ -1,6 +1,6 @@
 <mat-card class="bg-third">
   <mat-card class="bg-card white br-sm">
-    <h3> افزودن {{pageTitle}}  </h3>
+    <h3> افزودن {{pageTitle}} </h3>
   </mat-card>
 
   <form [formGroup]="form"
@@ -47,8 +47,7 @@
           <mat-select formControlName="MessageObjectTypes">
             <mat-option *ngFor="let unit of comboLoadList[
             dataSourceObjectSet['MessageObjectTypes']];"
-            (changed)="updateRecordStatus(MessageObjectTypeId,MsgObjTypeIdStatus)"
-
+              (changed)="updateRecordStatus(MessageObjectTypeId,MsgObjTypeIdStatus)"
               class="align-r"
               [value]="unit.Id">
               {{ unit.Value }}
@@ -76,8 +75,7 @@
           <input matInput
             formControlName="MessageText"
             value=""
-            (changed)="updateRecordStatus(MessageObjectTypeId,MsgStatus)"
-            >
+            (changed)="updateRecordStatus(MessageObjectTypeId,MsgStatus)">
         </mat-form-field>
       </div>
 

@@ -9,10 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent {
 
-  constructor(private http: HttpClient) {}
-  
+  constructor(private http: HttpClient) { }
+
 
   ngOnInit() {
+
     this.http.get('/assets/appConfig.json').subscribe((confing: any) => {
       localStorage.setItem(
         'hermes_endPoints',
@@ -21,7 +22,7 @@ export class AppComponent {
     });
   }
 
-  
+
 }
 
 

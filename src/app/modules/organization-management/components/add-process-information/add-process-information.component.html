@@ -6,144 +6,149 @@
     <form [formGroup]="form"
         (ngSubmit)="send()">
         <div class="form-content pt32">
-            <div fxLayout="row"
-                fxLayoutGap.gt-xs="32px"
-                fxLayoutGap="32px"
-                formGroupName="tblCore_Message_Properties">
-                <!-- عنوان فارسی-->
-                <mat-form-field appearance="outline"
-                    fxFlex="30rem"
-                    fxFlex.xs="100%"
-                    formGroupName="MessageTypes">
-                    <mat-label>{{
-                        parallelLabelSet["MessageTypes"]
-                        }}</mat-label>
-                    <mat-select formControlName="MessageTypes">
-                        <mat-option class="align-r">
-                        </mat-option>
-                    </mat-select>
-                    <!-- <mat-error class="combo-err-box"
-                        *ngIf="MessageTypeId?.invalid && MessageTypeId?.touched">
-                        <signalr-error [field]="MessageTypeId"
-                            [errorTxt]="errorSet['MessageTypes']"></signalr-error>
-                    </mat-error> -->
-                </mat-form-field>
-                <!-- کلید واژه-->
-                <mat-form-field appearance="outline"
-                    fxFlex="30rem"
-                    fxFlex.xs="100%"
-                    formGroupName="MessageTypes">
-                    <mat-label>{{
-                        parallelLabelSet["MessageTypes"]
-                        }}</mat-label>
-                    <mat-select formControlName="MessageTypes">
-                        <mat-option class="align-r">
-                        </mat-option>
-                    </mat-select>
-                    <!-- <mat-error class="combo-err-box"
-                        *ngIf="MessageTypeId?.invalid && MessageTypeId?.touched">
-                        <signalr-error [field]="MessageTypeId"
-                            [errorTxt]="errorSet['MessageTypes']"></signalr-error>
-                    </mat-error> -->
-                </mat-form-field>
-                <!--  کد-->
-                <mat-form-field appearance="outline"
-                    fxFlex="30rem"
-                    fxFlex.xs="100%"
-                    formGroupName="MessageTypes">
-                    <mat-label>{{
-                        parallelLabelSet["MessageTypes"]
-                        }}</mat-label>
-                    <mat-select formControlName="MessageTypes">
-                        <mat-option class="align-r">
-                        </mat-option>
-                    </mat-select>
-                    <!-- <mat-error class="combo-err-box"
-                        *ngIf="MessageTypeId?.invalid && MessageTypeId?.touched">
-                        <signalr-error [field]="MessageTypeId"
-                            [errorTxt]="errorSet['MessageTypes']"></signalr-error>
-                    </mat-error> -->
-                </mat-form-field>
-                <!-- توضیحات -->
-                <div formGroupName="tblCore_Messages">
-                    <div formGroupName="MessageText">
-                        <mat-form-field appearance="outline"
-                            class="w_100">
-                            <mat-label>{{
-                                parallelLabelSet["MessageText"]
-                                }}</mat-label>
-                            <input matInput
-                                formControlName="MessageText"
-                                value="">
-                        </mat-form-field>
-                    </div>
+            <div formGroupName="tblWfp_WorkFlows">
+                <div fxLayout="row"
+                    fxLayoutGap="15px">
 
+                    <!-- *****عنوان فارسی ***** -->
+                    <mat-form-field appearance="outline"
+                        fxFlex="30rem"
+                        fxFlex.xs="100%">
+                        <mat-label>{{
+                            parallelLabelSet["Name"]
+                            }}</mat-label>
+                        <input matInput
+                            formControlName="Name"
+                            modelStatus
+                            [editMode]="editMode">
+                        <mat-error class="combo-err-box"
+                            *ngIf="Name?.invalid && Name?.touched">
+                            <signalr-error [field]="Name"
+                                [errorTxt]="errorSet['Name']"></signalr-error>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- *****کلید واژه ***** -->
+                    <mat-form-field appearance="outline"
+                        fxFlex="30rem"
+                        fxFlex.xs="100%">
+                        <mat-label>{{
+                            parallelLabelSet["ApiKey"]
+                            }}</mat-label>
+                        <input matInput
+                            class="backgr"
+                            formControlName="ApiKey"
+                            type="text">
+                        <mat-error class="combo-err-box"
+                            *ngIf="ApiKey?.invalid && ApiKey?.touched">
+                            <signalr-error [field]="ApiKey"
+                                [errorTxt]="errorSet['ApiKey']"></signalr-error>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <!-- *****کد ***** -->
+                    <mat-form-field appearance="outline"
+                        fxFlex="30rem"
+                        fxFlex.xs="100%">
+                        <mat-label>{{
+                            parallelLabelSet["Code"]
+                            }}</mat-label>
+                        <input matInput
+                            class="backgr"
+                            formControlName="Code"
+                            type="text">
+                        <mat-error class="combo-err-box"
+                            *ngIf="Code?.invalid && Code?.touched">
+                            <signalr-error [field]="Code"
+                                [errorTxt]="errorSet['Code']"></signalr-error>
+                        </mat-error>
+                    </mat-form-field>
                 </div>
-                <!-- تامین کالا -->
+
+                <div fxLayout="row">
+                    <!-- *****توضیحات ***** -->
+                    <mat-form-field appearance="outline"
+                        class="w_100">
+                        <mat-label>{{
+                            parallelLabelSet["Description"]
+                            }}</mat-label>
+                        <input matInput
+                            formControlName="Description"
+                            value="">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div formGroupName="tblWfp_WorkFlows_Properties"
+                fxLayout="row"
+                fxLayoutGap="25px">
+                <!-- منو /زیر منو -->
                 <div fxLayout="column"
-                    class="ContactRole_SupplierId">
-                    <!-- <combo-box
-                  [label]="parallelLabelSet['ContactRole_SupplierId']"
-                  [list]="
-                    comboLoadList[dataSourceObjectSet['ContactRole_SupplierId']]
+                    class="SystemMenu"
+                    fxFlex="30rem">
+                    <combo-box [label]="parallelLabelSet['SystemMenu']"
+                        [list]="
+                    comboLoadList[dataSourceObjectSet['SystemMenu']]
                   "
-                  formControlName="ContactRole_SupplierId"
-                  [editMode]="editMode"
-                  [status]="ProductStatus"
-                  (changed)="updateRecordStatus(tblInv_Products)"
-                ></combo-box> -->
-                    <!-- <mat-error
-                  class="combo-err-box"
-                  *ngIf="
-                    ContactRole_SupplierId?.invalid && ContactRole_SupplierId?.touched
-                  "
-                >
-                  <signalr-error
-                    [field]="ContactRole_SupplierId"
-                    [errorTxt]="errorSet['ContactRole_SupplierId']"
-                  ></signalr-error>
-                </mat-error> -->
+                        formControlName="SystemMenu"
+                        [editMode]="editMode"></combo-box>
+                    <mat-error class="combo-err-box"
+                        *ngIf="
+                            SystemMenu?.invalid && SystemMenu?.touched
+                  ">
+                        <signalr-error [field]="SystemMenu"
+                            [errorTxt]="errorSet['SystemMenu']"></signalr-error>
+                    </mat-error>
                 </div>
                 <!-- ماهیت فرآیند -->
                 <mat-form-field appearance="outline"
-                    fxFlex="30rem"
-                    formGroupName="MessageObjectTypes">
+                    fxFlex="30rem">
                     <mat-label>{{
-                        parallelLabelSet["MessageObjectTypes"]
+                        parallelLabelSet["WorkFlowType"]
                         }}</mat-label>
-                    <mat-select formControlName="MessageObjectTypes">
-                        <mat-option class="align-r">
+                    <mat-select formControlName="WorkFlowType">
+                        <mat-option class="align-r"
+                            *ngFor="let unit of comboLoadList[
+                        dataSourceObjectSet['WorkFlowType']];"
+                        (changed)="updateRecordStatus(WorkFlowType,WorkFlowTypeStatus)"
+                        [value]="unit.Id"
+                        >
+                            {{ unit.Value }}
                         </mat-option>
                     </mat-select>
-                    <!-- <mat-error class="combo-err-box"
-                        *ngIf="
-          MessageObjectTypeId?.invalid &&
-          MessageObjectTypeId?.touched ">
-                        <signalr-error [field]="MessageObjectTypeId"
-                            [errorTxt]="errorSet['MessageObjectTypeId']"></signalr-error>
-                    </mat-error> -->
+                    <mat-error class="combo-err-box"
+                        *ngIf="WorkFlowType?.invalid && WorkFlowType?.touched ">
+                        <signalr-error [field]="WorkFlowType"
+                            [errorTxt]="errorSet['WorkFlowType']"></signalr-error>
+                    </mat-error>
                 </mat-form-field>
                 <!-- آیکون منو -->
                 <mat-form-field appearance="outline"
-                    fxFlex="30rem"
-                    formGroupName="MessageObjectTypes">
+                    fxFlex="30rem">
                     <mat-label>{{
-                        parallelLabelSet["MessageObjectTypes"]
+                        parallelLabelSet["SystemIcon"]
                         }}</mat-label>
-                    <mat-select formControlName="MessageObjectTypes">
-                        <mat-option class="align-r">
+                    <mat-select formControlName="SystemIcon">
+                        <mat-option class="align-r"
+                            (changed)="updateRecordStatus(SystemIcon,SystemIconStatus)"
+                            *ngFor="let unit of comboLoadList[
+                    dataSourceObjectSet['SystemIcon']];"
+                            [value]="unit.Id">
+                            {{ unit.Value }}
                         </mat-option>
+
                     </mat-select>
-                    <!-- <mat-error class="combo-err-box"
+                    <mat-error class="combo-err-box"
                         *ngIf="
-          MessageObjectTypeId?.invalid &&
-          MessageObjectTypeId?.touched ">
-                        <signalr-error [field]="MessageObjectTypeId"
-                            [errorTxt]="errorSet['MessageObjectTypeId']"></signalr-error>
-                    </mat-error> -->
+          SystemIcon?.invalid &&
+          SystemIcon?.touched ">
+                        <signalr-error [field]="SystemIcon"
+                            [errorTxt]="errorSet['SystemIcon']"></signalr-error>
+                    </mat-error>
                 </mat-form-field>
             </div>
+
         </div>
+        <!-- Submit Button -->
         <div fxLayout="row"
             fxLayoutAlign="end center"
             fxLayoutGap="64px"
