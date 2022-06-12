@@ -74,20 +74,35 @@ export class AddProcessInformationComponent extends EditBaseClass implements OnI
 
       }),
       tblWfp_WorkFlows_Properties: this.fb.group({
-        Model: [this.modelSet['SystemMenu']],
-        SystemMenu: [''],
-        WorkFlowType: [''],
-        SystemIcon: [''],
-        RecordStatus: ['Inserted'],
-        KeyId: [null],
+        SystemMenu: this.fb.group({
+          Model: [this.modelSet['SystemMenu']],
+          SystemMenu: [''],
+          RecordStatus: ['Inserted'],
+          Command: [''],
+          KeyId: [null],
+        }),
+        WorkFlowType: this.fb.group({
+          Model: [this.modelSet['WorkFlowType']],
+          WorkFlowType: [''],
+          RecordStatus: ['Inserted'],
+          Command: [''],
+          KeyId: [null],
+        }),
+        SystemIcon: this.fb.group({
+          Model: [this.modelSet['SystemIcon']],
+          SystemIcon: [''],
+          RecordStatus: ['Inserted'],
+          Command: [''],
+          KeyId: [null],
+        }),
       }),
     });
   };
 
   send() {
-    debugger;
     const formVal = this.form.value;
     if (this.form.value) {
+      debugger;
       let contractData = this.makeContractData(formVal);
       contractData = [...contractData, ...this.recordStatusSet];
       const actionType = this.wpId ? 'UpdateN' : 'Insertn';
@@ -133,10 +148,16 @@ export class AddProcessInformationComponent extends EditBaseClass implements OnI
   get SystemIcon() {
     return this.tblWfp_WorkFlows_Properties.get('SystemIcon');
   }
-
+  get ProductStatus() {
+    return this.tblWfp_WorkFlows_Properties.get('RecordStatus')?.value;
+  }
   // *************** GetRecordStatus
   get SystemIconStatus() {
     return this.SystemIcon?.get('SystemIconStatus')?.value;
+
+  }
+  get SystemMenuStatus() {
+    return this.SystemMenu?.get('SystemMenuStatus')?.value;
 
   }
   get WorkFlowTypeStatus() {

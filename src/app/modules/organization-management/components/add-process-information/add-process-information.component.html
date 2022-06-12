@@ -84,13 +84,15 @@
                 <!-- منو /زیر منو -->
                 <div fxLayout="column"
                     class="SystemMenu"
-                    fxFlex="30rem">
-                    <combo-box [label]="parallelLabelSet['SystemMenu']"
-                        [list]="
-                    comboLoadList[dataSourceObjectSet['SystemMenu']]
-                  "
+                    fxFlex="30rem"
+                    formGroupName="SystemMenu">
+                    <combo-box 
+                        [label]="parallelLabelSet['SystemMenu']"
+                        [list]="comboLoadList[dataSourceObjectSet['SystemMenu']]"
                         formControlName="SystemMenu"
-                        [editMode]="editMode"></combo-box>
+                        [editMode]="editMode"
+                        [status]="SystemMenuStatus"
+                        (changed)="updateRecordStatus(SystemMenu,SystemMenuStatus)"></combo-box>
                     <mat-error class="combo-err-box"
                         *ngIf="
                             SystemMenu?.invalid && SystemMenu?.touched
@@ -101,7 +103,8 @@
                 </div>
                 <!-- ماهیت فرآیند -->
                 <mat-form-field appearance="outline"
-                    fxFlex="30rem">
+                    fxFlex="30rem"
+                    formGroupName="WorkFlowType">
                     <mat-label>{{
                         parallelLabelSet["WorkFlowType"]
                         }}</mat-label>
@@ -109,9 +112,8 @@
                         <mat-option class="align-r"
                             *ngFor="let unit of comboLoadList[
                         dataSourceObjectSet['WorkFlowType']];"
-                        (changed)="updateRecordStatus(WorkFlowType,WorkFlowTypeStatus)"
-                        [value]="unit.Id"
-                        >
+                            (changed)="updateRecordStatus(WorkFlowType,WorkFlowTypeStatus)"
+                            [value]="unit.Id">
                             {{ unit.Value }}
                         </mat-option>
                     </mat-select>
@@ -123,7 +125,8 @@
                 </mat-form-field>
                 <!-- آیکون منو -->
                 <mat-form-field appearance="outline"
-                    fxFlex="30rem">
+                    fxFlex="30rem"
+                    formGroupName="SystemIcon">
                     <mat-label>{{
                         parallelLabelSet["SystemIcon"]
                         }}</mat-label>
