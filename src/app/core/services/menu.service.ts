@@ -45,7 +45,6 @@ export class MenuService {
   getMenuHttp(contract: any) {
     return this.signalr.postGetData(contract)?.pipe(
       map((data) => {
-        console.log(data);
         
         const menuList = this.makeMenu(data);
         const sortedMenu = this.sortMenu(menuList);

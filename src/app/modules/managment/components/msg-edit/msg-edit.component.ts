@@ -40,7 +40,6 @@ export class MsgEditComponent extends EditBaseClass implements OnInit {
 
     this.grabage.add(
       this.route.data.subscribe(async (res) => {
-        console.log(res);
         const data = res['initData'];
         const id = this.route.snapshot.paramMap.get('id');
         this.validationSet = data.validation;
@@ -141,7 +140,6 @@ export class MsgEditComponent extends EditBaseClass implements OnInit {
 
       this.grabage.add(
         this.service.add(param).subscribe((res) => {
-          console.log(res);
 
           this.location?.back();
         })

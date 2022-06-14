@@ -195,7 +195,6 @@ export class UploadComponent
             },
             (error: any) => {
               if (error instanceof BadRequestError) {
-                //console.log(error);
 
                 this.control?.setErrors({ unhandled: true });
                 this.onTouch();
@@ -256,7 +255,6 @@ export class UploadComponent
     if (this.showMode && this.id) {
       this.service.downloadFile(this.id);
     }
-    //console.log('download');
     //  this.service.downloadAttachment('123323366', 'supplierAttachment');
   }
 

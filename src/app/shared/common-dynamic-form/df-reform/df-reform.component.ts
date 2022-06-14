@@ -73,6 +73,5 @@ export class DFReformComponent
   }
 
   prjInput(value:any) {
-    console.log('prjInput', value);
   }
 }

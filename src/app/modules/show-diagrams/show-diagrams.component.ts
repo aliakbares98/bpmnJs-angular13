@@ -40,7 +40,6 @@ export class ShowDiagramsComponent implements OnInit {
     const { type, error, warnings } = event;
 
     if (type === 'success') {
-      console.log(`Rendered diagram (%s warnings)`, warnings.length);
     }
 
     if (type === 'error') {
@@ -53,7 +52,6 @@ export class ShowDiagramsComponent implements OnInit {
   async saveWorkFlow(): Promise<void> {
     try {
       let bpmnContent: any = await this.diagramComponent.getBpmnContent();
-      console.log(bpmnContent.xml);
     } catch (err) {
     }
   }
@@ -72,7 +70,6 @@ export class ShowDiagramsComponent implements OnInit {
 
   savexml() {
     this.bpmnJS.saveXML((err, data) => {
-      console.log(data);
     });
   }
 
@@ -82,7 +79,6 @@ export class ShowDiagramsComponent implements OnInit {
     //   const blob = new Blob([svg],
     //     { type: 'text/plain;charset=utf-8' }); 
     //     FileSaver.saveAs(blob, 'bpmnSample.bpmn');
-    //     console.log(blob);
     // });
 
 
@@ -104,7 +100,6 @@ export class ShowDiagramsComponent implements OnInit {
       document.body.appendChild(downloadLink);
       downloadLink.click();
     });
-    console.log(svgCode);
     
 
   }

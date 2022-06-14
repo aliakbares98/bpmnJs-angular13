@@ -138,7 +138,6 @@ export class ListClass
     this.getModulePermisions();
     this.setKeysForSearchStructureReq();
     this.newAccesssEl = this.findPermisionBy('New');
-    console.log(this.newAccesssEl);
 
     const initData = await this.service.resolveValidation()?.toPromise();
     this.validationSet = initData.validation;
@@ -169,7 +168,6 @@ export class ListClass
 
   setKeysForSearchStructureReq() {
     const accesssEl = this.findPermisionBy('Srch');
-      console.log('result data:',accesssEl);
       
     if (accesssEl) {
       this.setApiKeyAndFormName(this.permisionKey, accesssEl.WorkFlowFormName);
@@ -249,7 +247,6 @@ export class ListClass
       );
 
       this.modulPermisions = permisionSet[this.permisionKey];
-      console.log(this.modulPermisions);
       
     }
   }

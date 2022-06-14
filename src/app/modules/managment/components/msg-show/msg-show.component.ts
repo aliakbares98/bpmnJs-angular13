@@ -62,7 +62,6 @@ export class MsgShowComponent extends ShowClass implements OnInit, OnDestroy {
       if (params['id']) {
         await this.getReport(+params['id']);
         this.setMsgProperties()
-        console.log('this.Msg_Properties',this.Msg_Properties);
         
       }
     });

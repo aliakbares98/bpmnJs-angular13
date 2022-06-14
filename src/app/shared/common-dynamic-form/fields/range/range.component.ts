@@ -22,7 +22,6 @@ export class RangeComponent implements OnInit {
   @Output() prjInput = new EventEmitter();
 
   ngOnInit() {
-    //console.log('ngOnInit', this.field?.name?.From);
   }
 
   get from() {

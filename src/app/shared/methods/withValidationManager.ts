@@ -87,7 +87,6 @@ export function withValidationManager<T extends Constructor<{}>>(
           //  this.setModelToFormGroup(modelName, item);
           this.addValidatotToFormGroup(itemCtrl);
         } else if (item instanceof FormControl) {
-          // console.log('nothing');
         }
       });
     }

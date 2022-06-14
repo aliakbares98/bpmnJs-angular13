@@ -92,7 +92,6 @@ export class SignalrService {
   receive() {
     this.connection.on('ReceiveMessage', (data) => {
       const contract = JSON.parse(data);
-      console.log(contract);
 
       const type = contract.ActionType;
       const apiKey = contract.ApiKey;
@@ -115,7 +114,6 @@ export class SignalrService {
       this.connection
         .start()
         .then(() => {
-          console.log('started', this.connection.connectionId);
           this.receive();
           this.signalrConnected = true;
           this.connectionParam.connectionId = this.connection.connectionId;
@@ -128,7 +126,6 @@ export class SignalrService {
 
         .catch((err) => {
           reject(false);
-          console.log('Error while starting connection: ' + err);
         });
     });
   }
@@ -138,7 +135,6 @@ export class SignalrService {
       this.connection
         .stop()
         .then(() => {
-          console.log('signalr stoped');
 
           this.signalrConnected = false;
           resolve(true);
@@ -191,7 +187,6 @@ export class SignalrService {
     const preContracts = this.getContracts().filter(
       (c) => c.ApiKey !== contract.ApiKey
     );
-    console.log(contract);
     
     const newContracts = [...preContracts, contract];
     this.setContracts(newContracts);

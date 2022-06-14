@@ -72,7 +72,6 @@ export class DiagramsComponent implements OnChanges, OnDestroy, OnInit {
 
     var eventBus = this.bpmnJS.get("eventBus");
     eventBus.on("element.click", (event) => {
-      console.log(event);
       switch (event.element.type) {
         case 'bpmn:StartEvent':
           // this.dialogShape()

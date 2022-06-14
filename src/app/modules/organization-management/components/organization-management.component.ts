@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { ListClass } from '@classes/list.class';
 import { Component, OnInit } from '@angular/core';
-import { EventBusService } from '@services/event-bus.service';
+import { EventBusService } from '@core/services/event-bus.service';
 import { OrganizationManagementService } from './../service/organization-management.service';
 
 
@@ -20,10 +20,7 @@ export class OrganizationManagementComponent extends ListClass implements OnInit
     super(eb)
   }
 
-  public statusList: Array<string> = [];
-  public override  showList: any;
-
-  
+ 
   override async ngOnInit() {
     super.ngOnInit();
   }

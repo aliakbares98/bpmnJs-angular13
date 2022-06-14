@@ -51,7 +51,6 @@ export class CommonService {
         },
       ],
     };
-console.log(contract);
 
     return this.signalr.postGetData(contract);
   }

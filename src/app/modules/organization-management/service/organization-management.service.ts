@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CommonService } from '@services/common.service';
-import { SignalrService } from '@services/signalr.service';
+import { SignalrService } from '@core/services/signalr.service';
+
 
 @Injectable({
   providedIn: 'root'

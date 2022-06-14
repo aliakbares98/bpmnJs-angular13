@@ -41,7 +41,6 @@ export class PublicClass implements OnInit, OnDestroy {
       for (const itemKey in items) {
         if (Array.isArray(items[itemKey])) {
           /* array which contain some object and array */
-          //  console.log('items[itemKey]', items[itemKey]);
 
           for (const subItemKey in items[itemKey]) {
             if (items[itemKey][subItemKey]) {
@@ -231,7 +230,6 @@ export class PublicClass implements OnInit, OnDestroy {
   }
 
   // updateSubjectRecordStatusSetBy(formGroup) {
-  //   console.log('updateSubjectRecordStatusSetBy');
   //   const keyId = formGroup.get('KeyId')?.value;
   //   if (keyId) {
   //     const model = formGroup.get('Model')?.value;
