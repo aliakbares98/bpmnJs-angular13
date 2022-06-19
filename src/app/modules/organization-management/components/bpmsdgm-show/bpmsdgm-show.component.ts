@@ -65,10 +65,13 @@ export class BpmsdgmShowComponent extends ShowClass implements OnInit, OnDestroy
     })
 
   }
+  
   setMsgProperties() {
     if (this.reportData?.Properties && this.reportData?.Properties.length) {
       this.bpmsdgm_Properties = separateGroupValue(this.reportData.Properties)
     }
+    console.log('show:',this.bpmsdgm_Properties);
+    
   }
 
   override ngOnDestroy() {

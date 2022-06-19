@@ -5,36 +5,42 @@
       fxLayout="column"
       fxLayoutGap="35px">
       <div fxLayout="row wrap"
-        fxLayoutGap="80px"
+        fxLayoutGap="100px"
         dir="rtl"
         class="report-elm_row">
         <div class="report-elm mb-32">
           {{ parallelLabelSet["Name"] }} :
-          <span>{{ bpmsdgm_Properties['Name'] }}</span>
+          <span>{{ reportData['Name'] }}</span>
         </div>
         <div class="report-elm mb-32">
           {{ parallelLabelSet["ApiKey"] }} :
-          <span>{{ bpmsdgm_Properties['ApiKey'] }}</span>
+          <span>{{ reportData['ApiKey'] }}</span>
         </div>
         <div class="report-elm mb-32">
           {{ parallelLabelSet["Code"] }} :
-          <span>{{ bpmsdgm_Properties['Code'] }}</span>
+          <span>{{ reportData['Code'] }}</span>
         </div>
+     
+      </div>
+      <div fxLayout="row wrap"
+        fxLayoutGap="100px"
+        dir="rtl"
+        class="report-elm_row">
         <div class="report-elm mb-32">
           {{ parallelLabelSet["Description"] }} :
-          <span>{{ bpmsdgm_Properties['Description'] }}</span>
+          <span>{{ reportData['Description'] }}</span>
         </div>
         <div class="report-elm mb-32">
           {{ parallelLabelSet["SystemMenu"] }} :
-          <span>{{ bpmsdgm_Properties['SystemMenu'] }}</span>
+          <span>{{ bpmsdgm_Properties['SystemSubMenuName'] }}</span>
         </div>
         <div class="report-elm mb-32">
           {{ parallelLabelSet["WorkFlowType"] }} :
-          <span>{{ bpmsdgm_Properties['WorkFlowType'] }}</span>
+          <span>{{ bpmsdgm_Properties['WorkflowTypesName'] }}</span>
         </div>
         <div class="report-elm mb-32">
           {{ parallelLabelSet["SystemIcon"] }} :
-          <span>{{ bpmsdgm_Properties['SystemIcon'] }}</span>
+          <span>{{ bpmsdgm_Properties['SystemIconsName'] }}</span>
         </div>
       </div>
     

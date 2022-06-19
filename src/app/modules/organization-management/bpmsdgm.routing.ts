@@ -15,7 +15,7 @@ const routes: Routes = [
   },
 
 
-  ...['BPMSDgmNew/New','BPMSDgmUpd/:id/Edit'].map(
+  ...['BPMSDgmNew/New', 'BPMSDgmUpd/:id/Edit'].map(
     (path) => ({
       path,
       component: BpmsdgmEditComponent,
@@ -26,15 +26,16 @@ const routes: Routes = [
     }),
   ),
 
-  ...['BPMSDgmShow/:id/Show'].map(
-    (path) => ({
-      path,
-      component:BpmsdgmShowComponent,
-      resolve: {
-        validation: ValidationResolverService
-      }
-    }),
-  ),
+  ...['BPMSDgmShow/:id/Show',
+    'BPMSDgmDel/:id/Delete'].map(
+      (path) => ({
+        path,
+        component: BpmsdgmShowComponent,
+        resolve: {
+          validation: ValidationResolverService
+        }
+      }),
+    ),
 
 ];
 

@@ -33,7 +33,6 @@ export class MsgShowComponent extends ShowClass implements OnInit, OnDestroy {
   public Msg_Properties: { [key: string]: string | number } = {};
   public Msg_Mapping: { [key: string]: string | number } = {};
 
-
   public pageTitle = 'نمایش اطلاعات';
 
   public override parallelLabelSet: ObjKeyStr = {};

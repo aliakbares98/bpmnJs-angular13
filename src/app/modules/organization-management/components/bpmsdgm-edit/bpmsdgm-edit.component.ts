@@ -100,8 +100,6 @@ export class BpmsdgmEditComponent extends EditBaseClass implements OnInit {
   setbpmsdgmProperties() {
     this.SystemMenu?.patchValue({
       SystemMenu: {
-        // Id: 382,
-        // Value:'ورود',
         Id: this.bpmsdgm_Properties['SystemSubMenuId'],
         Value: this.bpmsdgm_Properties['SystemSubMenuName']
       },
