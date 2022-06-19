@@ -6,7 +6,7 @@ import { SignalrService } from '@core/services/signalr.service';
 @Injectable({
   providedIn: 'root'
 })
-export class OrganizationManagementService extends CommonService {
+export class BmpsdgmService extends CommonService {
 
 
   constructor(public override signalr: SignalrService) {

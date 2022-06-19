@@ -1,0 +1,70 @@
+
+<div class="main-container">
+    <h1 class="header-title">{{ pageTitle }}</h1>
+    <div class="form-content"
+      fxLayout="column"
+      fxLayoutGap="35px">
+      <div fxLayout="row wrap"
+        fxLayoutGap="80px"
+        dir="rtl"
+        class="report-elm_row">
+        <div class="report-elm mb-32">
+          {{ parallelLabelSet["Name"] }} :
+          <span>{{ bpmsdgm_Properties['Name'] }}</span>
+        </div>
+        <div class="report-elm mb-32">
+          {{ parallelLabelSet["ApiKey"] }} :
+          <span>{{ bpmsdgm_Properties['ApiKey'] }}</span>
+        </div>
+        <div class="report-elm mb-32">
+          {{ parallelLabelSet["Code"] }} :
+          <span>{{ bpmsdgm_Properties['Code'] }}</span>
+        </div>
+        <div class="report-elm mb-32">
+          {{ parallelLabelSet["Description"] }} :
+          <span>{{ bpmsdgm_Properties['Description'] }}</span>
+        </div>
+        <div class="report-elm mb-32">
+          {{ parallelLabelSet["SystemMenu"] }} :
+          <span>{{ bpmsdgm_Properties['SystemMenu'] }}</span>
+        </div>
+        <div class="report-elm mb-32">
+          {{ parallelLabelSet["WorkFlowType"] }} :
+          <span>{{ bpmsdgm_Properties['WorkFlowType'] }}</span>
+        </div>
+        <div class="report-elm mb-32">
+          {{ parallelLabelSet["SystemIcon"] }} :
+          <span>{{ bpmsdgm_Properties['SystemIcon'] }}</span>
+        </div>
+      </div>
+    
+    </div>
+    <div
+    fxLayout="row"
+    fxLayoutAlign="start start"
+    fxLayoutGap="64px"
+    dir="ltr"
+    class="del-cancel_btn"
+  >
+    <button
+      type="button"
+      mat-stroked-button
+      color="accent"
+      (click)="backFn()"
+      *ngIf="hasReportData"
+    >
+      بازگشت
+    </button>
+    <button
+      type="button"
+      mat-raised-button
+      color="accent"
+      (click)="removeReport()"
+      *ngIf="isDeleteMode && hasReportData"
+    >
+      حذف
+    </button>
+  </div>
+  
+  </div>
+  

@@ -36,6 +36,7 @@ export class MsgEditComponent extends EditBaseClass implements OnInit {
   }
 
   override ngOnInit(): void {
+
     super.ngOnInit();
 
     this.grabage.add(

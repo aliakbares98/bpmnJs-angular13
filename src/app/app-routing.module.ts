@@ -24,7 +24,7 @@ const routes: Routes = [
       },
       {
         path: 'Management',
-        loadChildren: () => import(`./modules/organization-management/organization-management.module`).then((m) => m.OrganizationManagementModule),
+        loadChildren: () => import(`./modules/organization-management/bpmsdgm.module`).then((m) => m.OrganizationManagementModule),
       },
       { 
         path: 'diagram',

@@ -92,6 +92,8 @@ export class SignalrService {
   receive() {
     this.connection.on('ReceiveMessage', (data) => {
       const contract = JSON.parse(data);
+      console.log(contract);
+      
 
       const type = contract.ActionType;
       const apiKey = contract.ApiKey;

@@ -1,23 +1,24 @@
 import { ObjKeyStr, ValidationSet } from '@interfaces/global.interfaces';
-import { KeyStr } from './../../../../shared/interfaces/global.interfaces';
+import { KeyStr } from '../../../../shared/interfaces/global.interfaces';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-import { OrganizationManagementService } from './../../service/organization-management.service';
 import { EditBaseClass } from '@classes/edit-base.class';
 import { makeLoadList } from '@sharedMod/methods/makeLoadList';
 import { Location } from '@angular/common';
+import { BmpsdgmService } from '../../service/bpmsdgm.service';
+import { separateGroupValue } from '@methods/seprateGroupValue';
 
 
 @Component({
-  selector: 'app-add-process-information',
-  templateUrl: './add-process-information.component.html',
-  styleUrls: ['./add-process-information.component.scss']
+  selector: 'app-bpmsdgm-edit',
+  templateUrl: './bpmsdgm-edit.component.html',
+  styleUrls: ['./bpmsdgm-edit.component.scss']
 
 })
 
 
-export class AddProcessInformationComponent extends EditBaseClass implements OnInit {
+export class BpmsdgmEditComponent extends EditBaseClass implements OnInit {
 
 
   public pageTitle = 'ثبت اطلاعات فرآیند ';
@@ -26,10 +27,13 @@ export class AddProcessInformationComponent extends EditBaseClass implements OnI
   public override validationSet: ValidationSet[] = [];
   public override comboLoadList: KeyStr[] = [];
   public override modelSet: ObjKeyStr = {};
+  public bpmsdgm_Properties: { [key: string]: string | number } = {};
+
+
 
 
   constructor(
-    public override service: OrganizationManagementService,
+    public override service: BmpsdgmService,
     fb: FormBuilder,
     private route: ActivatedRoute,
     location: Location
@@ -50,16 +54,80 @@ export class AddProcessInformationComponent extends EditBaseClass implements OnI
         const id = this.route.snapshot.paramMap.get('id');
         this.validationSet = data.validation;
         this.setEditFormValidations();
-        
+
 
         this.initForm();
         this.populateValidation(this.FormCtrls);
         this.comboLoadList = makeLoadList(data.load);
 
+        if (id) {
+          this.pageTitle = 'ویرایش';
+          this.editMode = true;
+          await this.getReport(+id);
+          this.populate();
+        }
+
       })
     )
 
   }
+
+  populate() {
+    if (this.reportData) {
+
+      this.tblWfp_WorkFlows?.patchValue({
+        Name: this.reportData['Name'],
+        ApiKey: this.reportData['ApiKeyName'],
+        Code: this.reportData['CodeId'],
+        Description: this.reportData['Description'],
+        RecordStatus: 'updated',
+        KeyId: this.reportData['Name'],
+        Command: this.reportData['Name'],
+      })
+
+
+      if (this.reportData?.Properties && this.reportData?.Properties.length) {
+        this.bpmsdgm_Properties = separateGroupValue(
+          this.reportData?.Properties
+        );
+        console.log('mahmmodi joon:', this.bpmsdgm_Properties);
+
+      }
+      this.setbpmsdgmProperties();
+    }
+  }
+
+  setbpmsdgmProperties() {
+    this.SystemMenu?.patchValue({
+      SystemMenu: {
+        // Id: 382,
+        // Value:'ورود',
+        Id: this.bpmsdgm_Properties['SystemSubMenuId'],
+        Value: this.bpmsdgm_Properties['SystemSubMenuName']
+      },
+      RecordStatus: this.bpmsdgm_Properties['SystemMenuRecordStatus'],
+      KeyId: this.bpmsdgm_Properties['SystemMenuKeyId'],
+      Command: this.bpmsdgm_Properties['SystemSubMenuCommand'],
+
+    }),
+      this.WorkFlowType?.patchValue({
+        WorkFlowType:  this.bpmsdgm_Properties['WorkflowTypesId'],
+        RecordStatus: this.bpmsdgm_Properties['WorkflowTypesRecordStatus'],
+        KeyId: this.bpmsdgm_Properties['WorkflowTypesKeyId'],
+        Command: this.bpmsdgm_Properties['WorkflowTypesCommand'],
+      })
+    this.SystemIcon?.patchValue({
+      SystemIcon: this.bpmsdgm_Properties['SystemIcon'],
+      RecordStatus: this.bpmsdgm_Properties['SystemIconRecordStatus'],
+      KeyId: this.bpmsdgm_Properties['SystemIconKeyId'],
+      Command: this.bpmsdgm_Properties['SystemIconCommand'],
+    })
+
+    console.log('HIWorkFlowType', this.WorkFlowType);
+    console.log('SystemMenu', this.SystemMenu);
+
+  }
+
 
   override initForm: any = () => {
     this.form = this.fb.group({
@@ -100,10 +168,12 @@ export class AddProcessInformationComponent extends EditBaseClass implements OnI
   };
 
   send() {
+
     const formVal = this.form.value;
     if (this.form.value) {
-      debugger;
       let contractData = this.makeContractData(formVal);
+      console.log(contractData);
+
       contractData = [...contractData, ...this.recordStatusSet];
       const actionType = this.wpId ? 'UpdateN' : 'Insertn';
       const param = {
